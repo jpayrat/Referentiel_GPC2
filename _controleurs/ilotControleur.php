@@ -64,7 +64,7 @@ class ilotControleur extends baseControleur {
         //var_dump($d);
         $vue->afficheHaut($d['haut']);
         $vue->afficheMenuLateral($d['lateral']);
-        $vue->afficheCorps($d['corps'], 'affIndex');
+        $vue->afficheCorps($d['corps'], 'affIndex');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();
     }
 

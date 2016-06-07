@@ -18,7 +18,6 @@ class ModelVue {
         require(VUES_PATH.$vue.".php");
     }
 
-
     public function afficheBas() {
         require(VUES_PATH."bas.php");
     }
