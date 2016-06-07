@@ -56,7 +56,7 @@ class Routeur {
             $data = $this->paramsUrl;
             //unset($data[1]);
             //unset($data[2]);
-            var_dump($data);
+            //var_dump($data);
             call_user_func_array(array($controller, $this->methodName()), $this->paramsUrl);
         }
         else {

@@ -25,7 +25,15 @@ use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 class ilotControleur extends baseControleur {
 
     public function affIndex($params) {
+
+
+
+
         var_dump($params);
+
+
+
+
         $d = array(); // tableau collectant les données
 
         $d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
