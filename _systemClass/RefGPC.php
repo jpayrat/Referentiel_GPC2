@@ -15,12 +15,18 @@ class RefGPC
     const DB_HOST = 'localhost';   
  */
     private static $database;
+    private static $connexion;
 
     public static function getDB(){
         if (self::$database === null){
-            self::$database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
+            if (self::$connexion === null) {
+                throw new \Exception("Impossible de se connecter à la base avec une connexion inconnue !");
+            }
+            self::$database = self::$connexion->getDB(SELECT_DB);
         }
 
         return self::$database;
     }
+    
+    public static function connect($connexion){ self::$connexion = $connexion; }
 }
