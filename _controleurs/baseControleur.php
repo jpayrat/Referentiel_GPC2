@@ -1,8 +1,13 @@
 <?php
 namespace RefGPC\_controleurs;
-
+/**
+ * Description of defautControleur
+ * classe de base des controleurs
+ * @author Marc
+ */
 class baseControleur {
-
+    
+    
     var $vars = array();
 
     public function __construct() {

@@ -6,7 +6,6 @@ use RefGPC\_models\ChoixBase;
 use RefGPC\_models\MenuLateral;
 use \RefGPC\_models\Formulaire;
 use \RefGPC\_models\ModelVue;
-use \RefGPC\_models\Routeur;
 
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 
@@ -22,17 +21,9 @@ use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
  * -> Eventuellement un historique des modifications
  **/
 
-class ilotControleur extends baseControleur {
+class ilotControleur {
 
     public function affIndex($params) {
-
-
-
-
-        var_dump($params);
-
-
-
 
         $d = array(); // tableau collectant les données
 
@@ -52,6 +43,8 @@ class ilotControleur extends baseControleur {
         $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre('ilot');
 
         $form = new Formulaire($choixBase->codeBase());
+        $d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
+        $d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
         $d['corps']['selectIlotList'] = $form->select('ilotList');
         $d['corps']['selectTypeIlot'] = $form->select('typeIlot');
         $d['corps']['selectUsed'] = $form->select('used');
@@ -61,19 +54,15 @@ class ilotControleur extends baseControleur {
         $d['corps']['selectSiteGeo'] = $form->select('siteGeo');
         $d['corps']['selectDomaineAct'] = $form->select('domaineAct');
 
-        $d['corps']['nbIlot'] = RefGPC::getDB()->queryCount('SELECT iloCodeIlot FROM `tm_ilots`');
-        //var_dump($d);
+        $d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$choixBase->codeBase()."' ");
 
-        
+        //var_dump($d);
         $vue = new ModelVue($d);
-        extract($d);
-        //echo $classCSSLienMP;
-        //var_dump($d['haut']);
-        //var_dump($d);
-        $vue->afficheHaut($d['haut']);
-        $vue->afficheMenuLateral($d['lateral']);
-        $vue->afficheCorps($d['corps'], 'affIndex');// TODO : je n'arrive pas à automatiser le "affIndex"
-        $vue->afficheBas();
-    }
 
+        $vue->afficheHaut($d['haut'], 'ilot'); // Le second paramètre = fichier js à inclure
+        $vue->afficheMenuLateral($d['lateral']);
+        $vue->afficheCorps($d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
+        $vue->afficheBas();
+
+    }
 }

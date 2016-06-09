@@ -21,12 +21,9 @@ class Formulaire
 
     }
     
-    public function input($name)
+    public function input($name, $size, $maxLength)
     {
-
-        $nbIlot = RefGPC::getDB()->queryCount('SELECT iloCodeIlot FROM `tm_ilots`');
-        echo '<input type="text" name="' . $name . '" placeholder="' . $nbIlot . '"></input>';
-
+        return '<input type="text" name="'.$name.'" id="'.$name.'" size="'.$size.'" maxlength="'.$maxLength.'" ></input>';
     }
 
     public function select($name)

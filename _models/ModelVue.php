@@ -3,8 +3,9 @@ namespace RefGPC\_models;
 
 class ModelVue {
 
-    public function afficheHaut($variablesHaut) {
+    public function afficheHaut($variablesHaut, $js) {
         extract($variablesHaut);
+        if($js != null) { $jqueryLoader=  '<script src="'.WEBPATH.'js/'.$js.'.js" type="text/javascript"></script>'; }
         require(VUES_PATH."haut.php");
     }
 

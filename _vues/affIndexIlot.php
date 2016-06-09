@@ -1,10 +1,11 @@
-        <div class="container">
+ <div class="container">
 
-            <form method="post" id="form_ilot" action="#" class="formulaire">
-                <h1> Îlots GPC <?php echo '- '.$libelleBase; ?></h1>
+                <h1> Îlots GPC <?php echo '- '.$libelleBase; ?> <span class=""><?= '- '.$nbIlot; ?> ilots</span></h1>
                 <hr />
 
-                <label for="rechercheGlobal" class="gen souligner">Recherche globale</label><input type="text" name="rechercheGlobal" id="rechercheGlobal" tabindex="1" size="30" maxlength="28" />
+            <form method="post" id="form_ilot" action="#" class="formulaire">
+                <label for="rechercheGlobal" class="gen souligner">Recherche globale</label>
+                <?= $inputIlotGlobal; ?>
 
                 <div style="border: 0px solid #000; display: inline-block;text-align: center; width: 52%;">
                     <span id="all_form">Lister tous les îlots</span>
@@ -17,7 +18,9 @@
 
                 <div class="search_ilot_detail">
                     <div style="width: 55%; display: inline-block;">
-                        <label for="ilot_tape" class="gen">Ilot </label> <input type="text" name="ilot_tape" id="ilot_tape" tabindex="1" size="3" maxlength="3" /> <span>ou</span>
+                        <label for="ilot_tape" class="gen">Ilot </label>
+                        <?= $inputIlotTape; ?>
+                            <span>ou</span>
                         <?= $selectIlotList; ?>
                     </div>
                     <div style="width: 20%; display: inline-block;">
@@ -74,39 +77,6 @@
 
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <form action="Parties_pros_v0.1/PPros/rechercheGlobal" method="POST">
-                <div class="formSearchGlobal">
-                    <button class="rechercheGenPProsSubmit" type="submit" aria-label="Rechercher"></button>
-                    <?php //echo $input; ?>
-                    <br /><br />
-                    <button class="rechercheRecentSubmit" id="rechercheRecentSubmit" type="submit">Parties récentes</button> - <button class="rechercheHasardSubmit" type="submit">Partie au hasard</button>
-                </div>
-            </form>
 
             <br /><br /><br /><br />
             <hr />

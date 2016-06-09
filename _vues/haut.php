@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="<?= WEBPATH; ?>css/style.css" />
     <link rel="shortcut icon" href="" />
 
-    <script src="<?= WEBPATH; ?>_js/jquery-1.12.1.min.js" type="text/javascript"></script>
+    <script src="<?= WEBPATH; ?>js/jquery-1.12.1.min.js" type="text/javascript"></script>
+    <?= $jqueryLoader; ?>
+
 
     <title>Referentiel-GPC</title>
 </head>

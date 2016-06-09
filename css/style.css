@@ -72,6 +72,7 @@ hr { height: 1px; border: 0; background-color: #d6d6d6; clear: both; width: 100%
 .container { display: inline-block; width: 75%; margin: 0 auto; padding: 0px 30px 40px 30px; color: #333; border-left: 1px solid #000;}
 
 .container h1 { margin: 8px 0 4px 0px; }
+.container h1 span { font-size: 0.8em; }
 .container h2 { margin: 10px 0 4px 0px; }
 
 div.ligne_form { font-size: 15px; }
