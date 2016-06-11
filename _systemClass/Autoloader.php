@@ -16,12 +16,18 @@ class Autoloader{
             $className = str_replace(self::RACINE_NAMESPACE.'\\', '', $className);
             $className = str_replace('\\', '/', $className);
 
-            require PATH.$className.'.php';
+            $pathToFile = PATH.$className.'.php';
+            if (!\file_exists($pathToFile)) {
+                $msg =  '<br />Autoloader::autoload : chemin inconnu ['.$pathToFile.']';
+                echo $msg;
+                // throw new RefGpcException($msg); // A voir pour la suite les exceptions
+            }
+            require $pathToFile;
         }
         else {
-           $msg =  '<br />Autoloader::autoload : impossible de charger ['.$className.']'; 
+            $msg =  '<br />Autoloader::autoload : impossible de charger ['.$className.']';
             echo $msg;
-           // throw new RefGpcException($msg); // A voir pour la suite les exceptions
+            // throw new RefGpcException($msg); // A voir pour la suite les exceptions
         }
     }
 }

@@ -3,17 +3,19 @@ namespace RefGPC\_models;
 
 class menuLateral
 {
+    var $cssIlot;
+    var $cssCentre;
+    var $cssTech;
 
-    public function classCSSMenuLateralActifIlot($menu)
+    public function __construct($menu)
     {
-        if ($menu == 'ilot') { $classLienMenuLateralIlot = 'actif'; } else { $classLienMenuLateralIlot = ''; }
-        return $classLienMenuLateralIlot;
+        $this->cssIlot = $menu == 'ilot' ? 'actif' : '';
+        $this->cssCentre = $menu == 'centre' ? 'actif' : '';
+        $this->cssTech = $menu == 'tech' ? 'actif' : '';
     }
 
-    public function classCSSMenuLateralActifCentre($menu)
-    {
-        if ($menu == 'centre') { $classLienMenuLateralCentre = 'actif'; } else { $classLienMenuLateralCentre = ''; }
-        return $classLienMenuLateralCentre;
-    }
+    public function classCSSMenuLateralActifIlot()  { return $this->cssIlot;  }
+    public function classCSSMenuLateralActifCentre(){ return $this->cssCentre;  }
+    public function classCSSMenuLateralActifTech()  { return $this->cssTech;  }
     
 }

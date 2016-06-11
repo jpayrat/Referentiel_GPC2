@@ -37,10 +37,11 @@ class ilotControleur {
         $d['corps']['libelleBase'] = $choixBase->libelleBase();
         $d['haut']['classCSSLienLR'] = $choixBase->classCSSLien('LR');
         $d['haut']['classCSSLienMP'] = $choixBase->classCSSLien('MP');
-
-        $menuLateral = new menuLateral();
-        $d['lateral']['classLienMenuLateralIlot'] = $menuLateral->classCSSMenuLateralActifIlot('ilot');
-        $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre('ilot');
+        
+        $menuLateral = new menuLateral('ilot');
+        $d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
+        $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
+        $d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
 
         $form = new Formulaire($choixBase->codeBase());
         $d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
