@@ -29,7 +29,7 @@ class ilotControleur extends baseControleur {
 
 
 
-        var_dump($params);
+        //var_dump($params);
 
 
 
@@ -47,9 +47,10 @@ class ilotControleur extends baseControleur {
         $d['haut']['classCSSLienLR'] = $choixBase->classCSSLien('LR');
         $d['haut']['classCSSLienMP'] = $choixBase->classCSSLien('MP');
 
-        $menuLateral = new menuLateral();
-        $d['lateral']['classLienMenuLateralIlot'] = $menuLateral->classCSSMenuLateralActifIlot('ilot');
-        $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre('ilot');
+        $menuLateral = new menuLateral('ilot');
+        $d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
+        $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
+        $d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
 
         $form = new Formulaire($choixBase->codeBase());
         $d['corps']['selectIlotList'] = $form->select('ilotList');

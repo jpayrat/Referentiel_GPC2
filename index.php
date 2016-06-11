@@ -1,6 +1,8 @@
 <?php
 use \RefGPC\_systemClass\Autoloader;
 use \RefGPC\_systemClass\Routeur;
+//use \RefGPC\_systemClass\Connexion;
+use \RefGPC\_systemClass\RefGPC;
 
 //require 'F:/Programmes/wamp/www/Referentiel_GPC/_controleurs/baseControleur.php';
 
@@ -12,10 +14,22 @@ Autoloader::register(); // On pourrait enlever \RefGPC\_systemClass\ si on met u
 define ('WEBPATH', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
 define ('PATH', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
+
 // Définition des dossiers du MVC
 define ('CONTROLEURS_PATH', PATH.'_controleurs/');
 define ('MODELS_PATH', PATH.'_models/');
 define ('VUES_PATH', PATH.'_vues/');
+
+// Définition de la connexion à la BD
+define ('SELECT_DB', 'marclocal'); // selectionne la base de données
+
+$connexion = new \RefGPC\_systemClass\Connexion(); // creation de l'utilisateur
+$connexion->addDB('marclocal', 'root', '', 'referentiel-gpc'); // identifiants 
+$connexion->addDB('juju','referentiel-gpc_pprod_si', 'referenti_si_dbo', 'PswcS1li');
+RefGPC::connect($connexion); // determine la connexion a la base
+// la base peut être appelée avec RefGPC::getDB()
+// mais on peut aussi faire $connexion->getDB()
+// J'ai ajoute un utilisateur dans RefGPC pour garder le code existant.
 
 
 

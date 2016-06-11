@@ -5,14 +5,19 @@ namespace RefGPC\_systemClass;
 class Routeur {
 
     // nom du controleur par defaut en attendant d'avoir une véritable page d'accueil
-    const DEFCONTROLLERNAME = 'ilotControleur';
+    const DEF_CONTROLLERNAME = 'ilotControleur';
     // action par defaut en attendant d'avoir une véritable page d'accueil
-    const DEFACTIONNAME = 'affIndex';
+    const DEF_ACTIONNAME = 'affIndex';
+    
+    // ui par defaut
+    const DEF_UI = 'MP';
 
     private $knownControllers = array(
         'baseControleur',
+        'ilotControleur',
         'centreControleur',
-        'ilotControleur'); // liste des controlleurs connus, A maintenir à jour !!!
+        'techControleur',
+        ); // liste des controlleurs connus, A maintenir à jour !!!
 
     /* index tableau $paramsUrl
      * 0 : ui LR ou MP
@@ -31,20 +36,30 @@ class Routeur {
         $pageAsk = (string) filter_input(INPUT_GET, 'url');
         $pageAsk = rtrim($pageAsk, '/');
         $pageAsk = explode('/', $pageAsk); // séparation des éléments de l'url
-
+        //var_dump($pageAsk);
         // Calcul de la base choisie LR ou MP
         if (isset($pageAsk[0])) {
             if (!preg_match('#[A-Z]{2}#', $pageAsk[0])) { $pageAsk[0] = 'MP';  /* ui par défaut */ }
             else { $pageAsk[0] = $pageAsk[0] == 'LR' ? 'LR' : 'MP'; }
         }
-        else { $pageAsk[0] = 'MP'; /* ui par défaut */ }
+        else { $pageAsk[0] = self::DEF_UI; /* ui par défaut */ }
 
         // Calcul du controleur : $controllerName = $pageAsk[1].'Controleur';
-        $pageAsk[1]  = isset($pageAsk[1]) ? $pageAsk[1] . 'Controleur' : self::DEFCONTROLLERNAME;
-        if (!$this->controllerExists($pageAsk[1])) { $pageAsk[1] = self::DEFCONTROLLERNAME; }
+        if (!isset($pageAsk[1])) {
+            die("Erreur 404 : url mal formée : pas de controleur");
+        }
+        // echo "pag 1 ".$pageAsk[1];
+        if (!$this->controllerExists($pageAsk[1])) { 
+            // TODO :
+            // le controleur choisi est inconnu : 
+            // utiliser un controleur d'erreur et afficher 404
+            echo '<br />Attention le controleur {'. $pageAsk[1] . '} n\'existe pas, redirection vers '.self::DEF_CONTROLLERNAME.' .';
+            
+            $pageAsk[1] = self::DEF_CONTROLLERNAME; 
+        }
 
         // Calcul de la method du controleur à utiliser
-        $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
+        $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEF_ACTIONNAME;
         return $pageAsk;
     }
 
