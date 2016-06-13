@@ -8,7 +8,13 @@
         <meta name="keywords" content="" />
         <link rel="stylesheet" type="text/css" href="<?= WEBPATH; ?>css/style.css" />
         <link rel="shortcut icon" href="" />
-
+       <script> 
+            var iloCodeBase; 
+            iloCodeBase='<?= $codeBase ;?>';
+            var Complement_Titre; 
+            Complement_Titre='<?= $libelleBase ;?>';
+             var php_ilot ='<?=CONTROLEURS_PATH;?>ilotAjaxControleur.php';
+        </script>  
         <script src="<?= WEBPATH; ?>js/jquery-1.12.1.min.js" type="text/javascript"></script>
         <?= $jqueryLoader; ?>
 

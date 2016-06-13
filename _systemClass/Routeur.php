@@ -24,6 +24,7 @@ class Routeur {
 
     public function __construct($url) {
         // traite les données de l'url
+        //var_dump($url);
         $this->paramsUrl = $this->traiteURL($url);
     }
 
@@ -51,6 +52,7 @@ class Routeur {
     private function controllerExists($name) { return in_array($name, $this->knownControllers); }
 
     public function exec() {
+        $this->dump();
         $controller = $this->createController();
         if (method_exists($controller, $this->methodName())) {
             $data = $this->paramsUrl;
@@ -69,7 +71,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-        //echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
+        echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }
@@ -77,4 +79,9 @@ class Routeur {
     public function methodName() { return $this->paramsUrl[2]; }
     public function controllerName() { return $this->paramsUrl[1]; }
 
+    public function dump() {
+        echo '<pre>'.__METHOD__;
+        var_dump($this->paramsUrl);
+        echo '</pre>';
+    }
 }
