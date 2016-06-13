@@ -13,7 +13,7 @@
             iloCodeBase='<?= $codeBase ;?>';
             var Complement_Titre; 
             Complement_Titre='<?= $libelleBase ;?>';
-             var php_ilot ='<?=CONTROLEURS_PATH;?>ilotAjaxControleur.php';
+             var php_ilot ='<?=WEBPATH;?>/_controleurs/ilotAjaxControleur.php';
         </script>  
         <script src="<?= WEBPATH; ?>js/jquery-1.12.1.min.js" type="text/javascript"></script>
         <?= $jqueryLoader; ?>
