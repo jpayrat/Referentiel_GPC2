@@ -52,7 +52,7 @@ class Routeur {
     private function controllerExists($name) { return in_array($name, $this->knownControllers); }
 
     public function exec() {
-        $this->dump();
+       // $this->dump();
         $controller = $this->createController();
         if (method_exists($controller, $this->methodName())) {
             $data = $this->paramsUrl;
@@ -71,7 +71,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-        echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
+        //echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }

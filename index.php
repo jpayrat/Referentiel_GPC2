@@ -1,5 +1,5 @@
 <?php
- var_dump($_GET);
+//var_dump($_GET);
 use \RefGPC\_systemClass\Autoloader;
 use \RefGPC\_systemClass\Routeur;
 
