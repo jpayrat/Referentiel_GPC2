@@ -63,7 +63,7 @@ class Routeur {
             // TODO: creer le controller des erreur et renvoyer sur erreur 404
             echo '<br /> ERREUR 404';
             var_dump($this->paramsUrl);
-            throw new RefGpcException('Dispatch::exec() : methode ['.$this->methodName().'] inexistante !');
+            throw new \Exception('Dispatch::exec() : methode ['.$this->methodName().'] inexistante !');
         }
     }
 
@@ -76,9 +76,5 @@ class Routeur {
 
     public function methodName() { return $this->paramsUrl[2]; }
     public function controllerName() { return $this->paramsUrl[1]; }
-
-    //Pas utilisé ici ...
-    public function baseName() { return $this->paramsUrl[0]; }
-    public function addController($name) { $this->knownControllers[] = $name; }
 
 }

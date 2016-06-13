@@ -60,7 +60,7 @@ class ilotControleur {
         //var_dump($d);
         $vue = new ModelVue($d);
 
-        $vue->afficheHaut($d['haut'], 'ilot'); // Le second paramètre = fichier js à inclure
+        $vue->afficheHaut($d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
         $vue->afficheMenuLateral($d['lateral']);
         $vue->afficheCorps($d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();

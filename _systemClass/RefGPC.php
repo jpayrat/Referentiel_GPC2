@@ -8,9 +8,9 @@ class RefGPC
 
     private static $connexion = array(
         'Marc' => array(
-                            'db_name' => 'root',
-                            'db_user' => '',
-                            'db_pass' => 'referentiel-gpc',
+                            'db_name' => 'referentiel-gpc',
+                            'db_user' => 'root',
+                            'db_pass' => '', 
                             'db_host' => 'localhost'
                             ),
         'Julien' => array(
