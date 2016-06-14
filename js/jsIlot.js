@@ -59,18 +59,21 @@ $(document).ready(function () {
     function requete_formulaire(critere)
     {
        // alert('requete_formulaire : ('+critere+')');
-        data_get = '';
+//        data_get = '';
+        
+        data_get = 'url=' + iloCodeBase +'/ilotAjax/affIlots/'; // param url pour prise en compte par le routeur sur index.php
+        // passe la base,  le controleur ilotAjax et la methode affIlots
         
         if (critere == 'select_all') {
             //data_get = 'select_all' + iloCodeBase + '/' + Complement_Titre;
-            data_get = 'select_all=ok&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre;
+            data_get += 'select_all=ok/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
         }
         else if (critere == 'select_one') {
-            data_get = 'select_one=ok&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre + '&ilot=' + ilot;
+            data_get += 'select_one=ok&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre + '&ilot=' + ilot;
         }
         
         else {
-            data_get = 'rechercheGlobal=' + rechercheGlobal + '&optim=' + optim + '&ilot=' + ilot + '&typeIlot=' + typeIlot + '&used=' + used + '&competence=' + competence + '&serviceCible=' + serviceCible + '&entreprise=' + entreprise + '&siteGeo=' + siteGeo + '&domaineAct=' + domaineAct + '&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre;
+            data_get += 'rechercheGlobal=' + rechercheGlobal + '&optim=' + optim + '&ilot=' + ilot + '&typeIlot=' + typeIlot + '&used=' + used + '&competence=' + competence + '&serviceCible=' + serviceCible + '&entreprise=' + entreprise + '&siteGeo=' + siteGeo + '&domaineAct=' + domaineAct + '&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre;
         }
         
        // alert('data_get '+data_get);
@@ -88,7 +91,8 @@ $(document).ready(function () {
             // on envoie la valeur recherché en GET au fichier de traitement
             $.ajax({
                 type: 'GET', // envoi des données en GET ou POST
-                url: php_ilot, // url du fichier de traitement
+                url: php_ilot, // url du fichier de traitement : ilotAjaxControleur.php
+                // renseignée dans le haut de la page : vues/haut.php
                 data: data_get,
                 beforeSend: function () { // traitements JS à faire AVANT l'envoi
                   //  alert('beforeSend php_ilot : ' + php_ilot);
@@ -98,7 +102,7 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     // traitements JS à faire APRES le retour du fichier .php
-                    alert('success: '+data);
+                    //alert('success: '+data);
                     $('#results_ilot').fadeIn().html(data); // affichage des résultats dans le bloc #results
                 }
             });

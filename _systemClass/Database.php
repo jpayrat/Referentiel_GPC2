@@ -37,7 +37,7 @@ class Database{
 
     public function queryAll($statement){
         $req = $this->getPDO()->query($statement);
-        $res = $req->fetchAll();
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
 }

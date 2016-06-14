@@ -22,4 +22,9 @@ class ModelVue {
     public function afficheBas() {
         require(VUES_PATH."bas.php");
     }
+    
+    public function afficheResultIlot($dataSelectAll) {
+        
+        require(VUES_PATH."resultIlot.php");
+    }
 }
