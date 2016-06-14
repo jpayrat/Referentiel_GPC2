@@ -1,4 +1,5 @@
 <?php
+//var_dump($_GET);
 use \RefGPC\_systemClass\Autoloader;
 use \RefGPC\_systemClass\Routeur;
 
@@ -21,7 +22,9 @@ define ('SELECT_DB', 'Marc');
 
 // Récupération de la page demandée par l'utilisateur
 // LR/ilotControleur/action/varable2/variable2
+//var_dump($_GET);
 $urlGET = htmlentities($_GET['url']);
+//var_dump($urlGET);
 $myRouteur = new Routeur($urlGET);
 $myRouteur->exec();
 
