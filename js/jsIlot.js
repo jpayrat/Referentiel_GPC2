@@ -61,12 +61,12 @@ $(document).ready(function () {
        // alert('requete_formulaire : ('+critere+')');
 //        data_get = '';
         
-        data_get = 'url=' + iloCodeBase +'/ilotAjax/affIlots/'; // param url pour prise en compte par le routeur sur index.php
+        data_get = 'url=' + iloCodeBase +'/ilotAjax/'; // param url pour prise en compte par le routeur sur index.php
         // passe la base,  le controleur ilotAjax et la methode affIlots
         
         if (critere == 'select_all') {
             //data_get = 'select_all' + iloCodeBase + '/' + Complement_Titre;
-            data_get += 'select_all=ok/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
+            data_get += 'select_all/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
         }
         else if (critere == 'select_one') {
             data_get += 'select_one=ok&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre + '&ilot=' + ilot;
@@ -91,11 +91,11 @@ $(document).ready(function () {
             // on envoie la valeur recherché en GET au fichier de traitement
             $.ajax({
                 type: 'GET', // envoi des données en GET ou POST
-                url: php_ilot, // url du fichier de traitement : ilotAjaxControleur.php
+                url: php_ilot, // url du fichier de traitement : index.php
                 // renseignée dans le haut de la page : vues/haut.php
                 data: data_get,
                 beforeSend: function () { // traitements JS à faire AVANT l'envoi
-                  //  alert('beforeSend php_ilot : ' + php_ilot);
+                    //alert('beforeSend php_ilot : ' + php_ilot);
                     
                     $('#results_ilot').empty();
                     $('#results_ilot').html('</br /><center><img src="_img/_design/ajax-loader.gif" alt="loader" id="ajax-loader" /></center>'); // ajout d'un loader pour signifier l'action

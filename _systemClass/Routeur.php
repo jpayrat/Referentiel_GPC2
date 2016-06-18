@@ -33,9 +33,9 @@ class Routeur {
         $this->paramsUrl['controleur']  = $data[1];
         $this->paramsUrl['methode']     = $data[2];
         
-        // lecture des autres parametres
-        $data = $this->readParam(array_slice($data, 3));
-        //var_dump($this->paramsUrl);
+        // lecture des autres parametres dans $this->paramsUrl
+       $this->readParam(array_slice($data, 3));
+       // var_dump($this->paramsUrl);
     }
 
     /**
@@ -88,6 +88,12 @@ class Routeur {
     
     private function controllerExists($name) { return in_array($name, $this->knownControllers); }
 
+    
+    /**
+     * Appel de la methode du controleur et passage des parametres
+     * dans la methode
+     * @throws \Exception
+     */
     public function exec() {
        // $this->dump();
         $controller = $this->createController();

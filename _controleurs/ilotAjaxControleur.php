@@ -13,21 +13,22 @@ class ilotAjaxControleur {
     /**
      * Selectionne le modele et redirrige les données dans la vue
      */
-    public function affIlots($param) {
+    public function select_all($param) {
+        //echo '<br /> '.__CLASS__ . '::' . __METHOD__ ;
         //var_dump($param);
         $d = array(); // tableau collectant les données
         // données recupere en parametre
         $d['select_all']        = $this->getParam($param, 'select_all');
         $d['iloCodeBase']       = $this->getParam($param, 'iloCodeBase');
         $d['Complement_Titre']  = $this->getParam($param, 'Complement_Titre');
-        $d['ilot']              = $this->getParam($param, 'ilot');
         //var_dump($d);
         // recuperation données modele select_all
         $model = new modelSelectAll($d);
         //array_merge($d , $model->getData());
         //var_dump($model->getData());          
-        $d['dataIlot'] = $model->getData();
-        //var_dump($d);   
+        $d['dataIlot'] = $model->getData('dataIlot');
+        $d['nbIlots'] = $model->getData('nbIlots');
+       // var_dump($d);   
 
         $vue = new ModelVue();
         $vue->afficheResultIlot($d);

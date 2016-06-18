@@ -24,6 +24,8 @@ class ModelVue {
     }
     
     public function afficheResultIlot($dataSelectAll) {
+        // traitement des données
+
         
         require(VUES_PATH."resultIlot.php");
     }
