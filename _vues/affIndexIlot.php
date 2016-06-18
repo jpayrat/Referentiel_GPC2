@@ -23,10 +23,12 @@
                 <span>ou</span>
                 <?= $selectIlotList; ?>
             </div>
+            
             <div style="width: 20%; display: inline-block;">
                 <label for="typeIlot" class="gen">Type d'îlot </label>
                 <?= $selectTypeIlot; ?>
             </div>
+            
             <div style="width: 19%; display: inline-block;">
                 <label for="used" class="gen">Utilisé ? </label>
                 <?= $selectUsed; ?>
@@ -78,10 +80,11 @@
         </div>
 
 
-        <br /><br /><br /><br />
-        <hr />
+        <br /> 
         <br />
+        <!-- div du retour de la requete Ajax -->
         <div id="results_ilot" style="display: none;"></div>
+        <hr />
         <br /><br /><br />
 
 </div>

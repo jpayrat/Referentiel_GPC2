@@ -27,7 +27,7 @@ $(document).ready(function () {
   */  
     function recup_form_ilot()
     {
-        alert('recup_form_ilot : ');
+        //alert('recup_form_ilot : ');
         rechercheGlobal = $('#rechercheGlobal').val();
         optim = $('input:radio[name="optim"]:checked').val();
         // récupération de l'îlot
@@ -58,22 +58,30 @@ $(document).ready(function () {
 
     function requete_formulaire(critere)
     {
-       // alert('requete_formulaire : ('+critere+')');
+        //alert('requete_formulaire : ('+critere+')');
 //        data_get = '';
         
         data_get = 'url=' + iloCodeBase +'/ilotAjax/'; // param url pour prise en compte par le routeur sur index.php
-        // passe la base,  le controleur ilotAjax et la methode affIlots
+        // passe la base,  le controleur ilotAjax
         
-        if (critere == 'select_all') {
+        if (critere === 'select_all') {
             //data_get = 'select_all' + iloCodeBase + '/' + Complement_Titre;
             data_get += 'select_all/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
         }
-        else if (critere == 'select_one') {
-            data_get += 'select_one=ok&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre + '&ilot=' + ilot;
+        else if (critere === 'select_one') {
+            
+            data_get += 'select_one/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre + '/ilot=' + ilot;
         }
-        
+        else if (critere === 'reinit') {
+            data_get += ''; // methode par defaut (dans routeur) : affIndex
+        }        
         else {
-            data_get += 'rechercheGlobal=' + rechercheGlobal + '&optim=' + optim + '&ilot=' + ilot + '&typeIlot=' + typeIlot + '&used=' + used + '&competence=' + competence + '&serviceCible=' + serviceCible + '&entreprise=' + entreprise + '&siteGeo=' + siteGeo + '&domaineAct=' + domaineAct + '&iloCodeBase=' + iloCodeBase + '&Complement_Titre=' + Complement_Titre;
+            data_get += 'selectAny/rechercheGlobal=' + rechercheGlobal 
+                    + '/optim=' + optim + '/ilot=' + ilot + '/typeIlot=' + typeIlot 
+                    + '/used=' + used + '/competence=' + competence 
+                    + '/serviceCible=' + serviceCible + '/entreprise=' + entreprise  
+                    + '/siteGeo=' + siteGeo + '/domaineAct=' + domaineAct 
+                    + '/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
         }
         
        // alert('data_get '+data_get);
@@ -81,6 +89,7 @@ $(document).ready(function () {
         // Si le formulaire est vide, on affiche rien
         if (typeof critere === 'undefined' && rechercheGlobal == '' && optim == 'tous' && ilot == '' && typeIlot == 'tous' && used == 'tous' && competence == 'tous' && serviceCible == 'tous' && entreprise == 'tous' && siteGeo == 'tous' && domaineAct == 'tous')
         {
+            //alert('critere ' + critere);
             $('#results_ilot').empty();
         }
 
@@ -112,22 +121,29 @@ $(document).ready(function () {
     $('#reinit_form').on('click', function () {
         $('#form_ilot')[0].reset();
         recup_form_ilot();
-        requete_formulaire();
+        requete_formulaire('reinit');
     });
     $('#all_form').on('click', function () {
         $('#form_ilot')[0].reset();
         requete_formulaire('select_all');
     });
 
-    $('#rechercheGlobal').on('keyup', function () {
+    $('#rechercheGlobal').on('click', function () {
+        
         recup_form_ilot();
         requete_formulaire();
     });
+    $('#rechercheGlobal').on('change', function () {
+        alert('change');
+
+    });
+    
     $('input:radio[name="optim"]').change(function () {
         recup_form_ilot();
         requete_formulaire();
     });
     $('#ilot_list').on('change', function () {
+        alert('ilot_list');
         $('#ilot_tape').val(''); // réinit de l'autre choix de l'îlot (ilot tapé)
         recup_form_ilot();
         requete_formulaire();

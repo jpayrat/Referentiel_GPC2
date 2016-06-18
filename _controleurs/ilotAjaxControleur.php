@@ -11,6 +11,13 @@ use \RefGPC\_models\ModelVue;
 class ilotAjaxControleur {
 
     /**
+     * methode par defaut.
+     * Appelée par reinit de jsIlot.js
+     */
+    public function affIndex() { 
+    }
+    
+    /**
      * Selectionne le modele et redirrige les données dans la vue
      */
     public function select_all($param) {
@@ -34,6 +41,16 @@ class ilotAjaxControleur {
         $vue->afficheResultIlot($d);
     }
 
+    /**
+     * Recherche Globale     
+     * * @param type $param
+     */
+    public function selectAny($param) {
+        // TODO a implementer
+        echo '<hr />'.'TODO : methode à implementer ! <br />';
+        var_dump($param);
+        
+    }
     public function test($param) {
         echo __CLASS__ . '::' . __METHOD__ . ' : yes !';
         var_dump($param);
