@@ -7,11 +7,17 @@
         <meta name="description" content="Référentiel GPC" />
         <meta name="keywords" content="" />
         <link rel="stylesheet" type="text/css" href="<?= WEBPATH; ?>css/style.css" />
+        <link rel="stylesheet" type="text/css" href="<?= WEBPATH; ?>css/ilot.css" />
         <link rel="shortcut icon" href="" />
-
-        <script src="<?= WEBPATH; ?>js/jquery-1.12.1.min.js" type="text/javascript"></script>
-        <?= $jqueryLoader; ?>
-
+       <script> 
+            var iloCodeBase='<?= $codeBase ;?>';
+            var Complement_Titre='<?= $libelleBase ;?>';
+            var php_ilot ='<?=WEBPATH; ?>index.php';
+        </script>  
+        <!-- ajout des script js controleur de la vue : ModelVue.php -->
+        <?php foreach($jqueryLoader as $jsScript): ?>
+        <?= $jsScript;?>
+        <?php endforeach; ?>
 
         <title>Referentiel-GPC</title>
     </head>

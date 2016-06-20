@@ -24,6 +24,7 @@ class Database{
         if($this->pdo === NULL) {
             $pdo = new PDO('mysql:dbname='.$this->db_name.';host='.$this->db_host, $this->db_user, $this->db_pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo->exec('SET NAMES utf8');
             $this->pdo = $pdo;
         }
         return $this->pdo;
@@ -37,7 +38,7 @@ class Database{
 
     public function queryAll($statement){
         $req = $this->getPDO()->query($statement);
-        $res = $req->fetchAll();
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);
         return $res;
     }
 }
