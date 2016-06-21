@@ -1,5 +1,5 @@
 <?php
-namespace RefGPC\_models;
+namespace RefGPC\_models\ilot;
 use \RefGPC\_systemClass\RefGPC;
 
 class Formulaire

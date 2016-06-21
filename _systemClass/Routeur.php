@@ -5,15 +5,15 @@ namespace RefGPC\_systemClass;
 class Routeur {
 
     // nom du controleur par defaut en attendant d'avoir une véritable page d'accueil
-    const DEFCONTROLLERNAME = 'ilotControleur';
+    const DEFCONTROLLERNAME = 'ilot\ilotControleur';
     // action par defaut en attendant d'avoir une véritable page d'accueil
     const DEFACTIONNAME = 'affIndex';
 
     private $knownControllers = array(
         'baseControleur',
         'centreControleur',
-        'ilotControleur',
-        'ilotAjaxControleur',
+        'ilot\ilotControleur',
+        'ilot\ilotAjaxControleur',
         ); // liste des controlleurs connus, A maintenir à jour !!!
 
     /* index tableau $paramsUrl
@@ -26,9 +26,10 @@ class Routeur {
 
     public function __construct($url) {
         // traite les données de l'url
-        //var_dump($url);
-       // $this->paramsUrl = $this->traiteURL($url);
+       // var_dump($url);
+
         $data = $this->readURL($url);
+        //var_dump($data);
         $this->paramsUrl['base']        = $data[0];
         $this->paramsUrl['controleur']  = $data[1];
         $this->paramsUrl['methode']     = $data[2];
@@ -47,8 +48,7 @@ class Routeur {
         $pageAsk = (string) filter_input(INPUT_GET, 'url');
         $pageAsk = rtrim($pageAsk, '/');
         $pageAsk = explode('/', $pageAsk); // séparation des éléments de l'url
-        //var_dump($pageAsk);
-        
+              
         // Calcul de la base choisie LR ou MP
         if (isset($pageAsk[0])) {
             if (!preg_match('#[A-Z]{2}#', $pageAsk[0])) { $pageAsk[0] = 'MP';  /* ui par défaut */ }
@@ -57,9 +57,21 @@ class Routeur {
         else { $pageAsk[0] = 'MP'; /* ui par défaut */ }
 
         // Calcul du controleur : $controllerName = $pageAsk[1].'Controleur';
-        $pageAsk[1]  = isset($pageAsk[1]) ? $pageAsk[1] . 'Controleur' : self::DEFCONTROLLERNAME;
-        if (!$this->controllerExists($pageAsk[1])) { $pageAsk[1] = self::DEFCONTROLLERNAME; }
-
+        // separation du repertoire avec le '@' 
+        if (isset($pageAsk[1])){
+            $parts = explode('@', $pageAsk[1]); 
+            if (isset($parts[1])) {
+                $pageAsk[1] = $parts[0].'\\'.$parts[1] . 'Controleur';
+            }
+            else {
+                $pageAsk[1] .= 'Controleur';
+            }
+            if (!$this->controllerExists($pageAsk[1])) { $pageAsk[1] = self::DEFCONTROLLERNAME; }
+        }
+        else {
+           $pageAsk[1] = self::DEFCONTROLLERNAME;
+        }
+        
         // Calcul de la method du controleur à utiliser
         $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
         return $pageAsk;
@@ -115,7 +127,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-        //echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
+       // echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }

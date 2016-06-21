@@ -1,9 +1,9 @@
 <?php
 
-namespace RefGPC\_controleurs;
+namespace RefGPC\_controleurs\ilot;
 
-use RefGPC\_models\modelSelectAll;
-use \RefGPC\_models\ModelVue;
+use \RefGPC\_models\ilot\modelSelectAll;
+use \RefGPC\_models\ilot\ModelVue;
 /**
  * controleur appelé par jsIlot.js.
  * Affiche la vue des ilots 
