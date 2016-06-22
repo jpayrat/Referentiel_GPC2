@@ -35,7 +35,8 @@ class ilotControleur {
         $choixBase = new ChoixBase($param);
         $d['corps']['codeBase'] = $choixBase->codeBase();
         $d['corps']['libelleBase'] = $choixBase->libelleBase();
-        $d['haut']['codeBase'] = $d['corps']['codeBase']; // copie dans 'haut' pour initialiser les variables du script jsIlot.js
+        $d['haut']['base'] = $param; // ui = MP ou LR
+        $d['haut']['codeBase'] = $d['corps']['codeBase']; // K2 ou T1 , copie dans 'haut' pour initialiser les variables du script jsIlot.js
         $d['haut']['libelleBase'] = $d['corps']['libelleBase'];
         $d['haut']['classCSSLienLR'] = $choixBase->classCSSLien('LR');
         $d['haut']['classCSSLienMP'] = $choixBase->classCSSLien('MP');   
