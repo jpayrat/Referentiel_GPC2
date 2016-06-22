@@ -14,6 +14,12 @@ class baseControleur {
       //  echo "<br />baseControleur CTOR";
     }
 
+    
+    public function affIndex() {
+        echo "baseControleur :: affIndex  test </br>";
+    }
+    
+    
     /**
      * Charge les données du modele : 
      * @param $modelName : nom du modele

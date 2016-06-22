@@ -1,6 +1,6 @@
 <?php
 
-namespace RefGPC\_models;
+namespace RefGPC\_models\ilot;
 
 /**
  * choix de la base K2 ou T1

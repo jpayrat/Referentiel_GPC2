@@ -61,7 +61,7 @@ $(document).ready(function () {
         //alert('requete_formulaire : ('+critere+')');
 //        data_get = '';
         
-        data_get = 'url=' + iloCodeBase +'/ilotAjax/'; // param url pour prise en compte par le routeur sur index.php
+        data_get = 'url=' + iloCodeBase +'/ilot@ilotAjax/'; // param url pour prise en compte par le routeur sur index.php
         // passe la base,  le controleur ilotAjax
         
         if (critere === 'select_all') {

@@ -1,11 +1,11 @@
 <?php
 
-namespace RefGPC\_controleurs;
+namespace RefGPC\_controleurs\ilot;
 
-use RefGPC\_models\ChoixBase;
-use RefGPC\_models\MenuLateral;
-use \RefGPC\_models\Formulaire;
-use \RefGPC\_models\ModelVue;
+use \RefGPC\_models\menuLateral;
+use \RefGPC\_models\ilot\ChoixBase;
+use \RefGPC\_models\ilot\Formulaire;
+use \RefGPC\_models\ilot\ModelVue;
 
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 

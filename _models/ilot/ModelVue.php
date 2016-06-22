@@ -1,5 +1,5 @@
 <?php
-namespace RefGPC\_models;
+namespace RefGPC\_models\ilot;
 
 class ModelVue {
 
@@ -24,7 +24,7 @@ class ModelVue {
 
     public function afficheCorps($variablesCorps, $vue) {
         extract($variablesCorps);
-        require(VUES_PATH.$vue.".php");
+        require(VUES_PATH.'ilot/'.$vue.".php");
     }
 
     public function afficheBas() {
@@ -35,6 +35,6 @@ class ModelVue {
         // traitement des données
 
         
-        require(VUES_PATH."resultIlot.php");
+        require(VUES_PATH."ilot/resultIlot.php");
     }
 }
