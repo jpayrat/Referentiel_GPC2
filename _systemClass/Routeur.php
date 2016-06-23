@@ -30,7 +30,7 @@ class Routeur {
     public function __construct($url) {
         // traite les données de l'url
        // echo '<br> Routeur::__construct url = ['.$url.']';
-        //var_dump($url);
+       // var_dump($url);
        
         $this->initControleurs();
         
@@ -76,9 +76,12 @@ class Routeur {
                //var_dump($pageAsk[1]);
             }
             else {
-                echo '<br />Controleur non trouvé : controleur par defaut !';
+                echo '<br />Controleur ['.$pageAsk[1].'] non trouvé : controleur par defaut !'; // pour debug
                $pageAsk[1] = self::DEFCONTROLLERNAME;  
             }
+        }
+        else {
+            $pageAsk[1] = self::DEFCONTROLLERNAME;  
         }
         // Calcul de la method du controleur à utiliser
         $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
@@ -135,7 +138,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-       // echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
+        echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }

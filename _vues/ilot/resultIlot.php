@@ -1,8 +1,14 @@
 <h2><?= $dataSelectAll['nbIlots'] ?>  <?= $dataSelectAll['nbIlots']== 1 ? ' îlot correspond' : ' îlots correspondent'; ?> 
 à votre recherche sur <?=$dataSelectAll['Complement_Titre']; ?></h2>
-<hr />
-<!-- lien telechargement -->
 
+<!-- lien telechargement -->
+<?php if ($dataSelectAll['nbIlots'] > 0): ?>
+    <a href="<?=$dataSelectAll['linkXls'] ?> class="exportcsv">
+        <span><img src=<?= $dataSelectAll['imgXls'] ?> alt='csv' width='15' height='15'>téléchargement</img></span>
+    </a>
+<?php endif; ?>
+<!-- fin lien --> 
+<hr />
 <?php $i=1; ?>
 <?php foreach($dataSelectAll['dataIlot'] as $row): ?>
    

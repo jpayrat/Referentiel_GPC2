@@ -30,6 +30,9 @@ class modelSelectAll {
         $this->values['nbIlots'] = RefGPC::getDB()->queryCount($sql);
         $this->values['dataIlot'] = RefGPC::getDB()->queryAll($sql);
 
+        // sauvegarde SQL pour reutilisation si extraction
+        $_SESSION['sql_Csv'] = $sql;
+        
         // charge la liste des sites
         $arrListeZone = $this->createListeZone();
         // calcul de la liste de sites

@@ -10,6 +10,7 @@ class ModelVue {
      */
     public function afficheHaut($variablesHaut, $js) {
         extract($variablesHaut);
+        
         // js de base
         $jqueryLoader[] = '<script src="'. WEBPATH .'js/jquery-1.12.1.min.js" type="text/javascript"></script>'."\n";
         // js supplementaires

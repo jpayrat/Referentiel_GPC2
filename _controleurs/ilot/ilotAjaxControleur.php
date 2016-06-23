@@ -37,6 +37,10 @@ class ilotAjaxControleur {
         $d['nbIlots'] = $model->getData('nbIlots');
        // var_dump($d);   
 
+        // lien pour telechargement
+        $d['linkXls'] = WEBPATH.$param['base'].'/ilot/extractCsv/'; //.'sql=SELECT * from tm_ilots';
+        $d['imgXls']  = WEBPATH.'img/excel.jpg';
+        
         $vue = new ModelVue();
         $vue->afficheResultIlot($d);
     }
