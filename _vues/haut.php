@@ -11,6 +11,7 @@
         <link rel="shortcut icon" href="" />
        <script> 
             var iloCodeBase='<?= $codeBase ;?>';
+            var base='<?= $base ;?>';
             var Complement_Titre='<?= $libelleBase ;?>';
             var php_ilot ='<?=WEBPATH; ?>index.php';
         </script>  

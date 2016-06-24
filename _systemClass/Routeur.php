@@ -9,13 +9,16 @@ class Routeur {
     // action par defaut en attendant d'avoir une véritable page d'accueil
     const DEFACTIONNAME = 'affIndex';
 
-    private $knownControllers = array(
-        'baseControleur',
-        'centreControleur',
-        'ilot\ilotControleur',
-        'ilot\ilotAjaxControleur',
-        ); // liste des controlleurs connus, A maintenir à jour !!!
+    private $knownControllers = array();
+    private function initControleurs(){
+        $this->knownControllers['base'] = '';
+        $this->knownControllers['centre'] = '';
+        $this->knownControllers['ilot'] = 'ilot';
+        $this->knownControllers['ilotAjax'] = 'ilot';
+    }
+    // liste des controlleurs connus, A maintenir à jour !!!
 
+    
     /* index tableau $paramsUrl
      * 0 : ui LR ou MP
      * 1 : controleur
@@ -26,8 +29,13 @@ class Routeur {
 
     public function __construct($url) {
         // traite les données de l'url
+       // echo '<br> Routeur::__construct url = ['.$url.']';
        // var_dump($url);
-
+       
+        $this->initControleurs();
+        
+        // var_dump($this->knownControllers);
+         
         $data = $this->readURL($url);
         //var_dump($data);
         $this->paramsUrl['base']        = $data[0];
@@ -48,7 +56,7 @@ class Routeur {
         $pageAsk = (string) filter_input(INPUT_GET, 'url');
         $pageAsk = rtrim($pageAsk, '/');
         $pageAsk = explode('/', $pageAsk); // séparation des éléments de l'url
-              
+           // var_dump($pageAsk[0]);  
         // Calcul de la base choisie LR ou MP
         if (isset($pageAsk[0])) {
             if (!preg_match('#[A-Z]{2}#', $pageAsk[0])) { $pageAsk[0] = 'MP';  /* ui par défaut */ }
@@ -56,22 +64,25 @@ class Routeur {
         }
         else { $pageAsk[0] = 'MP'; /* ui par défaut */ }
 
-        // Calcul du controleur : $controllerName = $pageAsk[1].'Controleur';
-        // separation du repertoire avec le '@' 
         if (isset($pageAsk[1])){
-            $parts = explode('@', $pageAsk[1]); 
-            if (isset($parts[1])) {
-                $pageAsk[1] = $parts[0].'\\'.$parts[1] . 'Controleur';
+            //echo '<br /> ['.$pageAsk[1].']';
+            //var_dump($this->knownControllers);
+            //echo '-> rep :  ['.$this->knownControllers[$pageAsk[1]].']';
+            if (isset($this->knownControllers[$pageAsk[1]])) {
+               // 
+                $pageAsk[1] = $this->knownControllers[$pageAsk[1]].'\\'.$pageAsk[1]. 'Controleur';
+                //echo '<br /> ciontrolleur ['.$pageAsk[1].']';
+                
+               //var_dump($pageAsk[1]);
             }
             else {
-                $pageAsk[1] .= 'Controleur';
+                echo '<br />Controleur ['.$pageAsk[1].'] non trouvé : controleur par defaut !'; // pour debug
+               $pageAsk[1] = self::DEFCONTROLLERNAME;  
             }
-            if (!$this->controllerExists($pageAsk[1])) { $pageAsk[1] = self::DEFCONTROLLERNAME; }
         }
         else {
-           $pageAsk[1] = self::DEFCONTROLLERNAME;
+            $pageAsk[1] = self::DEFCONTROLLERNAME;  
         }
-        
         // Calcul de la method du controleur à utiliser
         $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
         return $pageAsk;
@@ -119,7 +130,7 @@ class Routeur {
         }
         else {
             // TODO: creer le controller des erreur et renvoyer sur erreur 404
-            echo '<br /> ERREUR 404';
+            echo '<br /> ERREUR 404 -> dumping params :';
             var_dump($this->paramsUrl);
             throw new \Exception('Dispatch::exec() : methode ['.$this->methodName().'] inexistante !');
         }
@@ -127,7 +138,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-       // echo '<br />Dispatch::createController : Classe appele : [' . $name.']';
+        echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }
