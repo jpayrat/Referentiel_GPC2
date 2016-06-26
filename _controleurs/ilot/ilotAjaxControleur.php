@@ -2,7 +2,10 @@
 
 namespace RefGPC\_controleurs\ilot;
 
+use RefGPC\_models\ilot\modelIlot;
 use \RefGPC\_models\ilot\modelSelectAll;
+use \RefGPC\_models\ilot\modelSelectAny;
+use \RefGPC\_models\ilot\modelSelectOne;
 use \RefGPC\_models\ilot\ModelVue;
 /**
  * controleur appelé par jsIlot.js.
@@ -16,26 +19,32 @@ class ilotAjaxControleur {
      */
     public function affIndex() { 
     }
-    
+
+    private function getParam($paramArray, $paramName) { return isset($paramArray[$paramName]) ? $paramArray[$paramName] : ''; }
+
     /**
-     * Selectionne le modele et redirrige les données dans la vue
+     * Recherche Globale
+     * * @param type $param
      */
     public function select_all($param) {
         //echo '<br /> '.__CLASS__ . '::' . __METHOD__ ;
         //var_dump($param);
         $d = array(); // tableau collectant les données
         // données recupere en parametre
-        $d['select_all']        = $this->getParam($param, 'select_all');
+        //$d['select_all']        = $this->getParam($param, 'select_all');
         $d['iloCodeBase']       = $this->getParam($param, 'iloCodeBase');
         $d['Complement_Titre']  = $this->getParam($param, 'Complement_Titre');
-        //var_dump($d);
+
         // recuperation données modele select_all
-        $model = new modelSelectAll($d);
-        //array_merge($d , $model->getData());
-        //var_dump($model->getData());          
-        $d['dataIlot'] = $model->getData('dataIlot');
-        $d['nbIlots'] = $model->getData('nbIlots');
-       // var_dump($d);   
+        $modelAll = new modelSelectAll($d);
+
+        $d['dataIlot'] = $modelAll->getData('dataIlot');
+        $d['nbIlots'] = $modelAll->getData('nbIlots');
+
+        // charge la liste des sites
+        $modelIlot = new modelIlot();
+        $arrListeZone = $modelIlot->createListeZone();
+        $d['dataIlot'] = $modelIlot->organizeListZone($d['dataIlot'], $arrListeZone);
 
         // lien pour telechargement
         $d['linkXls'] = WEBPATH.$param['base'].'/ilot/extractCsv/'; //.'sql=SELECT * from tm_ilots';
@@ -46,20 +55,73 @@ class ilotAjaxControleur {
     }
 
     /**
-     * Recherche Globale     
+     * Recherche par critère
      * * @param type $param
      */
     public function selectAny($param) {
-        // TODO a implementer
-        echo '<hr />'.'TODO : methode à implementer ! <br />';
-        var_dump($param);
+
+        $d = array(); // tableau collectant les données
+        // données recupere en parametre
+
+        $d['rechercheGlobal']       = $this->getParam($param, 'rechercheGlobal');
+        $d['optim']       = $this->getParam($param, 'optim');
+        $d['ilot']       = $this->getParam($param, 'ilot');
+        $d['typeIlot']       = $this->getParam($param, 'typeIlot');
+        $d['used']       = $this->getParam($param, 'used');
+        $d['competence']       = $this->getParam($param, 'competence');
+        $d['serviceCible']       = $this->getParam($param, 'serviceCible');
+        $d['entreprise']       = $this->getParam($param, 'entreprise');
+        $d['siteGeo']       = $this->getParam($param, 'siteGeo');
+        $d['domaineAct']       = $this->getParam($param, 'domaineAct');
+        $d['iloCodeBase']       = $this->getParam($param, 'iloCodeBase');
+        $d['Complement_Titre']  = $this->getParam($param, 'Complement_Titre');
+
+        $modelAny = new modelSelectAny($d);
         
-    }
-    public function test($param) {
-        echo __CLASS__ . '::' . __METHOD__ . ' : yes !';
-        var_dump($param);
+        $d['dataIlot'] = $modelAny->getData('dataIlot');
+        $d['nbIlots'] = $modelAny->getData('nbIlots');
+
+        // charge la liste des sites
+        $modelIlot = new modelIlot();
+        $arrListeZone = $modelIlot->createListeZone();
+        $d['dataIlot'] = $modelIlot->organizeListZone($d['dataIlot'], $arrListeZone);
+        
+        // lien pour telechargement
+        $d['linkXls'] = WEBPATH.$param['base'].'/ilot/extractCsv/'; //.'sql=SELECT * from tm_ilots';
+        $d['imgXls']  = WEBPATH.'img/excel.jpg';
+
+        $vue = new ModelVue();
+        $vue->afficheResultIlot($d);
     }
 
-    
-    private function getParam($paramArray, $paramName) { return isset($paramArray[$paramName]) ? $paramArray[$paramName] : ''; }
+
+    public function select_one($param) {
+
+        $d = array(); // tableau collectant les données
+
+        // données recupere en parametre
+        $d['ilot']       = $this->getParam($param, 'ilot');
+        $d['iloCodeBase']       = $this->getParam($param, 'iloCodeBase');
+        $d['Complement_Titre']  = $this->getParam($param, 'Complement_Titre');
+
+        $modelOne = new modelSelectOne($d);
+
+        $d['dataIlot'] = $modelOne->getData('dataIlot');
+
+        // charge la liste des sites
+        $modelIlot = new modelIlot();
+        $arrListeZone = $modelIlot->createListeZone();
+        $d['dataIlot'] = $modelIlot->organizeListZone($d['dataIlot'], $arrListeZone);
+
+        if ($d['dataIlot'][0]['iloDateCreation'] == 0) { $d['dataIlot'][0]['iloDateCreation'] = ' - '; } else { $d['dataIlot'][0]['iloDateCreation'] = date('d-m-Y', $row['iloDateCreation']); }
+        if ($d['dataIlot'][0]['iloDateModif'] == 0) { $d['dataIlot'][0]['iloDateModif'] = ' - '; } else { $d['dataIlot'][0]['iloDateModif'] = date('d-m-Y', $d['dataIlot'][0]['iloDateModif']); }
+
+        //var_dump($d['dataIlot']);
+        //print_r($d['dataIlot']);
+
+        $vue = new ModelVue();
+        $vue->afficheDetailIlot($d);
+    }
+
+
 }

@@ -1,9 +1,10 @@
 <div class="container">
 
-    <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?> <span class=""><?= '- ' . $nbIlot; ?> ilots</span></h1>
-    <hr />
-
     <form method="post" id="form_ilot" action="#" class="formulaire">
+
+        <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?> <span class=""><?= '- ' . $nbIlot; ?> ilots</span></h1>
+        <hr />
+
         <label for="rechercheGlobal" class="gen souligner">Recherche globale</label>
         <?= $inputIlotGlobal; ?>
 
@@ -78,14 +79,13 @@
             </div>
 
         </div>
-
-
-        <br /> 
         <br />
-        <!-- div du retour de la requete Ajax -->
-        <div id="results_ilot" style="display: none;"></div>
-        <hr />
-        <br /><br /><br />
+        <br />
+    </form>
+
+    <!-- div du retour de la requete Ajax -->
+    <div id="results_ilot" style="display: none;"></div>
+    <br />
 
 </div>
 </section>

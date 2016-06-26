@@ -32,72 +32,6 @@ class modelSelectAll {
 
         // sauvegarde SQL pour reutilisation si extraction
         $_SESSION['sql_Csv'] = $sql;
-        
-        // charge la liste des sites
-        $arrListeZone = $this->createListeZone();
-        // calcul de la liste de sites
-        foreach ($this->values['dataIlot'] as $k => $row) {
-            if (isset($arrListeZone[$row['siIdSite']])) {
-                $this->values['dataIlot'][$k]['Liste_sites'] = $arrListeZone[$row['siIdSite']];
-            } else {
-                $this->values['dataIlot'][$k]['Liste_sites'] = '';
-            }
-            //$this->values['dataIlot'][$k]['Liste_sites']  = isset($arrListeZone[$row['siIdSite']]) ? $arrListeZone[$row['siIdSite']] :'';
-
-            // mise en forme des champs
-            $this->values['dataIlot'][$k]['iloCodeIlot'] = strtoupper($row['iloCodeIlot']);
-            $this->values['dataIlot'][$k]['iloLibelleIlot'] = strtoupper($row['iloLibelleIlot']);
-            $this->values['dataIlot'][$k]['iloOptim'] = $row['iloOptim'] == 1 ? 'Oui' : 'Non';
-            if ($row['used'] == '') {
-                $this->values['dataIlot'][$k]['used'] = ' - ';
-            }
-            if ($row['coIdCompetence'] == '') {
-                $this->values['dataIlot'][$k]['coIdCompetence'] = ' - ';
-            }
-            if ($row['sedIdServDem'] == '') {
-                $this->values['dataIlot'][$k]['sedIdServDem'] = ' - ';
-            }
-            if ($row['enIdEntreprise'] == '') {
-                $this->values['dataIlot'][$k]['enIdEntreprise'] = ' - ';
-            }
-            if ($row['siIdSite'] == '') {
-                $this->values['dataIlot'][$k]['siIdSite'] = ' - ';
-            }
-            if ($row['dacIdDomAct'] == '') {
-                $this->values['dataIlot'][$k]['dacIdDomAct'] = ' - ';
-            }
- 
- 
-        }
-    }
-
-    /**
-     * Cree la liste des zones à partir de la table des sites
-     * @return un tableau associatif par libelle de zone
-     */
-    public function createListeZone() {
-        $arrZone = array();
-        $sql = "/* liste des sous zones de la zone parent */
-                SELECT   t_sites.siIdSite as parentId, t_parentzone.siIdSite as zoneID , S.siLibelleSite as libZone, t_sites.siLibelleSite
-                FROM (t_sites
-                LEFT JOIN  t_parentzone 
-                ON t_parentzone.siIdSite_T_Sites = t_sites.siIdSite)
-
-                LEFT JOIN  t_sites as S
-                ON t_parentzone.siIdSite = S.siIdSite
-
-                where CHAR_LENGTH(t_sites.siIdSite) > 0;";
-        $values = RefGPC::getDB()->queryAll($sql);
-        //var_dump($values);
-        foreach ($values as $k => $v) {
-            if (isset($arrZone[$v['parentId']])) {
-                $arrZone[$v['parentId']] .= $v['libZone'] . '<br />';
-            } else {
-                $arrZone[$v['parentId']] = '<b>' . $v['siLibelleSite'] . ' :</b><br />';
-                $arrZone[$v['parentId']] .= $v['libZone'] . '<br />';
-            }
-        }
-        return $arrZone;
     }
 
     /**
@@ -105,7 +39,9 @@ class modelSelectAll {
      * @param type $indexData : indice du tableau, sélection des données
      * @return type array()
      */
-    public function getData($indexData) {  return $this->values[$indexData];  }
+    public function getData($indexData) {
+        return $this->values[$indexData];
+    }
 
     // ---- requetes SQL -------------------------
     private function sqlTmIlotsAffUnIlot($iloCodeIlot, $iloCodeBase) {

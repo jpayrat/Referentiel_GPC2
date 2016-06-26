@@ -34,8 +34,11 @@ class ModelVue {
     
     public function afficheResultIlot($dataSelectAll) {
         // traitement des données
-
-        
         require(VUES_PATH."ilot/resultIlot.php");
+    }
+
+    public function afficheDetailIlot($dataSelectOne) {
+        // traitement des données
+        require(VUES_PATH."ilot/resultIlotSelectOne.php");
     }
 }

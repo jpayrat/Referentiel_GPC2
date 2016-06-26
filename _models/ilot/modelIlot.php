@@ -20,8 +20,73 @@ class modelIlot {
     
     public function libelleBase() { return $this->base == 'LR' ? 'Languedoc-Roussillon' : 'Midi-Pyrénées';  }
     public function codeBase() { return $this->base == 'LR'? 'K2' : 'T1';  }
-    public function classCSSLien($ui) { return $ui == $this->base ?  'actif' : ''; }   
-    // 
+    public function classCSSLien($ui) { return $ui == $this->base ?  'actif' : ''; }
+
+    /**
+     * Cree la liste des zones à partir de la table des sites
+     * @return un tableau associatif par libelle de zone
+     */
+    public function createListeZone() {
+        $arrZone = array();
+        $sql = "/* liste des sous zones de la zone parent */
+                SELECT   t_sites.siIdSite as parentId, t_parentzone.siIdSite as zoneID , S.siLibelleSite as libZone, t_sites.siLibelleSite
+                FROM (t_sites
+                LEFT JOIN  t_parentzone 
+                ON t_parentzone.siIdSite_T_Sites = t_sites.siIdSite)
+
+                LEFT JOIN  t_sites as S
+                ON t_parentzone.siIdSite = S.siIdSite
+
+                where CHAR_LENGTH(t_sites.siIdSite) > 0;";
+        $values = RefGPC::getDB()->queryAll($sql);
+        //var_dump($values);
+        foreach ($values as $k => $v) {
+            if (isset($arrZone[$v['parentId']])) {
+                $arrZone[$v['parentId']] .= $v['libZone'] . '<br />';
+            } else {
+                $arrZone[$v['parentId']] = '<b>' . $v['siLibelleSite'] . ' :</b><br />';
+                $arrZone[$v['parentId']] .= $v['libZone'] . '<br />';
+            }
+        }
+        return $arrZone;
+    }
+
+    public function organizeListZone($dataIlot, $arrListeZone){
+        
+        foreach ($dataIlot as $k => $row) {
+            if (isset($arrListeZone[$row['siIdSite']])) {
+                $dataIlot[$k]['Liste_sites'] = $arrListeZone[$row['siIdSite']];
+            } else {
+                $dataIlot[$k]['Liste_sites'] = '';
+            }
+
+            // mise en forme des champs
+            $dataIlot[$k]['iloCodeIlot'] = strtoupper($row['iloCodeIlot']);
+            $dataIlot[$k]['iloLibelleIlot'] = strtoupper($row['iloLibelleIlot']);
+            $dataIlot[$k]['iloOptim'] = $row['iloOptim'] == 1 ? 'Oui' : 'Non';
+            if ($row['used'] == '') {
+                $dataIlot[$k]['used'] = ' - ';
+            }
+            if ($row['coIdCompetence'] == '') {
+                $dataIlot[$k]['coIdCompetence'] = ' - ';
+            }
+            if ($row['sedIdServDem'] == '') {
+                $dataIlot[$k]['sedIdServDem'] = ' - ';
+            }
+            if ($row['enIdEntreprise'] == '') {
+                $dataIlot[$k]['enIdEntreprise'] = ' - ';
+            }
+            if ($row['siIdSite'] == '') {
+                $dataIlot[$k]['siIdSite'] = ' - ';
+            }
+            if ($row['dacIdDomAct'] == '') {
+                $dataIlot[$k]['dacIdDomAct'] = ' - ';
+            }
+        }
+
+        return $dataIlot;
+    }
+
     
     /**
      * Cree le fichier csv sur le serveur.

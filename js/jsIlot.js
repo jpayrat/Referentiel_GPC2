@@ -28,20 +28,20 @@ $(document).ready(function () {
     function recup_form_ilot()
     {
         //alert('recup_form_ilot : ');
-        rechercheGlobal = $('#rechercheGlobal').val();
+        rechercheGlobal = $('#rechercheIlotGlobal').val();
         optim = $('input:radio[name="optim"]:checked').val();
         // récupération de l'îlot
-        if ($('#ilot_tape').val() == '')
+        if ($('#rechercheIlotTape').val() == '')
         {
-            if ($('#ilot_list').val() == '***') {
+            if ($('#ilotList').val() == '***') {
                 ilot = ''
             }
             else {
-                ilot = $('#ilot_list').val().substr(0, 3);
+                ilot = $('#ilotList').val().substr(0, 3);
             }
         }
         else {
-            ilot = $('#ilot_tape').val();
+            ilot = $('#rechercheIlotTape').val();
         }
 
         typeIlot = $('#typeIlot').val();
@@ -84,12 +84,13 @@ $(document).ready(function () {
                     + '/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre;
         }
         
-       // alert('data_get '+data_get);
+        //alert('data_get '+data_get);
+
 
         // Si le formulaire est vide, on affiche rien
-        if (typeof critere === 'undefined' && rechercheGlobal == '' && optim == 'tous' && ilot == '' && typeIlot == 'tous' && used == 'tous' && competence == 'tous' && serviceCible == 'tous' && entreprise == 'tous' && siteGeo == 'tous' && domaineAct == 'tous')
+        if (typeof critere === 'undefined' && rechercheGlobal == '' && optim == 'tous' && ilot == '' && typeIlot == '***' && used == '***' && competence == '***' && serviceCible == '***' && entreprise == '***' && siteGeo == '***' && domaineAct == '***')
         {
-            //alert('critere ' + critere);
+            //alert('critere ' + critere + data_get);
             $('#results_ilot').empty();
         }
 
@@ -107,7 +108,7 @@ $(document).ready(function () {
                     //alert('beforeSend php_ilot : ' + php_ilot);
                     
                     $('#results_ilot').empty();
-                    $('#results_ilot').html('</br /><center><img src="_img/_design/ajax-loader.gif" alt="loader" id="ajax-loader" /></center>'); // ajout d'un loader pour signifier l'action
+                    $('#results_ilot').html('</br /><center><img src="img/_design/ajax-loader.gif" alt="loader" id="ajax-loader" /></center>'); // ajout d'un loader pour signifier l'action
                 },
                 success: function (data) {
                     // traitements JS à faire APRES le retour du fichier .php
@@ -128,28 +129,22 @@ $(document).ready(function () {
         requete_formulaire('select_all');
     });
 
-    $('#rechercheGlobal').on('click', function () {
-        
+    $('#rechercheIlotGlobal').on('keyup', function () {
         recup_form_ilot();
         requete_formulaire();
-    });
-    $('#rechercheGlobal').on('change', function () {
-        alert('change');
-
     });
     
     $('input:radio[name="optim"]').change(function () {
         recup_form_ilot();
         requete_formulaire();
     });
-    $('#ilot_list').on('change', function () {
-        alert('ilot_list');
-        $('#ilot_tape').val(''); // réinit de l'autre choix de l'îlot (ilot tapé)
+    $('#ilotList').on('change', function () {
+        $('#rechercheIlotTape').val(''); // réinit de l'autre choix de l'îlot (ilot tapé)
         recup_form_ilot();
         requete_formulaire();
     });
-    $('#ilot_tape').on('keyup', function () {
-        $('#ilot_list').prop('selectedIndex', 0);// réinit de l'autre choix de l'îlot (ilot listé)
+    $('#rechercheIlotTape').on('keyup', function () {
+        $('#ilotList').prop('selectedIndex', 0);// réinit de l'autre choix de l'îlot (ilot listé)
         recup_form_ilot();
         requete_formulaire();
     });
@@ -183,7 +178,7 @@ $(document).ready(function () {
     });
 
     // Clic sur un ilot pour afficher le détail de ce dernier
-    $('#blocIlot').on('click', '.lienIlotAjax', function () {
+    $('#results_ilot').on('click', '.lienIlotAjax', function () {
         $("#form_ilot").hide(); // On cache le formulaire
 //				$("#blocIlot").empty(); // On vide le <h1> et le <hr /> qui contient Ilot GPC - MidiPy
         $("#results_ilot").empty(); // On vide le div qui reçoit les infos de l'îlot

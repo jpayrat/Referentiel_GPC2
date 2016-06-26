@@ -138,7 +138,7 @@ class Routeur {
 
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
-        echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
+        //echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
         // \RefGPC\_controleurs
         return new $name();
     }

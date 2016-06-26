@@ -54,7 +54,7 @@ border-color: rgba(82, 168, 236, 0.8) !important; outline: 0; -webkit-box-shadow
 .bloc_front_coms textarea { text-align: left; }
 
 a.exportcsv { text-decoration: none; color: inherit; float: right; margin: 0 20px 0 0; font-size: 0.9em; }
-a.exportcsv img { border: none; width: 20px; height: 20px; margin-left: 3px; }
+a.exportcsv img { border: none; width: 20px; height: 20px; margin-left: 3px; position: relative; top: 3px; }
 
 a.nav_map { text-decoration: none; display: inline-block; margin: 5px 23px 3px 0px; color: inherit; font-size: 0.9em; }
 a.nav_map:hover { color: #ff9700; }
