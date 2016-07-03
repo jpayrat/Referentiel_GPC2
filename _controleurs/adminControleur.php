@@ -21,7 +21,7 @@ class adminControleur extends baseControleur{
         $vue->afficheHaut($this->d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
         $vue->afficheMenuLateral($this->d['lateral']);
         
-        //$vue->afficheCorps($this->d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
+        //$vue->afficheCorps($this->d['corps'], 'affIndexIlot');//
         
         $vue->afficheBas();
     }
