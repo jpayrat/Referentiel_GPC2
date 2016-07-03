@@ -34,7 +34,7 @@
                 <div class="nav">
                     <div><a href="<?= $lienHorizMP; ?>" class="<?= $classCSSLienMP; ?>">Midi-Pyrénées</a></div>
                     <div class="separateur"><a href="<?= $lienHorizLR; ?>" class="<?= $classCSSLienLR; ?>">Languedoc Roussillon</a></div>
-                    <div></div>
+                    <div><a class="" href="<?= $lienAdmin; ?>">Administration</a></div></div>
                 </div>
             </div>
         </div>

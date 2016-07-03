@@ -137,4 +137,7 @@ class modelIlot {
 	return true;       
     }
     
+    // ------------------------------------------------------------------------
+    // modeles des données des ilots
+    
 }
