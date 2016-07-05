@@ -19,8 +19,8 @@ define ('CONTROLEURS_PATH', PATH.'_controleurs/');
 define ('MODELS_PATH', PATH.'_models/');
 define ('VUES_PATH', PATH.'_vues/');
 
-define ('SELECT_DB', 'Julien');
-
+//define ('SELECT_DB', 'Julien');
+define ('SELECT_DB', 'Marc');
 // Récupération de la page demandée par l'utilisateur
 // LR/ilotControleur/action/varable2/variable2
 //var_dump($_GET);

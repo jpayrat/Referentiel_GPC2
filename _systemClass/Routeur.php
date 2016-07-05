@@ -13,6 +13,7 @@ class Routeur {
     private function initControleurs(){
         $this->knownControllers['base'] = '';
         $this->knownControllers['centre'] = '';
+        $this->knownControllers['admin'] = '';
         $this->knownControllers['ilot'] = 'ilot';
         $this->knownControllers['ilotAjax'] = 'ilot';
     }
@@ -37,14 +38,14 @@ class Routeur {
         // var_dump($this->knownControllers);
          
         $data = $this->readURL($url);
-        //var_dump($data);
+       // var_dump($data);
         $this->paramsUrl['base']        = $data[0];
         $this->paramsUrl['controleur']  = $data[1];
         $this->paramsUrl['methode']     = $data[2];
-        
+        //var_dump($this->paramsUrl);
         // lecture des autres parametres dans $this->paramsUrl
        $this->readParam(array_slice($data, 3));
-       // var_dump($this->paramsUrl);
+        //var_dump($this->paramsUrl);
     }
 
     /**
@@ -68,12 +69,28 @@ class Routeur {
             //echo '<br /> ['.$pageAsk[1].']';
             //var_dump($this->knownControllers);
             //echo '-> rep :  ['.$this->knownControllers[$pageAsk[1]].']';
+            //
+            // --- parametre passé au constructeur du controleur ?
+            $paramConstructeur = null;
+            $posEgal = strpos($pageAsk[1], '=');
+            if ($posEgal !== FALSE) { 
+                $parts = explode('=', $pageAsk[1]);
+                $pageAsk[1] = $parts[0]; 
+                $paramConstructeur = $parts[1];
+            }
+            
             if (isset($this->knownControllers[$pageAsk[1]])) {
-               // 
-                $pageAsk[1] = $this->knownControllers[$pageAsk[1]].'\\'.$pageAsk[1]. 'Controleur';
-                //echo '<br /> ciontrolleur ['.$pageAsk[1].']';
-                
+                if (\strlen($this->knownControllers[$pageAsk[1]]) > 0) {
+                    $pageAsk[1] = $this->knownControllers[$pageAsk[1]].'\\'.$pageAsk[1]. 'Controleur';
+                }
+                else {
+                    $pageAsk[1] = $pageAsk[1]. 'Controleur';
+                }
+                //echo '<br /> controlleur ['.$pageAsk[1].']';
                //var_dump($pageAsk[1]);
+                if ($paramConstructeur !== null) {
+                    $pageAsk[1] = array( $pageAsk[1], $paramConstructeur);
+                }
             }
             else {
                 echo '<br />Controleur ['.$pageAsk[1].'] non trouvé : controleur par defaut !'; // pour debug
@@ -83,6 +100,8 @@ class Routeur {
         else {
             $pageAsk[1] = self::DEFCONTROLLERNAME;  
         }
+        
+        
         // Calcul de la method du controleur à utiliser
         $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
         return $pageAsk;
@@ -140,11 +159,25 @@ class Routeur {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
         //echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
         // \RefGPC\_controleurs
+        if (isset($this->paramsUrl['controleur'][1])) {
+            return new $name($this->paramsUrl['controleur'][1]);
+        }
         return new $name();
     }
 
     public function methodName()     { return $this->paramsUrl['methode'];    }
-    public function controllerName() { return $this->paramsUrl['controleur']; }
+    
+    /**
+     * $this->paramsUrl['controleur'] est soit le nom du controleur
+     * soit un tableau avec le nom et le param du constructeur
+     * @return type
+     */
+    public function controllerName() { 
+        if (is_array($this->paramsUrl['controleur'])){
+            return $this->paramsUrl['controleur'][0];
+        }
+        return $this->paramsUrl['controleur'];     
+    }
 
     public function dump() {
         echo '<pre>'.__METHOD__;

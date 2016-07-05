@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" id="ilot_corps">
 
     <form method="post" id="form_ilot" action="#" class="formulaire">
 
-        <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?> <span class=""><?= '- ' . $nbIlot; ?> ilots</span></h1>
+        <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?> <span class=""><?= $nbIlot>0 ? ' - ' . $nbIlot.' ilots' : ''; ?></span></h1>
         <hr />
 
         <label for="rechercheGlobal" class="gen souligner">Recherche globale</label>
