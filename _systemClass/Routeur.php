@@ -19,7 +19,7 @@ class Routeur {
     }
     // liste des controlleurs connus, A maintenir à jour !!!
 
-    
+
     /* index tableau $paramsUrl
      * 0 : ui LR ou MP
      * 1 : controleur
@@ -30,21 +30,21 @@ class Routeur {
 
     public function __construct($url) {
         // traite les données de l'url
-       // echo '<br> Routeur::__construct url = ['.$url.']';
-       // var_dump($url);
-       
+        // echo '<br> Routeur::__construct url = ['.$url.']';
+        // var_dump($url);
+
         $this->initControleurs();
-        
+
         // var_dump($this->knownControllers);
-         
+
         $data = $this->readURL($url);
-       // var_dump($data);
+        // var_dump($data);
         $this->paramsUrl['base']        = $data[0]; // MP ou LR
         $this->paramsUrl['controleur']  = $data[1];
         $this->paramsUrl['methode']     = $data[2];
         //var_dump($this->paramsUrl);
         // lecture des autres parametres dans $this->paramsUrl
-       $this->readParam(array_slice($data, 3));
+        $this->readParam(array_slice($data, 3));
         //var_dump($this->paramsUrl);
     }
 
@@ -57,27 +57,27 @@ class Routeur {
         $pageAsk = (string) filter_input(INPUT_GET, 'url');
         $pageAsk = rtrim($pageAsk, '/');
         $pageAsk = explode('/', $pageAsk); // séparation des éléments de l'url
-           // var_dump($pageAsk[0]);  
+        // var_dump($pageAsk[0]);
         // Calcul de la base choisie LR ou MP
         if (isset($pageAsk[0])) {
             if (!preg_match('#[A-Z]{2}#', $pageAsk[0])) { $pageAsk[0] = 'MP';  /* ui par défaut */ }
             else { $pageAsk[0] = $pageAsk[0] == 'LR' ? 'LR' : 'MP'; }
         }
         else { $pageAsk[0] = 'MP'; /* ui par défaut */ }
-		
+
         if (isset($pageAsk[1])){
             //echo '<br /> ['.$pageAsk[1].']';
             //var_dump($this->knownControllers);
             //echo '-> rep :  ['.$this->knownControllers[$pageAsk[1]].']';
             //
-			
-			/*
+
+            /*
             // --- parametre passé au constructeur du controleur ?
             $paramConstructeur = null;
             $posEgal = strpos($pageAsk[1], '=');
-            if ($posEgal !== FALSE) { 
+            if ($posEgal !== FALSE) {
                 $parts = explode('=', $pageAsk[1]);
-                $pageAsk[1] = $parts[0]; 
+                $pageAsk[1] = $parts[0];
                 $paramConstructeur = $parts[1];
             }
             */
@@ -89,21 +89,21 @@ class Routeur {
                     $pageAsk[1] = $pageAsk[1]. 'Controleur';
                 }
                 //echo '<br /> controlleur ['.$pageAsk[1].']';
-               //var_dump($pageAsk[1]);
-         
+                //var_dump($pageAsk[1]);
+
                 //$pageAsk[1] = array( $pageAsk[1], $pageAsk[0]);
 
             }
             else {
                 echo '<br />Controleur ['.$pageAsk[1].'] non trouvé : controleur par defaut !'; // pour debug
-               $pageAsk[1] = self::DEFCONTROLLERNAME;  
+                $pageAsk[1] = self::DEFCONTROLLERNAME;
             }
         }
         else {
-            $pageAsk[1] = self::DEFCONTROLLERNAME;  
+            $pageAsk[1] = self::DEFCONTROLLERNAME;
         }
-        
-        
+
+
         // Calcul de la method du controleur à utiliser
         $pageAsk[2] = isset($pageAsk[2]) ? $pageAsk[2] : self::DEFACTIONNAME;
         return $pageAsk;
@@ -116,7 +116,7 @@ class Routeur {
      * @param type $data données du $_GET sans les données base,controleur,methode
      */
     protected function readParam($data) {
-       // var_dump($data);
+        // var_dump($data);
         foreach($data as  $value) {
             $posEgal = strpos($value, '=');
             // parametre non nommé
@@ -124,28 +124,28 @@ class Routeur {
             //parametre nommé
             else {
                 $parts = explode('=', $value);
-                $this->paramsUrl[$parts[0]] = $parts[1]; 
+                $this->paramsUrl[$parts[0]] = $parts[1];
             }
         }
     }
-    
-    
+
+
     private function controllerExists($name) { return in_array($name, $this->knownControllers); }
 
-    
+
     /**
      * Appel de la methode du controleur et passage des parametres
      * dans la methode
      * @throws \Exception
      */
     public function exec() {
-       // $this->dump();
+        // $this->dump();
         $controller = $this->createController();
         if (method_exists($controller, $this->methodName())) {
             $data = $this->paramsUrl;
             //unset($data[1]);
             //unset($data[2]);
-           // var_dump($data);
+            // var_dump($data);
             //var_dump($this->paramsUrl);
             call_user_func_array(array($controller, $this->methodName()), array($this->paramsUrl));
         }
@@ -157,16 +157,16 @@ class Routeur {
         }
     }
 
-	
+
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
         //echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
         // \RefGPC\_controleurs
-		/*
+        /*
         if (isset($this->paramsUrl['controleur'][1])) {
             return new $name($this->paramsUrl['controleur'][1]);
         }
-		*/
+        */
         return new $name($this->nomBase());
     }
 
@@ -177,11 +177,11 @@ class Routeur {
      * soit un tableau avec le nom et le param du constructeur
      * @return type
      */
-    public function controllerName() { 
+    public function controllerName() {
         if (is_array($this->paramsUrl['controleur'])){
             return $this->paramsUrl['controleur'][0];
         }
-        return $this->paramsUrl['controleur'];     
+        return $this->paramsUrl['controleur'];
     }
 
     public function dump() {
