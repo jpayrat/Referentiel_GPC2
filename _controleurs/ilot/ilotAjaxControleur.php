@@ -97,6 +97,8 @@ class ilotAjaxControleur {
 
     public function select_one($param) {
 
+        //if connecté
+
         $d = array(); // tableau collectant les données
 
         // données recupere en parametre
@@ -113,15 +115,15 @@ class ilotAjaxControleur {
         $arrListeZone = $modelIlot->createListeZone();
         $d['dataIlot'] = $modelIlot->organizeListZone($d['dataIlot'], $arrListeZone);
 
-        if ($d['dataIlot'][0]['iloDateCreation'] == 0) { $d['dataIlot'][0]['iloDateCreation'] = ' - '; } else { $d['dataIlot'][0]['iloDateCreation'] = date('d-m-Y', $row['iloDateCreation']); }
-        if ($d['dataIlot'][0]['iloDateModif'] == 0) { $d['dataIlot'][0]['iloDateModif'] = ' - '; } else { $d['dataIlot'][0]['iloDateModif'] = date('d-m-Y', $d['dataIlot'][0]['iloDateModif']); }
-
+        //if ($d['dataIlot'][0]['iloDateCreation'] == 0) { $d['dataIlot'][0]['iloDateCreation'] = ' - '; } else { $d['dataIlot'][0]['iloDateCreation'] = date('d-m-Y', $row['iloDateCreation']); }
+        //if ($d['dataIlot'][0]['iloDateModif'] == 0) { $d['dataIlot'][0]['iloDateModif'] = ' - '; } else { $d['dataIlot'][0]['iloDateModif'] = date('d-m-Y', $d['dataIlot'][0]['iloDateModif']); }
+        $d['dataIlot'][0]['iloDateCreation'] = $d['dataIlot'][0]['iloDateCreation'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateCreation']);
+        $d['dataIlot'][0]['iloDateModif'] = $d['dataIlot'][0]['iloDateModif'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateModif']);
         //var_dump($d['dataIlot']);
         //print_r($d['dataIlot']);
 
         $vue = new ModelVue();
         $vue->afficheDetailIlot($d);
     }
-
 
 }

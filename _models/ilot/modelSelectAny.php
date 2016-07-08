@@ -29,59 +29,59 @@ class modelSelectAny
 
         if($param['typeIlot'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.tiIdTypeIot = '".$param['typeIlot']."' "; }
-            else { $condition .= " tm_ilots.tiIdTypeIot = '".$param['typeIlot']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.tiIdTypeIot = '".$param['typeIlot']."' "; 
         }
         if($param['used'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND `used` = '".$param['used']."' "; }
-            else { $condition .= " `used` = '".$param['used']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; }
+            $condition .= " `used` = '".$param['used']."' ";
         }
         if($param['competence'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.coIdCompetence = '".$param['competence']."' "; }
-            else { $condition .= " tm_ilots.coIdCompetence = '".$param['competence']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.coIdCompetence = '".$param['competence']."' ";
         }
         if($param['serviceCible'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.sedIdServDem = '".$param['serviceCible']."' "; }
-            else { $condition .= " tm_ilots.sedIdServDem = '".$param['serviceCible']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.sedIdServDem = '".$param['serviceCible']."' ";
         }
         if($param['entreprise'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.enIdEntreprise = '".$param['entreprise']."' "; }
-            else { $condition .= " tm_ilots.enIdEntreprise = '".$param['entreprise']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.enIdEntreprise = '".$param['entreprise']."' ";
         }
         if($param['siteGeo'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.siIdSite = '".$param['siteGeo']."' "; }
-            else { $condition .= " tm_ilots.siIdSite = '".$param['siteGeo']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.siIdSite = '".$param['siteGeo']."' ";
         }
         if($param['domaineAct'] != '***')
         {
-            if(!empty($condition)) { $condition .= " AND tm_ilots.dacIdDomAct = '".$param['domaineAct']."' "; }
-            else { $condition .= " tm_ilots.dacIdDomAct = '".$param['domaineAct']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " tm_ilots.dacIdDomAct = '".$param['domaineAct']."' ";
         }
         if($param['optim'] != 'tous')
         {
-            if(!empty($condition)) { $condition .= " AND `iloOptim` = '".$param['optim']."' "; }
-            else { $condition .= " `iloOptim` = '".$param['optim']."' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " `iloOptim` = '".$param['optim']."' ";
         }
 
         // Recherche de l'îlot et gestion de la recherche globale
         if($param['ilot'] != '')
         {
-            if(!empty($condition)) { $condition .= " AND `iloCodeIlot` LIKE '%".$param['ilot']."%' "; }
-            else { $condition .= " `iloCodeIlot` LIKE '%".$param['ilot']."%' "; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " `iloCodeIlot` LIKE '%".$param['ilot']."%' ";
         }
         if($param['rechercheGlobal'] != '')
         {
-            if(!empty($condition)) { $condition .= " AND (tm_ilots.dacIdDomAct LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.tiIdTypeIot LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.used LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.coIdCompetence LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.sedIdServDem LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.enIdEntreprise LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.siIdSite LIKE '%".$param['rechercheGlobal']."%' OR `iloCodeIlot` LIKE '%".$param['rechercheGlobal']."%' OR `iloLibelleIlot` LIKE '%".$param['rechercheGlobal']."%') "; }
-            else { $condition .= " (tm_ilots.dacIdDomAct LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.tiIdTypeIot LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.used LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.coIdCompetence LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.sedIdServDem LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.enIdEntreprise LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.siIdSite LIKE '%".$param['rechercheGlobal']."%' OR `iloCodeIlot` LIKE '%".$param['rechercheGlobal']."%' OR `iloLibelleIlot` LIKE '%".$param['rechercheGlobal']."%')"; }
+            if(!empty($condition)) { $condition .= " AND"; } 
+            $condition .= " (tm_ilots.dacIdDomAct LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.tiIdTypeIot LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.used LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.coIdCompetence LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.sedIdServDem LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.enIdEntreprise LIKE '%".$param['rechercheGlobal']."%' OR tm_ilots.siIdSite LIKE '%".$param['rechercheGlobal']."%' OR `iloCodeIlot` LIKE '%".$param['rechercheGlobal']."%' OR `iloLibelleIlot` LIKE '%".$param['rechercheGlobal']."%')";
         }
 
-        if(!empty($condition)) { $condition .= " AND `iloCodeBase` = '".$param['iloCodeBase']."' "; }
-        else { $condition .= " `iloCodeBase` = '".$param['iloCodeBase']."' "; }
+        if(!empty($condition)) { $condition .= " AND"; } 
+        $condition .= " `iloCodeBase` = '".$param['iloCodeBase']."' "; 
 
         return "
 		SELECT DISTINCT

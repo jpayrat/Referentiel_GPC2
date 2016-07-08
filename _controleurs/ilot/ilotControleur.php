@@ -2,12 +2,13 @@
 
 namespace RefGPC\_controleurs\ilot;
 
-use \RefGPC\_models\menuLateral;
-use \RefGPC\_models\ilot\modelIlot;
+use \RefGPC\_controleurs\baseControleur;
+
 use \RefGPC\_models\ilot\Formulaire;
 use \RefGPC\_models\ilot\ModelVue;
 
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
+
 
 /**
  * recupère les données pour l'affichage des ilots et les envoie à la vue.
@@ -21,54 +22,36 @@ use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
  * -> Eventuellement un historique des modifications
  **/
 
-class ilotControleur {
+class ilotControleur extends baseControleur{
 
+    public function __construct($base) {
+        parent::__construct($base);
+    }
+    
     // $param LR ou MP
     public function affIndex($params) {
 
-        $d = array(); // tableau collectant les données
+        //echo '$codeBase('.$this->codeBase.')';
+        $form = new Formulaire($this->codeBase); // choixBase->codeBase());
+        $this->d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
+        $this->d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
+        $this->d['corps']['selectIlotList'] = $form->select('ilotList');
+        $this->d['corps']['selectTypeIlot'] = $form->select('typeIlot');
+        $this->d['corps']['selectUsed'] = $form->select('used');
+        $this->d['corps']['selectCompetence'] = $form->select('competence');
+        $this->d['corps']['selectServiceCible'] = $form->select('serviceCible');
+        $this->d['corps']['selectEntreprise'] = $form->select('entreprise');
+        $this->d['corps']['selectSiteGeo'] = $form->select('siteGeo');
+        $this->d['corps']['selectDomaineAct'] = $form->select('domaineAct');
 
-        $d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
-        $d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
+        $this->d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$this->codeBase."' "); //$choixBase->codeBase()."' ");
 
-        $param = is_array($params) ? $params['base'] : $params;
-        //echo '('.$param.')';
-        $choixBase = new modelIlot($param); //ChoixBase($param);
-        $d['corps']['codeBase'] = $choixBase->codeBase();
-        $d['corps']['libelleBase'] = $choixBase->libelleBase();
-        
-        $d['haut']['base'] = $param; // ui = MP ou LR
-        $d['haut']['codeBase'] = $d['corps']['codeBase']; // K2 ou T1 , copie dans 'haut' pour initialiser les variables du script jsIlot.js
-        $d['haut']['libelleBase'] = $d['corps']['libelleBase'];
+        //var_dump($this->d);
+        $vue = new ModelVue($this->d);
 
-        $d['haut']['classCSSLienLR'] = $choixBase->classCSSLien('LR');
-        $d['haut']['classCSSLienMP'] = $choixBase->classCSSLien('MP');   
-        
-        $menuLateral = new menuLateral('ilot');
-        $d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
-        $d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
-        $d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
-
-        $form = new Formulaire($choixBase->codeBase());
-        $d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
-        $d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
-        $d['corps']['selectIlotList'] = $form->select('ilotList');
-        $d['corps']['selectTypeIlot'] = $form->select('typeIlot');
-        $d['corps']['selectUsed'] = $form->select('used');
-        $d['corps']['selectCompetence'] = $form->select('competence');
-        $d['corps']['selectServiceCible'] = $form->select('serviceCible');
-        $d['corps']['selectEntreprise'] = $form->select('entreprise');
-        $d['corps']['selectSiteGeo'] = $form->select('siteGeo');
-        $d['corps']['selectDomaineAct'] = $form->select('domaineAct');
-
-        $d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$choixBase->codeBase()."' ");
-
-        //var_dump($d);
-        $vue = new ModelVue($d);
-
-        $vue->afficheHaut($d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
-        $vue->afficheMenuLateral($d['lateral']);
-        $vue->afficheCorps($d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
+        $vue->afficheHaut($this->d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
+        $vue->afficheMenuLateral($this->d['lateral']);
+        $vue->afficheCorps($this->d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();
 
     }
@@ -99,4 +82,5 @@ class ilotControleur {
         }
     }
     
+
  }

@@ -136,5 +136,7 @@ class modelIlot {
 	fclose ($myfile);
 	return true;       
     }
+    // ------------------------------------------------------------------------
+    // modeles des données des ilots
     
 }
