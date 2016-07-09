@@ -97,6 +97,8 @@ class ilotAjaxControleur {
 
     public function select_one($param) {
 
+        //if connecté
+
         $d = array(); // tableau collectant les données
 
         // données recupere en parametre
