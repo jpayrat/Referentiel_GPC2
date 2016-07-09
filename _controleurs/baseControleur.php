@@ -30,8 +30,7 @@ class baseControleur {
     protected function barreHaut() {
         $this->d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
         $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
-        $this->d['haut']['lienAdmin'] = WEBPATH.'MP/admin';
-
+        $this->d['haut']['lienAdmin'] = WEBPATH.$this->base.'/admin';      
         //$choixBase = new modelIlot($this->base); //ChoixBase($param);
         $this->d['corps']['codeBase'] = $this->choixBase->codeBase();
         $this->d['corps']['libelleBase'] = $this->choixBase->libelleBase();
