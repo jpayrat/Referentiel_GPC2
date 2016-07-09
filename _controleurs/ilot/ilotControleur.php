@@ -24,11 +24,7 @@ use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 
 class ilotControleur extends baseControleur{
 
-<<<<<<< HEAD
     public function __construct($base) {
-=======
-    public function __construct($base = '') {
->>>>>>> origin/master
         parent::__construct($base);
     }
     

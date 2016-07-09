@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="dcf8133f-138e-465a-9b42-121d1e171aba" name="Default" comment="" />
+=======
     <list default="true" id="dcf8133f-138e-465a-9b42-121d1e171aba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -12,6 +15,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_systemClass/Routeur.php" afterPath="$PROJECT_DIR$/_systemClass/Routeur.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
     <ignored path="Referentiel_GPC.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -35,8 +39,40 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ilotControleur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_controleurs/ilot/ilotControleur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1488">
+              <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+              <folding>
+                <marker date="1467717904000" expanded="true" signature="1911:1989" placeholder="SELECT iloCo... tm_ilots" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connexion.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/connexion.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modelIlot.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_models/ilot/modelIlot.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -45,8 +81,23 @@
       <file leaf-file-name="Routeur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_systemClass/Routeur.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="2232">
+              <caret line="93" column="65" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_systemClass/Database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+=======
             <state relative-caret-position="384">
               <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
               <folding />
             </state>
           </provider>
@@ -55,13 +106,26 @@
       <file leaf-file-name="RefGPC.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_systemClass/RefGPC.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="384">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+=======
             <state relative-caret-position="600">
               <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="baseControleur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_controleurs/baseControleur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1224">
+              <caret line="52" column="5" selection-start-line="47" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
+              <folding />
+=======
       <file leaf-file-name="baseControleur.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_controleurs/baseControleur.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,6 +134,18 @@
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
               </folding>
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="ilotAjaxControleur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_controleurs/ilot/ilotAjaxControleur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2904">
+              <caret line="125" column="36" selection-start-line="101" selection-start-column="6" selection-end-line="125" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +153,15 @@
       <file leaf-file-name="adminControleur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_controleurs/adminControleur.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+=======
+      <file leaf-file-name="adminControleur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_controleurs/adminControleur.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
               <folding />
             </state>
           </provider>
@@ -103,6 +186,19 @@
         <option value="$PROJECT_DIR$/_vues/menuLateral.php" />
         <option value="$PROJECT_DIR$/_vues/affIndex.php" />
         <option value="$PROJECT_DIR$/_models/ModelVue.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/_systemClass/Routeur.php" />
+        <option value="$PROJECT_DIR$/_controleurs/ilotControleur.php" />
+        <option value="$PROJECT_DIR$/_models/MenuLateral.php" />
+        <option value="$PROJECT_DIR$/_systemClass/Autoloader.php" />
+        <option value="$PROJECT_DIR$/_controleurs/baseControleur.php" />
+        <option value="$PROJECT_DIR$/_controleurs/ilot/ilotControleur.php" />
+        <option value="$PROJECT_DIR$/conf/connexion.json" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/_systemClass/RefGPC.php" />
+        <option value="$PROJECT_DIR$/_controleurs/ilot/ilotAjaxControleur.php" />
+        <option value="$PROJECT_DIR$/_models/ilot/modelIlot.php" />
+=======
         <option value="$PROJECT_DIR$/_controleurs/ilotControleur.php" />
         <option value="$PROJECT_DIR$/_models/MenuLateral.php" />
         <option value="$PROJECT_DIR$/_systemClass/Autoloader.php" />
@@ -111,6 +207,7 @@
         <option value="$PROJECT_DIR$/_systemClass/RefGPC.php" />
         <option value="$PROJECT_DIR$/_controleurs/adminControleur.php" />
         <option value="$PROJECT_DIR$/_controleurs/baseControleur.php" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
       </list>
     </option>
   </component>
@@ -119,11 +216,15 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="1023" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -150,10 +251,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files" />
       </pane>
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -169,6 +273,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,12 +342,55 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="_models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ilot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="_controleurs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Referentiel_GPC" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_controleurs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ilot" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
+=======
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,6 +435,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="dcf8133f-138e-465a-9b42-121d1e171aba" name="Default" comment="" />
@@ -289,18 +453,31 @@
       <workItem from="1465324319452" duration="11351000" />
       <workItem from="1465502935615" duration="227000" />
       <workItem from="1465660001585" duration="3105000" />
+<<<<<<< HEAD
+      <workItem from="1467711732769" duration="3999000" />
+      <workItem from="1467721236978" duration="1203000" />
+=======
       <workItem from="1467956087330" duration="330000" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="28486000" />
+=======
     <option name="totallyTimeSpent" value="23614000" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21268657" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21062271" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -319,6 +496,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -329,6 +514,8 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/_systemClass/Routeur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -362,6 +549,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -390,7 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -438,7 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -471,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,7 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -517,6 +701,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+<<<<<<< HEAD
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_models/MenuLateral.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_systemClass/Autoloader.php">
+=======
           <folding />
         </state>
       </provider>
@@ -530,23 +734,52 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_systemClass/Database.php">
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="600">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/conf/connexion.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+=======
     <entry file="file://$PROJECT_DIR$/_systemClass/Autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="408">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controleurs/ilot/ilotControleur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1488">
+          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+          <folding>
+            <marker date="1467717904000" expanded="true" signature="1911:1989" placeholder="SELECT iloCo... tm_ilots" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_models/ilot/modelIlot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+=======
         <state relative-caret-position="312">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
@@ -557,33 +790,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/_systemClass/Routeur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2232">
+          <caret line="93" column="65" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
+=======
     <entry file="file://$PROJECT_DIR$/_systemClass/RefGPC.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/_systemClass/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+=======
     <entry file="file://$PROJECT_DIR$/_controleurs/adminControleur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_controleurs/baseControleur.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="384">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controleurs/baseControleur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="52" column="5" selection-start-line="47" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controleurs/ilot/ilotAjaxControleur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2904">
+          <caret line="125" column="36" selection-start-line="101" selection-start-column="6" selection-end-line="125" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_controleurs/adminControleur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+=======
         <state relative-caret-position="826">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
           </folding>
+>>>>>>> 060c832c00db7770b756def47170c6ea49b1e8f6
         </state>
       </provider>
     </entry>
