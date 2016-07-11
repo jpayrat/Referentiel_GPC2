@@ -8,9 +8,9 @@ use \RefGPC\_models\ilot\ModelVue;
  * @author Marc
  */
 class adminControleur extends baseControleur{
-
-    public function __construct() {
-        parent::__construct('MP');
+    
+    public function __construct($base) {
+        parent::__construct($base);
     }
 
 

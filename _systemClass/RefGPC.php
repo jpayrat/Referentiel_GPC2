@@ -14,7 +14,6 @@ class RefGPC
             //var_dump($filejson);
             $connexion = json_decode($filejson, true);
             //var_dump($connexion);
-
             self::$database = new Database( $connexion[SELECT_DB]['db_name'],
                 $connexion[SELECT_DB]['db_user'],
                 $connexion[SELECT_DB]['db_pass'],
