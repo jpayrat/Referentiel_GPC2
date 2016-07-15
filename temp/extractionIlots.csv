@@ -1,2 +1,303 @@
 iloCodeIlot;iloLibelleIlot;iloOptim;iloCodeEtablissement;iloCodeBase;iloInfo;iloInfoAdmin;iloDateCreation;iloDateModif;iloDateSuppression;used;sedIdServDem;prsIdProdSav;dacIdDomAct;coIdCompetence;siIdSite;enIdEntreprise;fiIdFiltrage;tiIdTypeIot;banIdBandeau
-7XX;FLITRAGE PROD PPP LR;0;DTV;K2;;;0;1458660256;0;Oui;;PROD;CL;PROD  Filtrage;LR;CAFT;1;FT;C 
+09L;LL + TDSL ARIEGE;0;TF7;T1;Activité E dpt 09 et 31s;;;31/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+12L;LL + TDSL Aveyron;1;TF7;T1;Activité E Dpt 12;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+12R;BL/ SOCAMP ui poi aveyron;0;TF7;T1;;;;22/03/2016;;Non;CA BL;PROD;BL;UI de POI;;;;ETL;CE
+31P;Prod Entreprise TLSE N/S;0;TF7;T1;Prod routeur TLSE;;;22/03/2016;;Oui;CACER;PROD;E;Routeur et LL;;Orange;;FT;CE
+31S;SAV Entreprise TLSE N/S;0;TF7;T1;SAV Routeur TLSE;;;22/03/2016;;Oui;CACER;SAV;E;Routeur et LL;;Orange;;FT;CE
+32L;LL + TSL Gers;0;TF7;T1;Activité E dpt 32;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+38T;RS/miroir TRANS;0;TF7;T1;Ilot de stockage lié à RST;;;22/03/2016;;?;CACER;PROD;RS;;;;;FT;R 
+39S;Transit Raccord POI pour C31;0;TF7;T1;Claudine AURIERES place des raccordements de POI qui peuvent être fait par les techniciens Orange (Sur C31, Toulouse uniquement). Sylvie BOYER regarde tous les jours cet îlot pour affecter ces raccordements aux techniciens Orange. Cela permet aux conducteurs d'activités BL de faire du tri dans les bandeaux. Jacques Sabatier est au courant.Commentaire de Jacques Sabatier à ZZZ PROG POI URR le 11/05/2015 : Les chantiers raccordement fibre sur Toulouse sont à envoyer sur 39S. Cela permet de ne pas engorger C31. Sylvie se charge de gérer les chantiers;;;22/03/2016;;Oui;CA BL;PROD;BL;;;;;FT;R 
+46L;LL + TDSL Lot;1;TF7;T1;Activité E dpt 46;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+65L;LL + TSL Hte Pyr;0;TF7;T1;Activité E dpt 65;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+81L;LL + TDSL TARN;0;TF7;T1;Activité E dpt 81;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+81R;BL/SCOPMP ui poi scopelec tarn;0;TF7;T1;;;;22/03/2016;;Non;CA BL;PROD;BL;UI de POI;;;;ETL;CE
+82L;LL + TDSL T et G;0;TF7;T1;Activité E dpt 82;;;22/03/2016;;Oui;CACER;PROD / SAV;E;Routeur et LL;;Orange;;FT;CE
+9CS;ui tampon recup 9 cegetel;0;TF7;T1;;Plan de charge non ouvert, à supprimer ?;;22/03/2016;;?;CACER;;;;;;;FT;CE
+ABS;ui procedure abs-rmc pilotage;0;TF7;T1;;;;22/03/2016;;?;CA GD;;;;;;;ETL;CE
+AC7;BL/réo GERS;0;TF7;T1;;Pas BL vu avec Jacques Sabatier;;28/03/2016;;Non;;;;;;;;FT;R 
+AC8;RS/miroir GERS;0;TF7;T1;ilot de stockage lié à AC9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+AC9;RS/exploitation GERS;0;TF7;T1;Activité RS dpt 32;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+ACC;der co reseau struct;0;TF7;T1;;;;22/03/2016;;Oui;CACER;;;;;;;ETL;R 
+ADM;UI RESERVEE ADMIN GPC PR TESTS;0;TF7;T1;;;;22/03/2016;;Oui;Admin GPC;;Admin;;;;;FT;C 
+ANA;Validés Analystes;0;TF7;T1;;Plan de charge non ouvert, à supprimer ?;;28/03/2016;;?;CACER;;;;;;;ETL;R 
+AP1; SOCAMP r10 aveyron rodez; ;TF7;T1;test de mise à jour;;;22/03/2016;;Non;CA GD;PROD;GD;PABX;;SCOTF7;;ETL;C 
+AQR;BL/UI BL tampon QRL analyste;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;;BL;;;;;ETL;R 
+ARX;PABX RODEZ;1;TF7;T1;Activité Pabx dpt 12;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+AU7;RS/réo MILLAU_RODEZ;0;TF7;T1;ilot de stockage lié à AU9;;;28/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+AU8;RS/miroir MILLAU_RODEZ;0;TF7;T1;ilot de stockage lié à AU9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+AU9;RS/exploitation MILLAU_RODEZ;0;TF7;T1;Activité RS dpt 12;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+AVT;ATT RETOUR VT URR;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+B09;BL/ SADTF7 ARIEGE;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;_09;SADTF7;;ETL;CE
+B12;BL/ SCOTF7 AVEYRON;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;12;SCOTF7;;ETL;CE
+B31;BL/ SADTF7 31SUD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;31Sud;SADTF7;;ETL;CE
+B32;BL/ SADTF7 GERS;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;32;SADTF7;;ETL;CE
+B3N;BL/ SCOTF7 TLSE NORD + 31 NORD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;Tlse_Nord;SCOTF7;;ETL;CE
+B3S;BL/ SADTF7 TOULOUSE SUD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;Tlse_Sud;SADTF7;;ETL;CE
+B46;BL/ SCOTF7 LOT;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;46;SCOTF7;;ETL;CE
+B65;BL/ SADTF7 HTES PYRENEES;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;65;SADTF7;;ETL;CE
+B81;BL/ SCOTF7 TARN;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;81_Gble;SCOTF7;;ETL;CE
+B82;BL/ SCOTF7 TARN ET GARONNE;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;SAV;BL;UI BL ETR;82;SCOTF7;;ETL;CE
+BCN;CHABLIS Zone Nord SCOTF7;0;TF7;T1;;;;22/03/2016;;Oui;;PROD;GD;;;SCOTF7;;ETL;CE
+BCS;CHABLIS Zone Sud SADTF7;0;TF7;T1;;;;22/03/2016;;Oui;;PROD;GD;;;SADTF7;;ETL;CE
+BTN;DOLMEN Zone Nord SCOTF7;0;TF7;T1;;;;22/03/2016;;Oui;;PROD;GD;;;SCOTF7;;ETL;CE
+BTS;DOLMEN Zone Sud SADTF7;0;TF7;T1;;;;22/03/2016;;Oui;;PROD;GD;;;SADTF7;;ETL;CE
+BYC;CHABLIS;0;TF7;T1;Réceptionne les R02ANU avec dans le bloc OT marqué [CHAB], puis elles sont déplacé en fonction de la zone nord ou sud vers BCS ou BCN. Attention au listes de centre dans UGPC 31/32;;;22/03/2016;;Oui;UI Nat;PROD;GD;;;;;RE;C 
+BYT;DOLMEN;0;TF7;T1;Réceptionne les R02 avec dans le bloc OT marqué [MIGB], puis elles sont déplacé en fonction de la zone nord ou sud vers BTS ou BTN. Attention au listes de centre dans UGPC 31/32;;;22/03/2016;;Oui;UI Nat;PROD;GD;;;;;RE;C 
+C12;BL/ FT AVEYRON;0;TF7;T1;Pour tech OBS;Pour tech OBS;;22/03/2016;;Oui;CA BL;SAV;BL;UI RS BL (URR Câble);;Orange;;FT;CE
+C31;BL/ FT TOULOUSE;0;TF7;T1;UI BL Orange;Pour tech OBS;;22/03/2016;;Oui;CA BL;SAV;BL;UI RS BL (URR Câble);;Orange;;FT;CE
+C65;BL/ FT POUR 65-32-31S;0;TF7;T1;UI BL Orange;Pour tech OBS;;22/03/2016;;Oui;CA BL;SAV;BL;UI RS BL (URR Câble);;Orange;;FT;CE
+C81;BL/ FT TARN;0;TF7;T1;UI BL Orange;Pour tech OBS;;22/03/2016;;Oui;CA BL;SAV;BL;UI RS BL (URR Câble);;Orange;;FT;CE
+C82;BL/ FT TARN ET GARONNE;0;TF7;T1;UI BL Orange;Pour tech OBS;;22/03/2016;;Oui;CA BL;SAV;BL;UI RS BL (URR Câble);;Orange;;FT;CE
+CBL;UI nat:CABLE BL MP FLASH Resea;0;TF7;T1;;;;22/03/2016;;Non;UI Nat;;;;;;;ETL;R 
+CPL;COMPLETEL;0;TF7;T1;Réceptionne les R02 DGT avec dans le bloc OT marqué [MIGSE]. Elles ne sont pas encore déplacé nord/sud  vers CPN et CPS. Attention aux listes de centres dans UGPC 31/32 - (28/07/2015);;;22/03/2016;;Oui;UI Nat;PROD;GD;;;;;RE;C 
+CPN;COMPLETEL Zone Nord SCOTF7;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;PROD;GD;;;SCOTF7;;ETL;CE
+CPS;COMPLETEL Zone Sud SADTF7;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;PROD;GD;;;SADTF7;;ETL;CE
+CQC;UI Tampon QRL Analy;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+DCO;BL/ILOT des DI sur DERCO;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;;BL;;;;;FT;C 
+DCW;Atte DI weekend pour DERCO;0;TF7;T1;Permet de stocker les DI arrivées le weekend pour une création de derco le lundi matin // Jacque sabatier;;;22/03/2016;;Oui;UGPC;SAV;BL;DERCO;;;;FT;C 
+DEF;3UI de Releve DEF automatique;0;TF7;T1;;;;22/03/2016;;?;CA GD;;GD;;;;;FT;CE
+DES;ui garage desamiantage;0;TF7;T1;;;;22/03/2016;;?;CA GD;;GD;;;;;ETL;CE
+DM1;TEST;0;TF7;T1;;;;22/03/2016;;Oui;Admin GPC;;;;;;;ETL;C 
+DMS;F ORANGE UI Releve R02TEL;0;TF7;T1;;;;22/03/2016;;?;CA GD;;;;;;;RE;C 
+ECE;CE ADSL;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+EFI;UI CENTRE FIAB;0;TF7;T1;;Plan de chage non ouvert;;22/03/2016;;;;;;;;;;FT;CE
+EMN;Etudes MAPPLE Nord SCOTF7;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour SCOP;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;SCOTF7;;ETL;CE
+EMS;Etudes MAPPLE Sud SADTF7;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour SADE;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;SADTF7;;ETL;CE
+EQC;ANALYSE QUALITE;0;TF7;T1;;;;22/03/2016;;;;;;;;;;FT;CE
+ESC;Analyse prod scopel;0;TF7;T1;;;;22/03/2016;;?;CA GD;;;;;;;ETL;C 
+ET0;ATTENTE RAPPEL CLIENT;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+EXP;RECEPTION EXP FTH MidiPy;0;TF7;T1;;;;22/03/2016;;;;;;;;;;FT;C 
+F09;Fibre PROD 09 - Ariege;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SAD;;FT;CE
+F12;Fibre PROD 12 - Aveyron;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SCO;;FT;CE
+F30; SCOTF7 Fibre Renfort 30 jours;0;TF7;T1;;Provisoire pour 30 jours. A été utile au environ de novembre 2015;;22/03/2016;;;;;;;;SCOTF7;;ETL;CE
+F32;Fibre PROD 32 - Gers;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SAD;;FT;CE
+F3N;Fibre PROD#R - SCOTF7 - TLSE N;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;SCOTF7;;ETL;CE
+F3S;Fibre PROD#R - SADTF7 - TLSE S;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;SADTF7;;ETL;CE
+F46;Fibre PROD 46 - Lot;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SCO;;FT;CE
+F65;Fibre PROD 65 - Htes Pyrenees;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SAD;;FT;CE
+F8A;PROD ET SAV FTTH ALBI;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;FTTH;;OBS-SCO;;FT;CE
+F8C;production et sav ftth tarn;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;FTTH;;OBS-SCO;;FT;CE
+F8M;maintenance ftth 82;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;SAV;GD;FTTH;;OBS-SCO;;FT;CE
+F8P;production ftth 82;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;FTTH;;OBS-SCO;;FT;CE
+FC8;RS/miroir FOIX;0;TF7;T1;ilot de stockage lié à FC9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+FC9;RS/exploitation FOIX;0;TF7;T1;activité RS dpt 09;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+FCN;Fibre CLGGCI - SCOTF7;0;TF7;T1;Réceptionne les CLGGCI Fibre pour SCOP créés par le PPC FTTH;;;22/03/2016;;Oui;PPC Fibre;;;;;SCOTF7;;ETL;CE
+FCS;Fibre CLGGCI - SADTF7;0;TF7;T1;Réceptionne les CLGGCI Fibre pour SADE créés par le PPC FTTH;;;22/03/2016;;Oui;PPC Fibre;;;;;SADTF7;;ETL;CE
+FDN;Fibre Debord SCOTF7 TLS N;0;TF7;T1;Débordement de l'îlot F3N si 30 equipes est insuffisant sur F3N;;;22/03/2016;;Oui;CA GD;PROD;;;;SCOTF7;;ETL;CE
+FDS;Fibre Debord SADTF7 TLS S;0;TF7;T1;Débordement de l'îlot F3S si 30 equipes est insuffisant sur F3S;;;22/03/2016;;Oui;CA GD;PROD;;;;SADTF7;;ETL;CE
+FIA;ui fiabilys;0;TF7;T1;1 tech à Darraux (09-31S) et 1 Tech à Anne-Archard (TLSE). La création des EXP AQD est faite automatiquement, les tech sont mis par les Responsables d'équipe. La communication et la relève sont faites automatiquement aussi.;CA GD ? avec tech gd ariège;;22/03/2016;;;;;;;;;;FT;CE
+FIL;CA GD/Filtrage Superviseur;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;;GD;;;;;FT;CE
+FIR;UI expertise pole QS;0;TF7;T1;îlot géré par thierry Jeansout;;;22/03/2016;;Oui;;;;;;;;FT;CE
+FLC;ICR CURATIF BL CONSTRUCTEL;0;TF7;T1;ICR / / / FIR Boucle Locale;;;22/03/2016;;Oui;CA BL;SAV;BL;;;;;FT;CE
+FLO;Fibre PROD Lourdes;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+FLT;UI FIR SCOPELEC LT;0;TF7;T1;FIR Ligne Terminal;;;22/03/2016;;Oui;CA GD;;;UI FIR / ICR;;;;FT;CE
+FMI;Fibre PROD Millau;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+FMU;Fibre PROD Muret;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+FNG;COMMANDES EN ATTENTE D OT PR FTH;0;TF7;T1;Le pilotage de production FTTH, place des prod qui peuvent être en attente d'OT, ou en attente de confirmation client, les rdv peuvent exploser, parfois dépasser les 100 jours. Pour le Génie Civil, des CLG (fibre), ils sont créés par le pilotage de production, affecté sur l'îlot FTP pour Scopelec( il n'y a que lui qui fait du GC Fibre sur midi py) et actuellement (20/05/2015) il se l'affecte, mais il ne se passe rien d'autre, F3N et F3S, chaque entreprise faisant sont GC Fibre (26/06/2015); ça re passe en UC, et apres le pilotage de prod ftth le passe sur l'ilot FNG. LEs CLG dans FNG sont soit;;;22/03/2016;;Oui;PPC Fibre;;;;;;;FT;C 
+FOR;UI pour migrations sfr c3p;0;TF7;T1;îlot de reception des migrations SFR;;;22/03/2016;;Oui;C3P;;;;;;;FT;C 
+FRG;FILTRAGE DES REO;0;TF7;T1;;;;22/03/2016;;;;;;;;;;FT;C 
+FSC;UI ICR CURATIF BL FIR SCOPELEC;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;;BL;;;;;FT;CE
+FSP;BL/ui ICR PREV. BL fir scop;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;;BL;;;;;FT;CE
+FTD;PROD FTTH ETR ANNEXE;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;;GD;FTTH;;;;FT;C 
+FTM;FTTH FT;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;;GD;FTTH;;;;FT;CE
+FTR;ui d attente pour ftth;0;TF7;T1;;;;22/03/2016;;?;;;;FTTH;;;;FT;CE
+GAA;Etudes MAPPLE Orange 12 + 81;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour les CHAFF Orange;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;;;FT;CE
+GAM;UI garage pour Commandes Muntiples;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+GAP;Etudes MAPPLE Orange 65+09+31S;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour les CHAFF Orange;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;;;FT;CE
+GAQ;Etudes MAPPLE Orange 46+82+32;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour les CHAFF Orange;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;;;FT;CE
+GAT;Etudes MAPPLE Orange TLS N/S;0;TF7;T1;Projet MAPPLE - En attente, Aiguillage des études ETUxxx pour les CHAFF Orange;Etudes Chaff;;22/03/2016;;Non;CHAFF;;;;;;;FT;CE
+GBX;PABX AUCH TARBES;0;TF7;T1;Activité Pabx dpt 65 et 32;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+GC8;RS/miroir ST-GAUDENS;0;TF7;T1;ilot de stockage lié à GC9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+GC9;RS/exploitation ST-GAUDENS;0;TF7;T1;Activité RS dpt 31s;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+GNO;SAV 24/24;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+GPM;MOBILIER PUB AVIP SO;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+GPX;PABX GARONNE ARIEGE;0;TF7;T1;Activité Pabx dpt 09 et 31s;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+GQC;QRL afaire Comminges;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+GQF;QRL a faire Foix;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+GQG;QRL a faire Gers;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+GQH;QRL a faire Htes Pyr;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+GQP;QRL a faire Pamiers;0;TF7;T1;;d'après Jacques Sabatier, UI GD pour suivis Jarretiere;;22/03/2016;;?;;;;;;;;ETL;CE
+GRG;ILOT DE GARAGE;0;TF7;T1;UI pr le VSL (sans coupure);automate pour ocapi;;22/03/2016;;;UI Nat;;;;;;;RE;C 
+GSP;ASP;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+GT9;RS/exploitation COMMUT_TLSE;0;TF7;T1;Activité Commutation Toulouse;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+GTC;REPONSE AUX AS URR;0;TF7;T1;;;;22/03/2016;;;;;;;;;;FT;CE
+HNO;ui hno flux opus gpc (CACER);0;TF7;T1;Ilots de transit entre GSR et CACER;;;22/03/2016;;;CACER et GSR;;;;;;;ETL;CE
+HPX;PABX tarn et garonne;1;TF7;T1;Activité Pabx dpt 82;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+HQC;T et Gar QRL AQC CA;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+HR8;RS/miroir MONTAUBAN;0;TF7;T1;ilot de stockage lié à HR9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+HR9;RS/exploitation MONTAUBAN;0;TF7;T1;activité RS dpt 82;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+IL1;ui tampon pour dring3;0;TF7;T1;Prise de rendez-vous à environ 2h  pour le P + E;;;22/03/2016;;Oui;CA GD;SAV;GD;DRING;;;;ETL;C 
+IL2;UI TAMPON SERV UNIV MARCHE R;0;TF7;T1;Prise de rendez-vous le lendemain pour le Service Universel;;;22/03/2016;;Oui;CA GD;SAV;GD;DRING;;;;ETL;C 
+IL3;UI Tampon SAV+ PCG/PFG MiPy;0;TF7;T1;Prise de rendez-vous SAV+ PFG/PCG pour Midi Py;;;22/03/2016;;Oui;CA GD;SAV;GD;;;;;ETL;C 
+IL4;UI Tampon SAV+ PCG/PFG TLS;0;TF7;T1;Prise de rendez-vous SAV+ PFG/PCG pour toulouse;;;22/03/2016;;Oui;CA GD;SAV;GD;;;;;ETL;C 
+IL5;ui tampon pour TER E TlsN/S;0;TF7;T1;;;22/03/2016;22/03/2016;;;;;;;;;;ETL;C 
+INP; INEOMP cablage immeuble neuf;0;TF7;T1;y transitent des RLG/CDS;;;22/03/2016;;?;CA BL;;BL;CABLAGE IMM NEUF;;;;ETL;R 
+JAZ;Ilot Filtrage MOE JAZZ;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;;;;;;;FT;C 
+LPX;PABX Lot;1;TF7;T1;Activité Pabx dpt 46;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+LQC;LOT QRL AQC /CA;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+LR7;RS/réo CAHORS;0;TF7;T1;;;;28/03/2016;;Oui;CACER;;;;;;;FT;R 
+LR8;RS/miroir CAHORS;0;TF7;T1;ilot de stockage lié à LR9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+LR9;RS/exploitation CAHORS;0;TF7;T1;activité RS dpt 46;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+M02;MIGRATION DEGROUPAGE;0;TF7;T1;UI de M02;;;22/03/2016;;Oui;CA GD;;GD;;;;;FT;C 
+MBT;UI Poubelle;0;TF7;T1;(ui pil pro et autres) -29/07/2015- Sont déplacées dans MBT les interventions (en général les R10) sans OT qui on un rdv pour le lendemain. Lorsque ces DI ont un OT (préparé par le PPCftth) un nouveau rdv est pris et la DI reprend sont chemin dans les îlots de vie. Ce fonctionnement est identique pour les R10 qui ont des soucis de dispo, ou travaux client(TL Transfert Local arrivé par eRDV) le RDV est mis en "requis" dans CRYSTAL, l'intervention dans GPC est mise dans MBT (sans OT > Etude incomplete) en attendant un nouveau rendez-vous, une fois le nouveau rdv pris, l'intervention reprend son ;Pour relève des ot bizarres ou doublons ou autres;;22/03/2016;;Oui;CA Toutes;;;;;;;RE;C 
+MGR;RS/MIGRATION TVNUM;0;TF7;T1;Lors de la création d?un NRA ou de la migration d?une Sous Répartition d?un répartiteur vers un autre, nous avons un délai minimum de 15 jours à attendre entre l'ouverture commercial et la réalisation de la migration. Durant ce laps de temps, nous recevons pour les clients des opérateurs tiers des informations sur les branchements à fairepour chaque client. Cela induit la création d'OT MGR, qui se retrouvent dans l'îlot MGR (à la mains de l'équipe RMUT).La préparation à la migration doit être réalisé durant ce délai de 15 jours, pendant ce temps le nombre d'OT peut augmenter.Or il se peu;Réceptionne les MGRXXX;;22/03/2016;;Oui;UPR RMUT;;;;;;;FT;CE
+MQC;LOT QRL AQC /CA millau;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+MV4;ui nationale pour mascot v4;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;;;;;;;ETL;CE
+NPN; SCOTF7 OT BL ac releve PRO;0;TF7;T1;Ce sont des îlots BL. Elles vont réceptionner des interventions crées par la CA BL. Ces interventions feront suite à une relève en DEF d?une intervention faite réellement en provisoire ce qui permettra de clôturer la 1ere intervention (ou derco) dans les délais. Ces interventions seront gratuites pour nous car l?ETR devra de finaliser ces travaux dans un délai assez court (environ 10 jours);Mise en place le 11/01/2016;;22/03/2016;;Oui;CA BL;SAV;BL;;;SCOTF7;;ETL;CE
+NPS; SADTF7 OT BL ac releve PRO;0;TF7;T1;Ce sont des îlots BL. Elles vont réceptionner des interventions crées par la CA BL. Ces interventions feront suite à une relève en DEF d?une intervention faite réellement en provisoire, ce qui permettra de clôturer la 1ere intervention (ou derco) dans les délais. Ces interventions seront gratuites pour nous car l?ETR devra de finaliser ces travaux dans un délai assez court (environ 10 jours);Mise en place le 11/01/2016;;22/03/2016;;Oui;CA BL;SAV;BL;;;SADTF7;;ETL;CE
+NRA;ui tampon nra prod avant mes;0;TF7;T1;Stock les productions en attente ouverture d un NRA (entre ouverture commerciale et la mise en service);;;22/03/2016;;Oui;CA GD;;GD;;;;;ETL;CE
+O09;Ilot Reception OPO Opit 09/31S;0;TF7;T1;Prise de rendez-vous des OPO pour le 09 et 31 sud;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;31s-09;;;ETL;CE
+O12;Ilot Reception OPO Opit 12;0;TF7;T1;Prise de rendez-vous des OPO pour le 12;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;12;;;ETL;CE
+O32;Ilot Reception OPO Opit 32;0;TF7;T1;Prise de rendez-vous des OPO pour le 32;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;32;;;ETL;CE
+O46;Ilot Reception OPO Opit 46;0;TF7;T1;Prise de rendez-vous des OPO pour le 46;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;46;;;ETL;CE
+O65;Ilot Reception OPO Opit 65;0;TF7;T1;Prise de rendez-vous des OPO pour le 65;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;65;;;ETL;CE
+O81;Ilot Reception OPO Opit 81;0;TF7;T1;Prise de rendez-vous des OPO pour le 81;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;81_Gble;;;ETL;CE
+O82;Ilot Reception OPO Opit 82;0;TF7;T1;Prise de rendez-vous des OPO pour le 82;;;22/03/2016;;Oui;CACER;PROD;E;Ilot accueil OPO;82;;;ETL;CE
+OPC;ui tampon opit ml suivi CAE;0;TF7;T1;;;;22/03/2016;;Oui;CACER;;;;;;;FT;CE
+OPE;UI MIROIR RV DES SAV PLUS;0;TF7;T1;PFO-PCC-PPC-CPC prennent les rv sur OPE;;;22/03/2016;;Oui;CA GD;;GD;;;;;FT;C 
+OPI;UI DE REDIRECTION DE UI OPE;0;TF7;T1;Après passage dans OPE arrivent sur OPI pour redirection vers les bonnes UI;;;22/03/2016;;Oui;CA GD;;GD;;;;;FT;C 
+OPO;Ilot Traitement des OPO/Opit;0;TF7;T1;Réception tous les OPO après la prise de rendez-vous sur les îlots Oxx;;;22/03/2016;;Oui;CACER;PROD;E;;;;;ETL;C 
+OPS;ui tampon opit ml suivi RAI;0;TF7;T1;Ilot miroir pour gestion activité OPITML entre ADCP et RAI;îlots de prise de rendez-vous fictif pour les opitMl avec PABX, des RMA IPV, le RAI par la suite prendra le rendez-vous quand il veut.;;22/03/2016;;Oui;RAI;;;;;;;FT;CE
+ORA;orange production;0;TF7;T1; PEQMOB - PRODUCTION D'EQUIPEMENT ORANGE - BAS DE RESEAU ET (ANTENNE, BTS, BSC, BAIE RADIO, à) #RPE;;;22/03/2016;;?;CACER;;;;;;;FT;R 
+OSM;UI MIROIR NEUF CEGETEL; ;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+OTL;Ilot Reception OPO Opit TLSE;0;TF7;T1;Prise de rendez-vous des OPO pour Toulouse N et S;;;22/03/2016;30/03/2016;Non;CACER;PROD;E;Ilot accueil OPO;;;;ETL;CE
+OTS;Ilot Reception OPO Opit TL;0;TF7;T1;;;;22/03/2016;;;;;;;Tlse_Gble;;;FT;CE
+P09; SADTF7 POI ARIEGE;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;_09;SADTF7;;ETL;CE
+P12; SCOTF7 POI AVEYRON;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;12;SCOTF7;;ETL;CE
+P31; SADTF7 POI 31 SUD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;31Sud;SADTF7;;ETL;CE
+P32; SADTF7 POI GERS;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;32;SADTF7;;ETL;CE
+P3N; SCOTF7 POI TOULOUSE + 31 NORD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;Tlse_Nord;SCOTF7;;ETL;CE
+P3S; SADTF7 POI TOULOUSE SUD;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;Tlse_Sud;SADTF7;;ETL;CE
+P46; SCOTF7 POI LOT;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;46;SCOTF7;;ETL;CE
+P65; SADTF7 POI HAUTES PYRENEES;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;65;SADTF7;;ETL;CE
+P76;UI nationale dediee publiphonie;0;TF7;T1;02/06/2015 - Recueille la publiphonie (MIT / PLI / PUC) pour le 31 et 46 - ETR Sogetrel;OPC / AUT et DPL des réo dans UGPC;;22/03/2016;;Oui;CA GD;SAV;GD;Publiphonie;P76;;;FT;C 
+P81; SCOTF7 POI TARN;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;81_Gble;SCOTF7;;ETL;CE
+P82; SCOTF7 POI TARN ET GARONNE;0;TF7;T1;;;;22/03/2016;;Oui;CA BL;PROD;BL;UI POI;82;SCOTF7;;ETL;CE
+PBC;UI de releve PBC;0;TF7;T1;pour relève auto en PBC;;;22/03/2016;;Oui;CA GD;;GD;ui pilotage pro;;;;FT;CE
+PBX;ui reo cagd vers Cacer;0;TF7;T1;Ilots de réo entre CAGD et CACER;créée à la demande de Michel Pozmanoff, mi-janvier;;22/03/2016;;Oui;CACER;SAV;E;PABX;;;;ETL;R 
+PCO;PRESOMPTIONS DERCO ISSUS OCAPI;0;TF7;T1;Ilots UGPC pour GEDERCO - 6 équipes de type 9 (Filtrage) - 0B1 à 0B6;;;22/03/2016;;Oui;UI UGPC;;;;;;;FT;C 
+PDC;ANALYSE DI AVEC PRESOMPTION DERCO;0;TF7;T1;;;;22/03/2016;;Oui;UI UGPC;;;;;;;FT;C 
+PDE;UI FICTIF pour PDE;0;TF7;T1;PDE n'est plus sensé être utilisée;;;22/03/2016;;Oui;UI UGPC;;;;;;;ETL;C 
+PF1;BL/ SEVAMP POI FIBRE;0;TF7;T1;;;;22/03/2016;;;;;;;;;;ETL;CE
+PFS;BL/ SADTF7 POI FIBRE;0;TF7;T1;;;;22/03/2016;;;;;;;;SADTF7;;ETL;CE
+PIO;pole int offr complx;0;TF7;T1;Activité Intégration PIOC SAV;;;22/03/2016;;Oui;CACER;SAV;E;;;;;FT;CE
+PPC;UI FICTIVE CLOTURES ROA PR FTH;0;TF7;T1;;;;22/03/2016;;;;;;;;;;FT;C 
+PPT;ALQPOT - BL Preventif Poteau;0;TF7;T1;Ilot pour le Plan Poteau - ETR Alquenry ALQPOT;;;22/03/2016;;Oui;UI Nat;;;;;;;ETL;R 
+PRE;UI Poubelle pour les TRE;0;TF7;T1;;;;22/03/2016;;Oui;UI UGPC;;;;;;;RE;C 
+PSC;UI STOCKAGE DES POI-PR CHAFF;0;TF7;T1;;;;22/03/2016;;Oui;;;;;;;;ETL;CE
+PSU;UI STOCKAGE PRESSU Suite ALARM;0;TF7;T1;Liaison entre CACER ET BL; stocker sans affecter des DI pressu suite à alarme sur le réseau. Elle va être alimenter par la CACER. Nous(BL) récupèrerons ces gin pour les réaffecter sur les UI BL;;;22/03/2016;;Oui;CACER;;E / BL;;;;;ETL;CE
+PUM;MOBILIER PUB AVIP SO;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+PUN;MOBILIER PUB AVIP SO;0;TF7;T1;;;;22/03/2016;;?;;;;UI de type SE (Boite au lettre);;;;SE;  
+Q09;STOCKAGE DES QRL DE L ARIEGE;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;_09;;;ETL;CE
+Q12;STOCKAGE DES QRL AVEYRON;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;12;;;ETL;CE
+Q31;STOCKAGE DES QRL DU 31 SUD;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;31Sud;;;ETL;CE
+Q32;STOCKAGE DES UI DU GERS;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;32;;;ETL;CE
+Q3N;STOCKAGE DES QRL DE TOULOUSE NORD;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;Tlse_Nord;;;ETL;CE
+Q3S;STOCKAGE DES QRL DE TOULOUSE SUD;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;Tlse_Sud;;;ETL;CE
+Q46;STOCKAGE DES QRL DU LOT;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;46;;;ETL;CE
+Q65;STOCKAGE DES QRL DES HTES PYRENEES;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;65;;;ETL;CE
+Q81;STOCKAGE DES QRL DU TARN;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;81_Gble;;;ETL;CE
+Q82;STOCKAGE DES QRL DU TARN ET GARONNE;0;TF7;T1;Les CdA BL mettent les QRL dans ces îlots en attendant qu'elles puissent être affectées;;;22/03/2016;;Oui;CA BL;SAV;BL;UI de Stockage de QRL;82;;;ETL;CE
+QAT;BL/UI BL transit QRL CAGD;0;TF7;T1;Thierry Jeansou en lien avec cette UI;;;22/03/2016;;Oui;CA BL;;;;;;;ETL;CE
+QR0; ORANGE UI QUARANTAINE R02TEL;0;TF7;T1;Sert entre autre, à mettre en quarantaine (les R02) pour attendre l'OT;;;22/03/2016;;Oui;UI UGPC;;;;;;;RE;C 
+QRN;BL/PEU URR POUR ETL;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+QUA;QUARANTAINE REGROUP;0;TF7;T1;;Attente ot pr regrouper;;22/03/2016;;Oui;CA GD;;GD;;;;;ETL;CE
+R09;R02 + PUB DE L ARIEGE(09);1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02;_09;;;FT;CE
+R12;R02 + PUB de l'AVEYRON;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02;12;;;FT;CE
+R2N;R02 SCOTF7 Zone NORD;0;TF7;T1;R02 Scopelec;02/06/2015 - Reçoit en direct les R02 DGT/DTP/NNU + le retour des îlots Rxx;;22/03/2016;;Oui;CA GD;PROD;GD;R02;;SCOTF7;;ETL;CE
+R2S;R02 SADTF7 Zone SUD;0;TF7;T1;R02 Sade;02/06/2015 - Reçoit en direct les R02 DGT/DTP/NNU + le retour des îlots Rxx;;22/03/2016;;Oui;CA GD;PROD;GD;R02;;SADTF7;;ETL;CE
+R31;ui jrt 31 sud;1;TF7;T1;Prend aussi en compte le Gers(32) et l'ariège(09);;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;R02 et Publiphonie;31Sud;;;FT;CE
+R32;r02 du gers;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02;32;;;FT;CE
+R3N;JARRETIERAGE TOULOUSE NORD;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02 et R03 Tlse;Tlse_Nord;;;FT;CE
+R3S;JARRETIERAGE TOULOUSE SUD;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02 et R03 Tlse;Tlse_Sud;;;FT;CE
+R46;R02 du Lot;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02;46;;;FT;CE
+R65;R02 renfort RSE du 65;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;R02 et Publiphonie;65;;;FT;CE
+R81;R02 DU TARN;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD;GD;R02;81_Gble;;;FT;CE
+R82;ui pub et jrt tarn et garonne;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;R02 et Publiphonie;82;;;FT;CE
+RAI;INTERFACE CACER-RAI;0;TF7;T1;Ilot de transit REO entre CACER et RAI;;;22/03/2016;;Oui;CACER;PROD;E / RS;;;;;FT;CE
+RAM;HO/ RE HABITE FT - RAM;0;TF7;T1;RE Habité par FT;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;Orange;;RE;C 
+RBO;HE/ SCOTF7 RE HABITE - BON;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RCA;HE/ SADTF7 RE HABITE - CAP;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RCO;HO/ RE HABITE FT - COL/J4A;0;TF7;T1;RE Habité par FT;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;Orange;;RE;C 
+RCU;HE/ SADTF7 RE HABITE - CUG;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RDG;QUARANTAINE RDG;0;TF7;T1;;;;22/03/2016;;Oui;Admin GPC;;;;;;;ETL;CE
+REA;en attente REAffectation;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;;;;;;;ETL;CE
+REO;Ilot de filtrage des REO;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;FT;C 
+RGA;HE/ SADTF7 RE habite - GAR;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RJA;HE/ SCOTF7 RE HABITE - JAU;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RJO;HE/ SCOTF7 RE - JOF/R2F/U2R;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RLF;HE/ SCOTF7 RE HABITE - LAF;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RLN;HE/ SCOTF7 RE HABITE - LAN;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RLO;HO/ RE HABITE FT - LOU/BAG;0;TF7;T1;RE Habité par FT;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;Orange;;RE;C 
+RLR;HE/ SADTF7 RE HABITE - LAR;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RMI;HE/ SADTF7 RE HABITE - MIN;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RMR;HE/ SADTF7 RE HABITE - MIR;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RMU;HO/ RE HABITE FT - MUR;0;TF7;T1;RE Habité par FT;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;Orange;;RE;C 
+ROU;HE/ SCOTF7 RE HABITE - COU;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SCOTF7;;RE;C 
+RPB;ui re poubelle;0;TF7;T1;;;;22/03/2016;;?;CA GD;;;;;;;RE;C 
+RPU;HE/ SADTF7 RE HABITE - PUR;0;TF7;T1;RE Habité par Constel;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;RE Habité;;SADTF7;;RE;C 
+RQC;rodez qrl analyse;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+RS1;Accueil CACER UIMP;0;TF7;T1;Ilots de transit pour suppression. Vidé régulièrement par administrateur GPC;;;22/03/2016;;Oui;CACER;;;;;;;FT;R 
+RSC;UI nat:RS der COMMUT+const FH;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;;;;;;;ETL;R 
+RST;RS/reseau structurant toulouse;0;TF7;T1;Activité Transmission Toulouse;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+RUE;Rendez-vous Unique Entreprise;0;TF7;T1;;;30/03/2016;;;;;;;;;;;RE;C 
+RVU;garage rdvuniq-pari17-entreprise;0;TF7;T1;je n'avais jamais entendu parlé de RVU mais rendez vous unique...les R04 sont stockées en attendant lesr10 ou lml (pour créer les REP ),mais si la r10 ou lml ont été annulé ...elles restent là;;;22/03/2016;;Oui;CACER;;;;;;;ETL;CE
+S09;ntic ariege;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S12;ntic-12 AVEYRON;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S31;NTIC SUD 31;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S32;NTIC-32 GERS;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S3N;NTIC TOULOUSE NORD;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S3S;NTIC TOULOUSE SUD;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S46;NTIC LOT;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S65;NTIC-65 HtePYRENEES;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S82;ui ntic tarn et garonne;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S8A;NTIC-81 TARN;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+S8C;ntic tarn castres;1;TF7;T1;;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI NTIC;;Orange;;FT;CE
+SIP;UI filtrage regle #SIP#;0;TF7;T1;Détecte les soupçons de SAV suite à production sur le même PC;;;22/03/2016;;Oui;UI UGPC;;;;;;;FT;C 
+SIS;Filtrage des #SIS#;0;TF7;T1;Détecte les soupçons de SAV suite à SAV sur le même PC;;;22/03/2016;;Oui;UI UGPC;;;;;;;FT;C 
+SOU;expertise client n2;0;TF7;T1;;;;22/03/2016;;?;CA GD;;GD;;;;;FT;CE
+SPF;BL/ui poi fibre spie;0;TF7;T1;;Pas BL vu avec Jacques Sabatier;;22/03/2016;;?;;;;;;;;ETL;CE
+SSS;UI de travail SS;0;TF7;T1;Utilisé par CRYSTAL, lors d'annulation de RDV R10, passe la R10 dans SSS, et fait une R03 à la place. NE sais pas comment les Interventions sortes de cette UI;;;22/03/2016;;Oui;;;;UI de type SE (Boite au lettre);;;;SE;  
+SVI;UI POUR PERI MASCOT;0;TF7;T1;;;;22/03/2016;;Oui;UI Nat;;;;;;;FT;CE
+TBN; SCOTF7 TREIN BL ZONE NORD;0;TF7;T1;;Affectation automatique UGPC;;22/03/2016;;Oui;CA BL;PROD / SAV;BL;UI de TREIN;;SCOTF7;;ETL;CE
+TBS; SADTF7 TREIN BL ZONE SUD;0;TF7;T1;;Affectation automatique UGPC;;22/03/2016;;Oui;CA BL;PROD / SAV;BL;UI de TREIN;;SADTF7;;ETL;CE
+TC8;RS/miroir TARBES;0;TF7;T1;ilot de stockage lié à TC9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+TC9;RS/exploitation TARBES;0;TF7;T1;activité RS dpt 65;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+TE7;RS/réo ALBI_CASTRES;0;TF7;T1;ilot de stockage lié à TE9;;;28/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+TE8;RS/miroir ALBI_CASTRES;0;TF7;T1;ilot de stockage lié à TE9;;;22/03/2016;;Oui;CACER;PROD;RS;;;;;FT;R 
+TE9;RS/exploitation ALBI_CASTRES;0;TF7;T1;activité RS dpt 81;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+TFN; SCOTF7 TREIN FTH Zone Nord;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;SAV;GD;UI de TREIN;;SCOTF7;;ETL;CE
+TFS; SADTF7 TREIN FTH Zone Sud;0;TF7;T1;;;;22/03/2016;;Oui;CA GD;SAV;GD;UI de TREIN;;SADTF7;;ETL;CE
+TLB;QRL ALBI;0;TF7;T1;;Jacques Sabatier ne connais pas;;22/03/2016;;?;;;;;;;;FT;CE
+TOC;new ui oceane adsl filtre;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;FT;CE
+TPA;PABX TARN (Albi+Castres);1;TF7;T1;Activité Pabx Tarn;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+TPX;PABX toulouse;0;TF7;T1;Activité Pabx Toulouse;;;22/03/2016;;Oui;CACER;PROD / SAV;E;PABX;;Orange;;FT;CE
+TQC;Tarn QRL AQC/CA;0;TF7;T1;;;;22/03/2016;;?;;;;;;;;ETL;CE
+TRN; SCOTF7 TREIN LT ZONE NORD;0;TF7;T1;;Affectation automatique UGPC;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de TREIN;;SCOTF7;;ETL;CE
+TRS; SADTF7 TREIN LT ZONE SUD;0;TF7;T1;;Affectation automatique UGPC;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de TREIN;;SADTF7;;ETL;CE
+UPR;ilot de transit cacer-upr;0;TF7;T1;Ilot de transit REO entre CACER et UPR;;;22/03/2016;;Oui;CACER et UPR;PROD;RS;;;;;ETL;C 
+UTP;ui tampon pour ca rs;0;TF7;T1;;;;22/03/2016;;Oui;CACER;;;;;;;ETL;R 
+V09; SADTF7 R10 ARIEGE;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;_09;SADTF7;;ETL;C 
+V12; SCOTF7 R10 AVEYRON;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;12;SCOTF7;;ETL;C 
+V31; SADTF7 R10 31SUD;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;31Sud;SADTF7;;ETL;C 
+V32; SADTF7 R10 GERS;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;32;SADTF7;;ETL;C 
+V3N; SCOTF7 R10 TOULOUSE + 31 NORD;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;Tlse_Nord;SCOTF7;;ETL;C 
+V3S; SADTF7 R10 TOULOUSE SUD;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;Tlse_Sud;SADTF7;;ETL;C 
+V46; SCOTF7 R10 LOT;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;46;SCOTF7;;ETL;C 
+V65; SADTF7 R10 HAUTES PYRENEES;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;65;SADTF7;;ETL;C 
+V81; SCOTF7 R10 TARN;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;81_Gble;SCOTF7;;ETL;C 
+V82; SCOTF7 R10 TARN ET GARONNE;0;TF7;T1;Regroup R04/LML;;;22/03/2016;;Oui;CA GD;PROD;GD;UI de Prod / Cat 10;82;SCOTF7;;ETL;C 
+VDS;attente vdsl en retrofit;0;TF7;T1;Ilot pour gerer les retours arrières des migrations automatiques en VDSL si NOK;C3P;;22/03/2016;;Oui;UI Nat;;;;;;;FT;C 
+VQC;Villefranche AQG;0;TF7;T1;Ilot avec equipe EQA et des EXPCUD;;;22/03/2016;;?;;;;;;;;ETL;CE
+VT9;RS/exploitation EVT_TLSE;0;TF7;T1;Activité Environnement technique Toulouse;;;22/03/2016;;Oui;CACER;PROD / SAV;RS;;;;;FT;R 
+WSC;MERCI NE PAS OUVRIR garage OSM;0;TF7;T1;;;;22/03/2016;;Oui;UI UGPC;;;;;;;RE;C 
+Y09; SADTF7 SAV ARIEGE;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;_09;SADTF7;;ETL;CE
+Y12; SCOTF7 SAV AVEYRON;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;12;SCOTF7;;ETL;CE
+Y31; SADTF7 SAV 31 SUD;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;31Sud;SADTF7;;ETL;CE
+Y32; SADTF7 SAV GERS;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;32;SADTF7;;ETL;CE
+Y3N; SCOTF7 SAV TOULOUSE + 31 NORD;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;Tlse_Nord;SCOTF7;;ETL;CE
+Y3S; SADTF7 SAV TOULOUSE SUD;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;Tlse_Sud;SADTF7;;ETL;CE
+Y46; SCOTF7 SAV LOT;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;46;SCOTF7;;ETL;CE
+Y65; SADTF7 SAV HAUTES PYRENEES;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;65;SADTF7;;ETL;CE
+Y81; SCOTF7 SAV TARN;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;81_Gble;SCOTF7;;ETL;CE
+Y82; SCOTF7 SAV TARN ET GARONNE;0;TF7;T1;Contient des R02 et R03;;;22/03/2016;;Oui;CA GD;PROD / SAV;GD;UI de SAV ETR;82;SCOTF7;;ETL;CE
