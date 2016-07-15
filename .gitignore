@@ -3,6 +3,7 @@
 /nbproject/private/project.properties
 /nbproject/private/project.xml
 /temp/*
+/temp/extractionIlots.csv
 /conf/*
 /conf/connexion.json
 /.idea/*
