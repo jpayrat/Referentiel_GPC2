@@ -7,13 +7,12 @@
     <form method="post" id="form_ilot" action="#" class="formulaire">
 
 
-        <label for="rechercheGlobal" class="gen">Recherche globale</label>
+        <label for="rechercheGlobal" class="gen">Login</label>
         <?= $inputIlotGlobal; ?>
 
-        <div style="border: 0px solid #000; display: inline-block;text-align: center; width: 52%;">
-            <span id="all_form">Lister tous les îlots</span>
-            <span id="reinit_form">Réinitialiser le formulaire</span>
-        </div>
+        <br /><br />
+        <label for="rechercheGlobal" class="gen">Mot de passe</label>
+        <?= $inputIlotGlobal; ?>
 
         <br />
         <br />
@@ -22,6 +21,5 @@
     <!-- div du retour de la requete Ajax -->
     <div id="results_ilot" style="display: none;"></div>
     <br />
-
 </div>
 </section>
