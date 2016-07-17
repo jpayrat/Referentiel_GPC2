@@ -47,9 +47,13 @@ class adminControleur extends baseControleur{
      *
      * ----
      * Le lien LOGIN sera du type AD\admin\profilAdmin
+     * il faudra ajouter des sorties de ces méthodes pour gérer les appels directs à ces liens
+     *
      * La CROIX du lient LOGIN sera du type AD\admin\deconnexion
+     * il faudra ajouter des sorties de ces méthodes pour gérer les appels directs à ces liens
      *
      * Le lien ADMINISTRATION sera du type AD\admin\connexion
+     * il faudra ajouter des sorties de ces méthodes pour gérer les appels directs à ces liens
      *
      * S'il n'y a rien après AD\admin, alors on execute la méthode AD\admin\affIndex qui va déterminer
      * quelle méthode il faut appeler en fonction des valeurs de session
@@ -59,9 +63,9 @@ class adminControleur extends baseControleur{
      *
      * A la suite de ça il faudra appliquer une condition à la page modelSelectOne pour
      * à la place d'afficher du text,
-     * afficher des textarea / input et autres select en version admin ...s
+     * afficher des textarea / input et autres select en version admin ...
      *
-     */s
+     */
 
 
 
