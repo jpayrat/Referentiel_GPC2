@@ -4,7 +4,7 @@ namespace RefGPC\_controleurs\admin;
 
 use \RefGPC\_controleurs\baseControleur;
 
-use \RefGPC\_models\ilot\ModelVue;
+use \RefGPC\_models\ModelVue;
 use \RefGPC\_models\Formulaire;
 
 /**
@@ -31,7 +31,7 @@ class adminControleur extends baseControleur{
         $vue->afficheHaut($this->d['haut'], ''); // Le second paramètre = fichier js à inclure
 //        $vue->afficheMenuLateral($this->d['lateral']);
 
-        $vue->afficheCorps($this->d['corps'], 'affIndexAdmin');// TODO : je n'arrive pas à automatiser le "affIndex"
+        $vue->afficheAdminCorps($this->d['corps'], 'affIndexAdmin');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();
     }
 

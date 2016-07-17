@@ -5,7 +5,7 @@ namespace RefGPC\_controleurs\ilot;
 use \RefGPC\_controleurs\baseControleur;
 
 use \RefGPC\_models\Formulaire;
-use \RefGPC\_models\ilot\ModelVue;
+use \RefGPC\_models\ModelVue;
 use \RefGPC\_models\MenuLateral;
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 
@@ -56,7 +56,7 @@ class ilotControleur extends baseControleur{
 
         $vue->afficheHaut($this->d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
         $vue->afficheMenuLateral($this->d['lateral']);
-        $vue->afficheCorps($this->d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
+        $vue->afficheIlotCorps($this->d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();
 
     }

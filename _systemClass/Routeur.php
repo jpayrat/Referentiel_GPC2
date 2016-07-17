@@ -61,7 +61,21 @@ class Routeur {
         // Calcul de la base choisie LR ou MP
         if (isset($pageAsk[0])) {
             if (!preg_match('#[A-Z]{2}#', $pageAsk[0])) { $pageAsk[0] = 'MP';  /* ui par défaut */ }
-            else { $pageAsk[0] = $pageAsk[0] == 'LR' ? 'LR' : 'MP'; }
+            else {
+                switch ($pageAsk[0]) {
+                    case 'MP':
+                        $pageAsk[0] = 'MP';
+                        break;
+                    case 'LR':
+                        $pageAsk[0] = 'LR';
+                        break;
+                    case 'AD':
+                        $pageAsk[0] = 'AD';
+                        break;
+                    default :
+                        $pageAsk[0] = 'MP';
+                }
+            }
         }
         else { $pageAsk[0] = 'MP'; /* ui par défaut */ }
 		

@@ -2,8 +2,8 @@
 
 namespace RefGPC\_controleurs;
 
-use \RefGPC\_models\menuLateral;
 use \RefGPC\_models\ilot\modelIlot;
+use \RefGPC\_models\ChoixBase;
 /**
  * Description of baseControleur
  *
@@ -17,10 +17,9 @@ class baseControleur {
     var $choixBase;
 
     public function __construct($selectBase) {
-        $this->base = $selectBase == 'LR' ? 'LR' : 'MP';
-        //var_dump($this->base);
+        $this->base = $selectBase;
 
-        $this->choixBase = new modelIlot($this->base); //ChoixBase($param);
+        $this->choixBase = new ChoixBase($this->base); //ChoixBase($param);
         $this->codeBase = $this->choixBase->codeBase();
 
         $this->barreHaut();
@@ -29,7 +28,7 @@ class baseControleur {
     protected function barreHaut() {
         $this->d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
         $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
-        $this->d['haut']['lienAdmin'] = WEBPATH.$this->base.'/admin';      
+        $this->d['haut']['lienAdmin'] = WEBPATH.'AD/admin';
         //$choixBase = new modelIlot($this->base); //ChoixBase($param);
         $this->d['corps']['codeBase'] = $this->choixBase->codeBase();
         $this->d['corps']['libelleBase'] = $this->choixBase->libelleBase();
@@ -40,6 +39,6 @@ class baseControleur {
 
         $this->d['haut']['classCSSLienLR'] = $this->choixBase ->classCSSLien('LR');
         $this->d['haut']['classCSSLienMP'] = $this->choixBase ->classCSSLien('MP');
-        $this->d['haut']['classCSSLienAdmin'] = $this->choixBase ->classCSSLien('Admin');
+        $this->d['haut']['classCSSLienAD'] = $this->choixBase ->classCSSLien('AD');
     }
 }

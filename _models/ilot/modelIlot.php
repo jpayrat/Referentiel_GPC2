@@ -14,13 +14,9 @@ class modelIlot {
     
     function __construct($choixUI ='') {
         //var_dump($choixUI);
-        $this->base = $choixUI;
+    //    $this->base = $choixUI;
         //var_dump($this->ui);
     }
-    
-    public function libelleBase() { return $this->base == 'LR' ? 'Languedoc-Roussillon' : 'Midi-Pyrénées';  }
-    public function codeBase() { return $this->base == 'LR'? 'K2' : 'T1';  }
-    public function classCSSLien($ui) { return $ui == $this->base ?  'actif' : ''; }
 
     /**
      * Cree la liste des zones à partir de la table des sites

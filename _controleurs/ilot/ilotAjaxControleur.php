@@ -6,7 +6,7 @@ use RefGPC\_models\ilot\modelIlot;
 use \RefGPC\_models\ilot\modelSelectAll;
 use \RefGPC\_models\ilot\modelSelectAny;
 use \RefGPC\_models\ilot\modelSelectOne;
-use \RefGPC\_models\ilot\ModelVue;
+use \RefGPC\_models\ModelVue;
 /**
  * controleur appelé par jsIlot.js.
  * Affiche la vue des ilots 
