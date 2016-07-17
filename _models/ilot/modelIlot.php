@@ -124,13 +124,31 @@ class modelIlot {
             if (array_key_exists('iloLibelleIlot', $row)) {
                 $row['iloLibelleIlot'] = rtrim ($row['iloLibelleIlot']);
             }
+            if (array_key_exists('iloDateModif', $row)) {
+				$row['iloDateModif'] = $this->stamp2Date($row['iloDateModif']);
+            }			
+            if (array_key_exists('iloDateCreation', $row)) {
+				$row['iloDateCreation'] = $this->stamp2Date($row['iloDateCreation']);
+            }			
+            if (array_key_exists('iloDateSuppression', $row)) {
+				$row['iloDateSuppression'] = $this->stamp2Date($row['iloDateSuppression']);
+            }
+            if (array_key_exists('iloInfo', $row)) {
+				$row['iloInfo'] = str_replace("\r\n", "", $row['iloInfo']); // filtre  les 'retour chariot' qui provoquent une detection de nouveau champ
+            }
+			
             // codage UTF-8 dans la base donc recodage en "ISO-8859-1" : pour windows
             foreach ($row as $key => $value) {
                     $row[$key] = mb_convert_encoding($value, "ISO-8859-1", "UTF-8");
             }           
             $line = implode(";", $row);
             fwrite ($myfile, $line. "\r\n" ); 
-            //var_dump($line);
+			//if ($row['iloCodeIlot']=="39S") {
+			//	var_dump($line);
+			//}
+			
+			
+			
         }
  	// ----- fin de fichier
 	fclose ($myfile);
@@ -138,5 +156,19 @@ class modelIlot {
     }
     // ------------------------------------------------------------------------
     // modeles des données des ilots
-    
+
+	/**
+	 * Retourne la date au format jj/mm/aaaa
+	 * avec une timestamp
+	 * @param String $timestamp exemple : 1458660256
+	 * @return String : 31/03/2016
+	 */
+	private function stamp2Date($timestamp) {
+		if ($timestamp == 0) {
+			return "";
+		}
+		$convdate =  new \DateTime();
+		$convdate->setTimestamp($timestamp);
+		return $convdate->format('d/m/Y');
+	}
 }
