@@ -35,4 +35,35 @@ class adminControleur extends baseControleur{
         $vue->afficheBas();
     }
 
+
+    // Algorithme de l'administration du site :
+    /*
+     *  > De base on arrive sur affIndex
+     *  Si les variables de session N'EXISTENT PAS
+     *  alors on affiche le formulaire d'autentification et dans la barre horizontale on affiche "administration"
+     *
+     *  Si les variables de session EXISTENT
+     *  alors on affiche la page d'administration et dans la barre horizontale on affiche le login
+     *
+     * ----
+     * Le lien LOGIN sera du type AD\admin\profilAdmin
+     * La CROIX du lient LOGIN sera du type AD\admin\deconnexion
+     *
+     * Le lien ADMINISTRATION sera du type AD\admin\connexion
+     *
+     * S'il n'y a rien après AD\admin, alors on execute la méthode AD\admin\affIndex qui va déterminer
+     * quelle méthode il faut appeler en fonction des valeurs de session
+     *
+     *
+     * Il n'y a plus qu'a tester tout ça avec les envois de $_POST
+     *
+     * A la suite de ça il faudra appliquer une condition à la page modelSelectOne pour
+     * à la place d'afficher du text,
+     * afficher des textarea / input et autres select en version admin ...s
+     *
+     */s
+
+
+
+
 }
