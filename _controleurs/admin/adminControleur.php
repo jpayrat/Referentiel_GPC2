@@ -1,8 +1,11 @@
 <?php
 
-namespace RefGPC\_controleurs;
+namespace RefGPC\_controleurs\admin;
+
+use \RefGPC\_controleurs\baseControleur;
+
 use \RefGPC\_models\ilot\ModelVue;
-use \RefGPC\_models\ilot\Formulaire;
+use \RefGPC\_models\Formulaire;
 
 /**
  * Description of adminControleur

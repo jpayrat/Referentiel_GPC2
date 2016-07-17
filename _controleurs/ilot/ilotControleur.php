@@ -4,7 +4,7 @@ namespace RefGPC\_controleurs\ilot;
 
 use \RefGPC\_controleurs\baseControleur;
 
-use \RefGPC\_models\ilot\Formulaire;
+use \RefGPC\_models\Formulaire;
 use \RefGPC\_models\ilot\ModelVue;
 use \RefGPC\_models\MenuLateral;
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()

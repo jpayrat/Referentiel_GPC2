@@ -13,7 +13,7 @@ class Routeur {
     private function initControleurs(){
         $this->knownControllers['base'] = '';
         $this->knownControllers['centre'] = '';
-        $this->knownControllers['admin'] = '';
+        $this->knownControllers['admin'] = 'admin';
         $this->knownControllers['ilot'] = 'ilot';
         $this->knownControllers['ilotAjax'] = 'ilot';
     }
