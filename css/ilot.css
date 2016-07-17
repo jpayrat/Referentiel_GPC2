@@ -11,7 +11,7 @@
 
 .couleur_ligne_pair{ background-color: #f7f7f7;  }
 
-.surligner { color: #ff9700; }
+.surligner { color: #f70; }
 .infoBulle { display: none; font-size: 0.9em; position: absolute; top: 10px; left: 10px; border: 1px solid #efefef; background-color: #ff9700; padding: 2px 6px; color: #000; }
 
 .lienIlotAjax

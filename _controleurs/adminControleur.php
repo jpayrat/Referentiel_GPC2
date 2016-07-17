@@ -2,6 +2,7 @@
 
 namespace RefGPC\_controleurs;
 use \RefGPC\_models\ilot\ModelVue;
+
 /**
  * Description of adminControleur
  *
@@ -18,8 +19,8 @@ class adminControleur extends baseControleur{
         // var_dump($this->d);
         $vue = new ModelVue($this->d);
 
-        $vue->afficheHaut($this->d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
-        $vue->afficheMenuLateral($this->d['lateral']);
+        $vue->afficheHaut($this->d['haut'], ''); // Le second paramètre = fichier js à inclure
+//        $vue->afficheMenuLateral($this->d['lateral']);
 
         //$vue->afficheCorps($this->d['corps'], 'affIndexIlot');//
 

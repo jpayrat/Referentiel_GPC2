@@ -21,7 +21,7 @@ define ('VUES_PATH', PATH.'_vues/');
 
 //define ('SELECT_DB', 'Marc');
 
-define ('SELECT_DB', 'Marc');
+define ('SELECT_DB', 'Julien');
 
 // Récupération de la page demandée par l'utilisateur
 // LR/ilotControleur/action/varable2/variable2
@@ -34,12 +34,12 @@ $myRouteur->exec();
 
 
 /**
- * Ajouté :
- * Création des inputs par la classe formulaire pour la recherche global et ilot tapé.
- * Modification de la class ModelVue->Haut();, qui permettra d'inclure le fichier javascript qui va bien via le controleur
- *
- */
+ * Ajouté 13/07/2016 :
 
-//
+ * Modification de la \vue\resultIlot.php pour intégrer le fait de surligner les éléments recherché
+ * Le menu latéral est maintenant appelé de l'ilotControleur et non plus de baseControleur
+
+ **/
+
 
 

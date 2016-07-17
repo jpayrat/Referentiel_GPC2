@@ -6,7 +6,7 @@ use \RefGPC\_controleurs\baseControleur;
 
 use \RefGPC\_models\ilot\Formulaire;
 use \RefGPC\_models\ilot\ModelVue;
-
+use \RefGPC\_models\MenuLateral;
 use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 
 
@@ -32,6 +32,11 @@ class ilotControleur extends baseControleur{
     public function affIndex($params) {
 
         //echo '$codeBase('.$this->codeBase.')';
+        $menuLateral = new menuLateral('ilot');
+        $this->d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
+        $this->d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
+        $this->d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
+
         $form = new Formulaire($this->codeBase); // choixBase->codeBase());
         $this->d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
         $this->d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
@@ -55,6 +60,8 @@ class ilotControleur extends baseControleur{
         $vue->afficheBas();
 
     }
+
+
 
     /**
      * Extraction des données ilot en csv.

@@ -51,6 +51,8 @@ class ilotAjaxControleur {
         $d['imgXls']  = WEBPATH.'img/excel.jpg';
         
         $vue = new ModelVue();
+        $d['rechercheGlobal']=''; // Initialisation de la variable à vide pour correspondre à selectAny (pour le surlignage des
+        $d['ilot']=''; //valeur tapées par l'utilisateur - recherche globale et ilot tapé
         $vue->afficheResultIlot($d);
     }
 

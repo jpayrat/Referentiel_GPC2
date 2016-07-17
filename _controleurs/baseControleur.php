@@ -24,7 +24,6 @@ class baseControleur {
         $this->codeBase = $this->choixBase->codeBase();
 
         $this->barreHaut();
-        $this->menuLMateral('ilot');
     }
 
     protected function barreHaut() {
@@ -41,14 +40,6 @@ class baseControleur {
 
         $this->d['haut']['classCSSLienLR'] = $this->choixBase ->classCSSLien('LR');
         $this->d['haut']['classCSSLienMP'] = $this->choixBase ->classCSSLien('MP');
-
+        $this->d['haut']['classCSSLienAdmin'] = $this->choixBase ->classCSSLien('Admin');
     }
-
-    protected function menuLMateral($option = 'ilot') {
-        $menuLateral = new menuLateral($option);
-        $this->d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
-        $this->d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
-        $this->d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
-    }
-
 }

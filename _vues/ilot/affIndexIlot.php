@@ -2,10 +2,10 @@
 
     <form method="post" id="form_ilot" action="#" class="formulaire">
 
-        <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?> <span class=""><?= $nbIlot>0 ? ' - ' . $nbIlot.' ilots' : ''; ?></span></h1>
+        <h1> Îlots GPC <?php echo '- ' . $libelleBase; ?><span class=""><?= $nbIlot>0 ? ' ('.$nbIlot.' ilots' : ''; ?>)</span></h1>
         <hr />
 
-        <label for="rechercheGlobal" class="gen souligner">Recherche globale</label>
+        <label for="rechercheGlobal" class="gen">Recherche globale</label>
         <?= $inputIlotGlobal; ?>
 
         <div style="border: 0px solid #000; display: inline-block;text-align: center; width: 52%;">
@@ -15,7 +15,7 @@
 
         <br />
 
-        <label for="recherchedetail" class="gen souligner" id="search_ilot_detail">Recherche avancée</label><span id="arrow" class="arrowBottom"></span>
+        <label for="recherchedetail" class="gen" id="search_ilot_detail">Recherche avancée</label><span id="arrow" class="arrowBottom"></span>
 
         <div class="search_ilot_detail">
             <div style="width: 55%; display: inline-block;">
