@@ -18,7 +18,7 @@ body  { margin: 0; padding: 0; background-color: #fff; font-family: 'MyriadText'
 h1 { color: #f70; font-family: "HelveticaNeueThin"; font-weight: 500; font-size: 1.7em; letter-spacing: -1px; line-height: 44px; padding: 0 8px; margin: 10px 0;}
 h2 { color: rgb(51, 51, 51); font-family: 'ProximaLight', Helvetica, Arial, Verdana, sans-serif; font-weight: 100; font-size: 1.3em; letter-spacing: -1px; line-height: 34px; padding: 0; margin: 0;}
 
-hr { height: 1px; border: 0; background-color: #d6d6d6; clear: both; width: 100%; margin: 4px auto 10px auto; }
+hr { height: 1px; border: 0; background-color: #969696; clear: both; width: 100%; margin: 4px auto 10px auto; }
 
 
 /*--------------------------------------------------------------------------------------------------------------------------
