@@ -49,8 +49,7 @@ class ilotControleur extends baseControleur{
         $this->d['corps']['selectSiteGeo'] = $form->select('siteGeo');
         $this->d['corps']['selectDomaineAct'] = $form->select('domaineAct');
 
-        $this->d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$this->codeBase."' "); //$choixBase->codeBase()."' ");
-
+        $this->d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$this->choixBase->codeBase()."' ");
         //var_dump($this->d);
         $vue = new ModelVue($this->d);
 

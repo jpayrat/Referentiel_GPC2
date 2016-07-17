@@ -6,20 +6,18 @@
 
     <form method="post" id="form_ilot" action="#" class="formulaire">
 
-
+        <center>
         <label for="rechercheGlobal" class="gen">Login</label>
         <?= $inputIlotGlobal; ?>
 
         <br /><br />
         <label for="rechercheGlobal" class="gen">Mot de passe</label>
         <?= $inputIlotGlobal; ?>
-
+        </center>
         <br />
         <br />
     </form>
 
-    <!-- div du retour de la requete Ajax -->
-    <div id="results_ilot" style="display: none;"></div>
     <br />
 </div>
 </section>

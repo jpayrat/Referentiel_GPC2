@@ -18,10 +18,6 @@ class baseControleur {
 
     public function __construct($selectBase) {
         $this->base = $selectBase;
-
-        $this->choixBase = new ChoixBase($this->base); //ChoixBase($param);
-        $this->codeBase = $this->choixBase->codeBase();
-
         $this->barreHaut();
     }
 
@@ -29,7 +25,8 @@ class baseControleur {
         $this->d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
         $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
         $this->d['haut']['lienAdmin'] = WEBPATH.'AD/admin';
-        //$choixBase = new modelIlot($this->base); //ChoixBase($param);
+
+        $this->choixBase = new ChoixBase($this->base); //ChoixBase($param);
         $this->d['corps']['codeBase'] = $this->choixBase->codeBase();
         $this->d['corps']['libelleBase'] = $this->choixBase->libelleBase();
 
