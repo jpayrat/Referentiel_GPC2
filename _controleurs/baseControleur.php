@@ -2,8 +2,7 @@
 
 namespace RefGPC\_controleurs;
 
-use \RefGPC\_models\ilot\modelIlot;
-use \RefGPC\_models\ChoixBase;
+
 /**
  * Description of baseControleur
  *
@@ -11,13 +10,15 @@ use \RefGPC\_models\ChoixBase;
  */
 class baseControleur {
     //put your code here
-    var $d = array(); // tableau collectant les données
-    var $base; // MP ou LR
-    var $codeBase; // T1 ou K2
-    var $choixBase;
+    protected $d = array(); // tableau collectant les données
+    
+    // accès privé, modifiable que dans baseControleur
+    private $base; // MP ou LR
+    private $codeBase; // T1 ou K2
 
     public function __construct($selectBase) {
         $this->base = $selectBase;
+        $this->codeBase =  $selectBase == 'LR'? 'K2' : 'T1';  
         $this->barreHaut();
     }
 
@@ -26,16 +27,33 @@ class baseControleur {
         $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
         $this->d['haut']['lienAdmin'] = WEBPATH.'AD/admin';
 
-        $this->choixBase = new ChoixBase($this->base); //ChoixBase($param);
-        $this->d['corps']['codeBase'] = $this->choixBase->codeBase();
-        $this->d['corps']['libelleBase'] = $this->choixBase->libelleBase();
+        $this->d['corps']['codeBase'] = $this->codeBase;  // K2 ou T1 
+        $this->d['corps']['libelleBase'] = $this->libelleBase();
 
         $this->d['haut']['base'] = $this->base; // ui = MP ou LR
         $this->d['haut']['codeBase'] = $this->d['corps']['codeBase']; // K2 ou T1 , copie dans 'haut' pour initialiser les variables du script jsIlot.js
         $this->d['haut']['libelleBase'] = $this->d['corps']['libelleBase'];
 
-        $this->d['haut']['classCSSLienLR'] = $this->choixBase ->classCSSLien('LR');
-        $this->d['haut']['classCSSLienMP'] = $this->choixBase ->classCSSLien('MP');
-        $this->d['haut']['classCSSLienAD'] = $this->choixBase ->classCSSLien('AD');
+        $this->d['haut']['classCSSLienLR'] = $this->classCSSLienActif('LR');
+        $this->d['haut']['classCSSLienMP'] = $this->classCSSLienActif('MP');
+        $this->d['haut']['classCSSLienAD'] = $this->classCSSLienActif('AD');
     }
-}
+    
+    /**
+     * Retourne 'actif' si la base est celle de l'instance
+     * @param type $base ! 'LR' ou 'MP' ou 'AD'
+     * @return String 'actif' ou ''
+     */
+    protected function classCSSLienActif($base) { return $base == $this->base ?  'actif' : ''; }
+    
+    /**
+     * Libellé de la base associée à la base
+     * @return String
+     */
+    protected function libelleBase() { return $this->base == 'LR' ? 'Languedoc-Roussillon' : 'Midi-Pyrénées';  }
+
+    
+    protected function base() { return $this->base; }
+    protected function codeBase() { return $this->codeBase; }
+    
+ }
