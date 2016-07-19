@@ -7,7 +7,7 @@ class menuLateral
     var $cssCentre;
     var $cssTech;
 
-    public function __construct($menu)
+    public function __construct($menu='')
     {
         $this->cssIlot = $menu == 'ilot' ? 'actif' : '';
         $this->cssCentre = $menu == 'centre' ? 'actif' : '';

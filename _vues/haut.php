@@ -32,9 +32,9 @@
                 <div class="titre"><a href="<?= WEBPATH; ?>">Référentiel GPC</a></div>
 
                 <div class="nav">
-                    <div><a href="<?= $lienHorizMP; ?>" class="<?= $classCSSLienMP; ?>">Midi-Pyrénées</a></div>
-                    <div class="separateur"><a href="<?= $lienHorizLR; ?>" class="<?= $classCSSLienLR; ?>">Languedoc Roussillon</a></div>
-                    <div><a href="<?= $lienAdmin; ?>" class="<?= $classCSSLienAD; ?>">Administration</a></div></div>
+                    <div><a href="<?= $lienHorizMP; ?>" class="<?= $classCSSLienMP; ?>"><?= $lienHorizMPLibelle; ?></a></div>
+                    <div class="separateur"><a href="<?= $lienHorizLR; ?>" class="<?= $classCSSLienLR; ?>"><?= $lienHorizLRLibelle; ?></a></div>
+                    <div><a href="<?= $lienHorizAD; ?>" class="<?= $classCSSLienAD; ?>"><?= $lienHorizADLibelle; ?></a> <?= $lienHorizADDeconnexion; ?></div></div>
                 </div>
             </div>
         </div>

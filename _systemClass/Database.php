@@ -36,6 +36,12 @@ class Database{
         return $res;
     }
 
+    public function queryOne($statement){
+        $req = $this->getPDO()->query($statement);
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        return $res;
+    }
+
     public function queryAll($statement){
         $req = $this->getPDO()->query($statement);
         $res = $req->fetchAll(PDO::FETCH_ASSOC);

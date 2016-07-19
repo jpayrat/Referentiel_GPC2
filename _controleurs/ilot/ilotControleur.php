@@ -37,7 +37,7 @@ class ilotControleur extends baseControleur{
         $this->d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
         $this->d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
 
-        $form = new Formulaire($this->codeBase); // choixBase->codeBase());
+        $form = new Formulaire($this->codeBase()); // choixBase->codeBase());
         $this->d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
         $this->d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
         $this->d['corps']['selectIlotList'] = $form->select('ilotList');
@@ -49,7 +49,7 @@ class ilotControleur extends baseControleur{
         $this->d['corps']['selectSiteGeo'] = $form->select('siteGeo');
         $this->d['corps']['selectDomaineAct'] = $form->select('domaineAct');
 
-        $this->d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$this->choixBase->codeBase()."' ");
+        $this->d['corps']['nbIlot'] = RefGPC::getDB()->queryCount("SELECT iloCodeIlot FROM `tm_ilots` WHERE `iloCodeBase` = '".$this->codeBase()."' ");
         //var_dump($this->d);
         $vue = new ModelVue($this->d);
 

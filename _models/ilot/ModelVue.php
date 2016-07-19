@@ -1,5 +1,5 @@
 <?php
-namespace RefGPC\_models;
+namespace RefGPC\_models\ilot;
 
 class ModelVue {
 
@@ -8,7 +8,6 @@ class ModelVue {
      * @param type $variablesHaut
      * @param type $js script à ajouter
      */
-
     public function afficheHaut($variablesHaut, $js) {
         extract($variablesHaut);
         
@@ -19,31 +18,15 @@ class ModelVue {
         require(VUES_PATH."haut.php");
     }
 
-    public function afficheMsg($variablesCorps, $vue) {
-        extract($variablesCorps);
-        require(VUES_PATH.$vue.".php");
-    }
-
-
     public function afficheMenuLateral($variablesLateral) {
         extract($variablesLateral);
         require(VUES_PATH."menuLateral.php");
     }
-    public function afficheMenuLateralAdmin() {
-        require(VUES_PATH."menuLateralAdmin.php");
-    }
 
-
-    public function afficheIlotCorps($variablesCorps, $vue) {
+    public function afficheCorps($variablesCorps, $vue) {
         extract($variablesCorps);
         require(VUES_PATH.'ilot/'.$vue.".php");
     }
-
-    public function afficheAdminCorps($variablesCorps, $vue) {
-        extract($variablesCorps);
-        require(VUES_PATH.'admin/'.$vue.".php");
-    }
-
 
     public function afficheBas() {
         require(VUES_PATH."bas.php");
@@ -54,15 +37,8 @@ class ModelVue {
         require(VUES_PATH."ilot/resultIlot.php");
     }
 
-    public function afficheDetailIlot($dataSelectOne)
-    {
+    public function afficheDetailIlot($dataSelectOne) {
         // traitement des données
-        require(VUES_PATH . "ilot/resultIlotSelectOne.php");
+        require(VUES_PATH."ilot/resultIlotSelectOne.php");
     }
-
-    public function afficheDetailIlotAdmin($dataSelectOne) {
-        // traitement des données
-        require(VUES_PATH."ilot/resultIlotSelectOneAdmin.php");
-    }
-
 }

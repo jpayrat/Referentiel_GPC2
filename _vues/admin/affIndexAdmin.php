@@ -4,15 +4,17 @@
     <hr />
 
 
-    <form method="post" id="form_ilot" action="#" class="formulaire">
+    <form method="post" id="form_ilot" action="<?= WEBPATH; ?>AD/admin/connexion" class="formulaire">
 
         <center>
-        <label for="rechercheGlobal" class="gen">Login</label>
-        <?= $inputIlotGlobal; ?>
+            <input type="hidden" name="mail" id="mail" />
+            <input type="text" name="e-mail" id="e-mail" class="input-e-mail" /><br />
+               <?= $inputNom; ?>
 
         <br /><br />
-        <label for="rechercheGlobal" class="gen">Mot de passe</label>
-        <?= $inputIlotGlobal; ?>
+               <?= $inputPass; ?>
+        <br /><br />
+        <button class="" type="submit" name="Envoyer">Log in</button>
         </center>
         <br />
         <br />
