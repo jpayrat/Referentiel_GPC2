@@ -3,6 +3,8 @@
 /nbproject/private/project.properties
 /nbproject/private/project.xml
 
+/temp/
+/temp/*
 /conf/*
 /conf/connexion.json
 /.idea/*
