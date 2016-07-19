@@ -7,3 +7,4 @@
 /conf/*
 /conf/connexion.json
 /.idea/*
+_models/ChoixBase.php
