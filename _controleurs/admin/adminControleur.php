@@ -21,7 +21,7 @@ class adminControleur extends baseControleur{
 
     public  function affIndex($params) {
 
-        $form = new Formulaire($this->codeBase); // choixBase->codeBase());
+        $form = new Formulaire($this->codeBase()); // choixBase->codeBase());
         $this->d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
         $this->d['corps']['inputIlotTape'] = $form->input('rechercheIlotTape','3','3');
 
