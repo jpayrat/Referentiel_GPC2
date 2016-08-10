@@ -92,6 +92,8 @@ label.radio { width: 78px; text-align: center; font-size: 0.8em; display: inline
 
 
 
+a.exportcsv { text-decoration: none; color: inherit; float: right; margin: 0 20px 0 0; font-size: 0.9em; }
+a.exportcsv img { border: none; width: 20px; height: 20px; margin-left: 3px; position: relative; top: 3px; }
 
 
 #blocIlot, #blocCentre, #blocActprod, #blocAdmin { margin: 0 0 0 13px; }

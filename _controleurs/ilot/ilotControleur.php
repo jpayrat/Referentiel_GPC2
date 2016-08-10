@@ -24,8 +24,8 @@ use \RefGPC\_systemClass\RefGPC; // RefGPC::getDB()
 
 class ilotControleur extends baseControleur{
 
-    public function __construct($base) {
-        parent::__construct($base);
+    public function __construct($base, $categorie) {
+        parent::__construct($base, $categorie);
     }
     
     // $param LR ou MP
@@ -36,6 +36,7 @@ class ilotControleur extends baseControleur{
         $this->d['lateral']['classLienMenuLateralIlot']   = $menuLateral->classCSSMenuLateralActifIlot();
         $this->d['lateral']['classLienMenuLateralCentre'] = $menuLateral->classCSSMenuLateralActifCentre();
         $this->d['lateral']['classLienMenuLateralTech']   = $menuLateral->classCSSMenuLateralActifTech();
+        $this->d['lateral']['base'] = $this->base;
 
         $form = new Formulaire($this->codeBase()); // choixBase->codeBase());
         $this->d['corps']['inputIlotGlobal'] = $form->input('rechercheIlotGlobal', '30','28');
@@ -53,7 +54,7 @@ class ilotControleur extends baseControleur{
         //var_dump($this->d);
         $vue = new ModelVue($this->d);
 
-        $vue->afficheHaut($this->d['haut'], 'jsIlot'); // Le second paramètre = fichier js à inclure
+        $vue->afficheHaut($this->d['haut'], 'jsIlot', 'ilot'); // Le second paramètre = fichier js à inclure
         $vue->afficheMenuLateral($this->d['lateral']);
         $vue->afficheIlotCorps($this->d['corps'], 'affIndexIlot');// TODO : je n'arrive pas à automatiser le "affIndex"
         $vue->afficheBas();

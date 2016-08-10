@@ -96,12 +96,12 @@ $(document).ready(function () {
 
         else
         {
-            //	alert(php_ilot);
+            	//alert(phpAjax);
 
             // on envoie la valeur recherché en GET au fichier de traitement
             $.ajax({
                 type: 'GET', // envoi des données en GET ou POST
-                url: php_ilot, // url du fichier de traitement : index.php
+                url: phpAjax, // url du fichier de traitement : index.php
                 // renseignée dans le haut de la page : vues/haut.php
                 data: data_get,
                 beforeSend: function () { // traitements JS à faire AVANT l'envoi

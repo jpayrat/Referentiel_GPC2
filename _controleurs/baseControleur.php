@@ -5,19 +5,21 @@ namespace RefGPC\_controleurs;
 class baseControleur {
 
     protected $d = array(); // tableau collectant les données
-    private $base; // MP ou LR
+    public $base; // MP ou LR
+    private $categorie; // Contient ilot / centre / tech etc ...
     private $codeBase; // T1 ou K2
 
 
-    public function __construct($selectBase) {
-        $this->base = $selectBase; // Contient LR / MP / AD
+    public function __construct($selectBase, $categorie) {
+        $this->categorie = $categorie ; // Contient ilot / centre / tech etc ...
+        $this->base = $selectBase ; // Contient LR / MP / AD
         $this->codeBase =  $selectBase == 'LR'? 'K2' : 'T1';
         $this->barreHaut();
     }
 
     protected function barreHaut() {
-        $this->d['haut']['lienHorizLR'] = WEBPATH.'LR/ilot';
-        $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/ilot';
+        $this->d['haut']['lienHorizLR'] = WEBPATH.'LR/'.$this->categorie;
+        $this->d['haut']['lienHorizMP'] = WEBPATH.'MP/'.$this->categorie;
         $this->d['haut']['lienHorizLRLibelle'] = 'Languedoc-Roussillon';
         $this->d['haut']['lienHorizMPLibelle'] = 'Midi-Pyrénées';
 

@@ -40,7 +40,7 @@ class Formulaire {
         $varReturn .= '<option value="***" selected="selected">Tous</option>';
 
         switch ($name) {
-
+        /******** Select pour les îlots *************/
             case 'ilotList':
                 $sql = "SELECT DISTINCT `iloCodeIlot`, `iloLibelleIlot` FROM `TM_Ilots` WHERE `iloCodeBase` = '" . $this->codeBase . "' ORDER BY `iloCodeIlot` ";
                 $rep = RefGPC::getDB()->queryAll($sql);
@@ -105,6 +105,64 @@ class Formulaire {
                     $varReturn .= '<option value="' . $row['dacIdDomAct'] . '">' . $row['dacIdDomAct'] . ' - ' . $row['daLibelleDomAct'] . ' </option>' . "\n";
                 }
                 break;
+            /******** Fin des Select pour les îlots *************/
+
+
+            /******** Select pour les Centres *************/
+            case 'centreList':
+                $sql = "SELECT DISTINCT `cenCodeCentre`, `cenLibelleCentre` FROM `TM_Centres` WHERE `cenCodeBase` = '" . $this->codeBase . "' ORDER BY `cenCodeCentre` ";
+                $rep = RefGPC::getDB()->queryAll($sql);
+                foreach ($rep as $row) {
+                    $varReturn .= '<option>' . $row['cenCodeCentre'] . ' - ' . $row['cenLibelleCentre'] . '</option>';
+                }
+                break;
+
+            case 'zoneETR':
+                $sql = "SELECT DISTINCT `zeCodeZoneETR`, `zeLibelleZoneETR` FROM `T_zoneETR` ORDER BY `zeCodeZoneETR` ";
+                $rep = RefGPC::getDB()->queryAll($sql);
+                foreach ($rep as $row) {
+                    $varReturn .= '<option value="'.$row['zeCodeZoneETR'].'">' . $row['zeCodeZoneETR'] . ' - ' . $row['zeLibelleZoneETR'] . '</option>';
+                }
+                break;
+
+            case 'idSiteGPC':
+                $sql = "SELECT DISTINCT tm_centres.siIdSite, t_sites.siLibelleSite FROM `TM_centres`
+		                                LEFT JOIN t_sites ON tm_centres.siIdSite = t_sites.siIdSite
+		                                ORDER BY `siIdSite` ";
+                $rep = RefGPC::getDB()->queryAll($sql);
+                foreach ($rep as $row) {
+                    $varReturn .= '<option value="'.$row['siIdSite'].'">' . $row['siLibelleSite'] . '</option>';
+                }
+                break;
+
+            case 'NRA':
+
+                    $varReturn .= '<option value="0">Sans les NRA Non OK</option>';
+                    $varReturn .= '<option value="1">Uniquement les NRA Non OK</option>';
+
+                break;
+
+            case 'repHab':
+
+                $varReturn .= '<option value="IS NULL">Sans les répartiteurs habités </option>';
+                $varReturn .= '<option value="IS NOT NULL">Uniquement les répartiteurs habités</option>';
+
+                break;
+
+            case 'zoneBlanche':
+
+                $varReturn .= '<option value="0">Sans les zones blanches </option>';
+                $varReturn .= '<option value="1">Uniquement les zones blanches</option>';
+
+                break;
+
+            case 'blocageR2':
+                $varReturn .= '<option value="IS NULL">Sans les blocages R2 </option>';
+                $varReturn .= '<option value="IS NOT NULL">Uniquement les blocage R2</option>';
+                break;
+
+
+            /******** Fin des Select pour les centres *************/
 
             default :;
         }

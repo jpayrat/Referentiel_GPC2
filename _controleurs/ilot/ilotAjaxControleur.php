@@ -50,7 +50,7 @@ class ilotAjaxControleur extends baseControleur{
 
         // lien pour telechargement
         $d['linkXls'] = WEBPATH.$param['base'].'/ilot/extractCsv/'; //.'sql=SELECT * from tm_ilots';
-        $d['imgXls']  = WEBPATH.'img/excel.jpg';
+        $d['imgXls']  = WEBPATH.'img/_design/excel.jpg';
         
         $vue = new ModelVue();
         $d['rechercheGlobal']=''; // Initialisation de la variable à vide pour correspondre à selectAny (pour le surlignage des

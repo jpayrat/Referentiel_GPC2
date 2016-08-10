@@ -1,20 +1,18 @@
 .champ { display: inline-block; vertical-align: middle; margin: 2px 2px; padding: 1px 1px; border: 0px solid #000; }
 
-.iloCode { width: 36px; font-size: 1.2em !important; letter-spacing: 2px; }
-.iloLibelle { width: 300px; }
-.servDem { width: 210px; }
-.ilotTypeIlot { width: 135px; }
-.dacIdDomAct { width: 235px; }
-.competence { width: 282px; }
-.site { width: 190px; }
-.entreprise { width: 188px; }
+.cenCode { padding: 0 3px; font-size: 1.2em !important; letter-spacing: 2px; }
+.cenLibelle { width: 260px; }
+.siLibelleSite { width: 235px; }
+.zeZoneETR { width: 210px; }
+.googleMap, .googleMap a, .googleMap a img { margin: 0; padding: 0; height: 38px; display:inline-block; }
+.infoAdmin { width: 850px; }
 
 .couleur_ligne_pair{ background-color: #f7f7f7;  }
 
 .surligner { color: #f70; } /* pour la mise en évidence de la recherche */
 .infoBulle { display: none; font-size: 0.9em; position: absolute; top: 10px; left: 10px; border: 1px solid #efefef; background-color: #ff9700; padding: 2px 6px; color: #000; }
 
-.lienIlotAjax
+.lienCentreAjax
 {
 font-size: 15px;
 color: #666;
@@ -37,9 +35,9 @@ transition-property: border-color, box-shadow;
 transition-timing-function: ease-in-out, ease-in-out;
 }
 
-.lienIlotAjax b { color: #444 !important; }
+.lienCentreAjax b { color: #444 !important; }
 
-.lienIlotAjax:hover
+.lienCentreAjax:hover
 {
 color: #000;
 border-radius: 2px;
@@ -49,7 +47,7 @@ border-color: rgba(82, 168, 236, 0.8) !important; outline: 0; -webkit-box-shadow
 }
 
 
-#results_ilot { width: 945px; }
+#results_Centre { width: 945px; }
 
 .bloc_front_coms textarea { text-align: left; }
 

@@ -9,10 +9,12 @@ class Routeur {
     // action par defaut en attendant d'avoir une véritable page d'accueil
     const DEFACTIONNAME = 'affIndex';
 
+    private $categorie; // contient: centre ou ilot ou tech etc ...
     private $knownControllers = array();
     private function initControleurs(){
         $this->knownControllers['base'] = '';
-        $this->knownControllers['centre'] = '';
+        $this->knownControllers['centre'] = 'centre';
+        $this->knownControllers['centreAjax'] = 'centre';
         $this->knownControllers['admin'] = 'admin';
         $this->knownControllers['ilot'] = 'ilot';
         $this->knownControllers['ilotAjax'] = 'ilot';
@@ -86,9 +88,11 @@ class Routeur {
             //
             if (isset($this->knownControllers[$pageAsk[1]])) {
                 if (\strlen($this->knownControllers[$pageAsk[1]]) > 0) {
+                    $this->categorie = $pageAsk[1];
                     $pageAsk[1] = $this->knownControllers[$pageAsk[1]].'\\'.$pageAsk[1]. 'Controleur';
                 }
                 else {
+                    $this->categorie = $pageAsk[1];
                     $pageAsk[1] = $pageAsk[1]. 'Controleur';
                 }
                 //echo '<br /> controlleur ['.$pageAsk[1].']';
@@ -158,7 +162,7 @@ class Routeur {
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
         //echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
-        return new $name($this->nomBase());
+        return new $name($this->nomBase(),$this->categorie);
     }
 
     public function methodName()     { return $this->paramsUrl['methode'];    }
