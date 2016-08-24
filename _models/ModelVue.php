@@ -9,10 +9,12 @@ class ModelVue {
      * @param type $js script à ajouter
      */
 
-    public function afficheHaut($variablesHaut, $js,$css) {
+    public function afficheHaut($variablesHaut, $js, $css) {
         extract($variablesHaut);
         // js de base
         $jqueryLoader[] = '<script src="'. WEBPATH .'js/jquery-1.12.1.min.js" type="text/javascript"></script>'."\n";
+        //CSS de base
+        $cssLoader[] = '<link rel="stylesheet" type="text/css" href="'.WEBPATH.'css/style.css" />';
         // js supplementaires
         if($js != null) { $jqueryLoader[] = '<script src="'.WEBPATH.'js/'.$js.'.js" type="text/javascript"></script>'."\n"; }
         //CSS supplémentaire
@@ -44,7 +46,7 @@ class ModelVue {
     /*** Vue des Centres ***/
     public function afficheCentreCorps($variablesCorps, $vue) { extract($variablesCorps); require(VUES_PATH.'centre/'.$vue.".php"); }
     public function afficheResultCentre($dataSelectAll) { require(VUES_PATH."centre/resultCentre.php"); }
-
+    public function afficheDetailCentre($dataSelectOne) { require(VUES_PATH . "centre/resultCentreSelectOne.php"); }
 
     /*** Vue Admin ***/
     public function afficheAdminCorps($variablesCorps, $vue) { extract($variablesCorps); require(VUES_PATH.'admin/'.$vue.".php"); }

@@ -18,6 +18,7 @@ class Routeur {
         $this->knownControllers['admin'] = 'admin';
         $this->knownControllers['ilot'] = 'ilot';
         $this->knownControllers['ilotAjax'] = 'ilot';
+        $this->knownControllers['cron'] = 'cron';
     }
     // liste des controlleurs connus, A maintenir à jour !!!
 
@@ -162,7 +163,7 @@ class Routeur {
     public function createController() {
         $name = '\\RefGPC\\_controleurs\\' . $this->controllerName();
         //echo '<br />Dispatch::createController : Classe appelée : [' . $name.']';
-        return new $name($this->nomBase(),$this->categorie);
+        return new $name($this->nomBase(),$this->categorie); // categorie = admin / cron / ilot / centre / etc ...
     }
 
     public function methodName()     { return $this->paramsUrl['methode'];    }

@@ -175,7 +175,7 @@ form button:hover, button.valid:hover { color: #ff9700; transition: color linear
 .msg_color_nok { color: #d42b2f; }
 
 
-
+#ajaxLoader { text-align: center; margin-top: 23px; }
 
 /******************************************** Fin spécificité formulaires *********************************************/
 /**********************************************************************************************************************/

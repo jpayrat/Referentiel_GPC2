@@ -6,7 +6,6 @@
         <meta name="author" content="PAYRAT Julien" />
         <meta name="description" content="Référentiel GPC" />
         <meta name="keywords" content="" />
-        <link rel="stylesheet" type="text/css" href="<?= WEBPATH; ?>css/style.css" />
         <?php foreach($cssLoader as $cssFile): ?>
             <?= $cssFile;?>
         <?php endforeach; ?>

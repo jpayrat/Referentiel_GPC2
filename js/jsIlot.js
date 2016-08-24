@@ -106,13 +106,14 @@ $(document).ready(function () {
                 data: data_get,
                 beforeSend: function () { // traitements JS à faire AVANT l'envoi
                     //alert('beforeSend php_ilot : ' + php_ilot);
-                    
+
                     $('#results_ilot').empty();
-                    $('#results_ilot').html('</br /><center><img src="img/_design/ajax-loader.gif" alt="loader" id="ajax-loader" /></center>'); // ajout d'un loader pour signifier l'action
+                    $('#ajaxLoader').show(); // ajout d'un loader pour signifier l'action
                 },
                 success: function (data) {
                     // traitements JS à faire APRES le retour du fichier .php
                     //alert('success: '+data);
+                    $('#ajaxLoader').hide();
                     $('#results_ilot').fadeIn().html(data); // affichage des résultats dans le bloc #results
                 }
             });

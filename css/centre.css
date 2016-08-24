@@ -43,11 +43,13 @@ color: #000;
 border-radius: 2px;
 border: 1px solid #eaeaea;
 border-color: rgba(82, 168, 236, 0.8) !important; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-
+cursor: pointer;
 }
 
 
-#results_Centre { width: 945px; }
+#results_centre { width: 945px; }
+
+h1 span.specificite { color: #ff0000; font-size: 0.8em; float: right; margin-right: 15px;}
 
 .bloc_front_coms textarea { text-align: left; }
 

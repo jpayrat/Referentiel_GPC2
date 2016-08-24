@@ -52,7 +52,7 @@ class centreAjaxControleur extends baseControleur{
         $d['imgXls']  = WEBPATH.'img/_design/excel.jpg';
         
         $vue = new ModelVue();
-        $d['rechercheGlobal']=''; // Initialisation de la variable à vide pour correspondre à selectAny (pour le surlignage des
+        $d['rechercheCentreGlobal']=''; // Initialisation de la variable à vide pour correspondre à selectAny (pour le surlignage des
         $d['centre']=''; //valeur tapées par l'utilisateur - recherche globale et ilot tapé
         $vue->afficheResultCentre($d);
     }
@@ -118,24 +118,32 @@ class centreAjaxControleur extends baseControleur{
 
         // données recupere en parametre
 
-        $d['ilot']              = $this->getParam($param, 'ilot');
-        $d['iloCodeBase']       = $this->getParam($param, 'iloCodeBase');
-        $d['Complement_Titre']  = $this->getParam($param, 'Complement_Titre');
+        $d['centre']            = $this->getParam($param, 'centre');
+        $d['cenCodeBase']       = $this->codeBase();
+        $d['Complement_Titre']  = $this->libelleBase();
 
         $modelOne = new modelSelectOne($d);
-        $d['dataIlot'] = $modelOne->getData('dataIlot');
+        $d['dataCentre'] = $modelOne->getData('dataCentre');
+
+        $i = 0;
+        while($i < count($d['dataCentre']))
+        {
+            $d['dataCentre'][$i]['coordGPS'] = $this->lambertIIExtend($d['dataCentre'][$i]['cenCoordGPSLambert2COX'], $d['dataCentre'][$i]['cenCoordGPSLambert2COY']);
+            $i = $i +1;
+        }
+
 
         // charge la liste des sites
-        $modelIlot = new modelIlot();
+       /*$modelIlot = new modelIlot();
         $arrListeZone = $modelIlot->createListeZone();
-
         $d['dataIlot'] = $modelIlot->organizeListZone($d['dataIlot'], $arrListeZone);
 
-        $d['dataIlot'][0]['iloDateCreation'] = $d['dataIlot'][0]['iloDateCreation'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateCreation']);
-        $d['dataIlot'][0]['iloDateModif'] = $d['dataIlot'][0]['iloDateModif'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateModif']);
 
+        $d['dataCentre'][0]['iloDateCreation'] = $d['dataIlot'][0]['iloDateCreation'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateCreation']);
+        $d['dataCentre'][0]['iloDateModif'] = $d['dataIlot'][0]['iloDateModif'] == 0 ? ' - ' : date('d-m-Y', $d['dataIlot'][0]['iloDateModif']);
+*/
         $vue = new ModelVue();
-        $vue->afficheDetailIlot($d);
+        $vue->afficheDetailCentre($d);
     }
     public function selectOneLogIN($param){
 

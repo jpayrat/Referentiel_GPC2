@@ -30,9 +30,34 @@ class Database{
         return $this->pdo;
     }
 
+    public function queryTransaction(){
+        $this->getPDO()->beginTransaction();
+    }
+    public function queryCommit(){
+        $this->getPDO()->commit();
+    }
+    public function queryRollBack(){
+        $this->getPDO()->rollBack();
+    }
+
+    /*
+try{
+RefGPC::getDB()->beginTransaction();
+RefGPC::getDB()->queryExec($sql);
+RefGPC::getDB()->commit();
+}
+catch (Exception $e) {
+    RefGPC::getDB()->rollBack();
+    echo "Failed: " . $e->getMessage();
+}*/
     public function queryCount($statement){
         $req = $this->getPDO()->query($statement);
         $res = $req->rowCount();
+        return $res;
+    }
+
+    public function queryExec($statement){
+        $res = $this->getPDO()->exec($statement);
         return $res;
     }
 

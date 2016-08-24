@@ -1,11 +1,11 @@
-<div class="container" id="ilot_corps">
+<div class="container" id="centre_corps">
 
-    <form method="post" id="form_ilot" action="#" class="formulaire">
+    <form method="post" id="form_centre" action="#" class="formulaire">
 
         <h1> Centres <?php echo '- ' . $libelleBase; ?><span class=""><?= $nbCentre>0 ? ' ('.$nbCentre.' centres )' : ''; ?></span></h1>
         <hr />
 
-        <label for="rechercheGlobal" class="gen">Recherche globale</label>
+        <label for="rechercheCentreGlobal" class="gen">Recherche globale</label>
         <?= $inputCentreGlobal; ?>
 
         <div style="border: 0px solid #000; display: inline-block;text-align: center; width: 52%;">
@@ -15,25 +15,25 @@
 
         <br />
 
-        <label for="recherchedetail" class="gen" id="search_ilot_detail">Recherche avancée</label><span id="arrow" class="arrowBottom"></span>
+        <label for="recherchedetail" class="gen" id="search_centre_detail">Recherche avancée</label><span id="arrow" class="arrowBottom"></span>
 
-        <div class="search_ilot_detail">
+        <div class="search_centre_detail">
             <div style="width: 62%; display: inline-block;">
-                <label for="ilot_tape" class="gen">Centre </label>
+                <label for="rechercheCentreTape" class="gen">Centre </label>
                 <?= $inputCentreTape; ?>
                 <span>ou</span>
                 <?= $selectCentreList; ?>
             </div>
             
             <div style="width: 37%; display: inline-block;">
-                <label for="typeIlot" class="gen">Zone ETR </label>
+                <label for="zoneETR" class="gen">Zone ETR </label>
                 <?= $selectZoneETR; ?>
             </div>
 
             <br />
 
             <div style="width: 32%; display: inline-block;">
-                <label for="used" class="gen">Zone GPC </label>
+                <label for="idSiteGPC" class="gen">Zone GPC </label>
                 <?= $selectIdSiteGPC; ?>
             </div>
 
@@ -43,17 +43,17 @@
             </div>
 
             <div style="width: 32%; display: inline-block;">
-                <label for="siteGeo" class="gen">Blocage R2 </label>
+                <label for="blocageR2" class="gen">Blocage R2 </label>
                 <?= $selectBlocageR2; ?>
             </div>
 
             <div style="width: 45%; display: inline-block;">
-                <label for="serviceCible" class="gen">Répartieur habité </label>
+                <label for="repHab" class="gen">Répartieur habité </label>
                 <?= $selectRepHab; ?>
             </div>
 
             <div style="width: 45%; display: inline-block;">
-                <label for="entreprise" class="gen">Zone blanche</label>
+                <label for="zoneBlanche" class="gen">Zone blanche</label>
                 <?= $selectZoneBlanche; ?>
             </div>
 
@@ -69,6 +69,7 @@
     </form>
 
     <!-- div du retour de la requete Ajax -->
+    <div id="ajaxLoader" style="display: none;"><img src="<?=WEBPATH; ?>img/_design/ajax-loader.gif" alt="Chargement..." id="ajax-loader" /></div>
     <div id="results_centre" style="display: none;"></div>
     <br />
 

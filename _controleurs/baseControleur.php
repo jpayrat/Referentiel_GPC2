@@ -11,7 +11,7 @@ class baseControleur {
 
 
     public function __construct($selectBase, $categorie) {
-        $this->categorie = $categorie ; // Contient ilot / centre / tech etc ...
+        $this->categorie = $categorie != 'admin' ? $categorie : 'ilot' ; // Contient ilot / centre / tech etc ...
         $this->base = $selectBase ; // Contient LR / MP / AD
         $this->codeBase =  $selectBase == 'LR'? 'K2' : 'T1';
         $this->barreHaut();

@@ -26,15 +26,6 @@ class modelSelectAny
     protected function sqlTmCentresRech($param)
     {
         $condition = '';
-        /*data_get url=MP/centreAjax/selectAny/
-        rechercheCentreGlobal=a/
-        centre=/
-        zoneETR=***
-        idSiteGPC=***
-        NRA=***
-        repHab=***
-        zoneBlanche=***
-        blocageR2=*** */
 
         if($param['zoneETR'] != '***')
         {
@@ -76,7 +67,7 @@ class modelSelectAny
         if($param['rechercheCentreGlobal'] != '')
         {
             if(!empty($condition)) { $condition .= " AND"; } 
-            $condition .= " (tm_centres.cenCodeCentre LIKE '%".$param['rechercheCentreGlobal']."%' OR tm_centres.siIdSite LIKE '%".$param['rechercheCentreGlobal']."%' OR tm_centres.cenInfoAdmin LIKE '%".$param['rechercheCentreGlobal']."%' )";
+            $condition .= " (tm_centres.cenCodeCentre LIKE '%".$param['rechercheCentreGlobal']."%' OR tm_centres.cenLibelleCentre LIKE '%".$param['rechercheCentreGlobal']."%' OR tm_centres.siIdSite LIKE '%".$param['rechercheCentreGlobal']."%' OR t_sites.siLibelleSite LIKE '%".$param['rechercheCentreGlobal']."%' OR tm_centres.cenInfoAdmin LIKE '%".$param['rechercheCentreGlobal']."%' )";
         }
 
         if(!empty($condition)) { $condition .= " AND"; } 

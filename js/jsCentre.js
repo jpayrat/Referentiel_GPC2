@@ -15,7 +15,7 @@ $(document).ready(function () {
     var all_form;
 
 
-    function recup_form_ilot()
+    function recup_form_centre()
     {
         rechercheCentreGlobal = $('#rechercheCentreGlobal').val();
         if ($('#rechercheCentreTape').val() == '')
@@ -62,7 +62,7 @@ $(document).ready(function () {
             data_get += 'select_all';
         }
         else if (critere === 'select_one') {
-            data_get += 'select_one/iloCodeBase=' + iloCodeBase + '/Complement_Titre=' + Complement_Titre + '/ilot=' + ilot;
+            data_get += 'select_one/centre=' + centre;
         }
         else if (critere === 'reinit') {
             data_get += ''; // methode par defaut (dans routeur) : affIndex
@@ -97,11 +97,12 @@ $(document).ready(function () {
                     //alert('beforeSend php_ilot : ' + php_ilot);
                     
                     $('#results_centre').empty();
-                    $('#results_centre').html('</br /><center><img src="img/_design/ajax-loader.gif" alt="loader" id="ajax-loader" /></center>'); // ajout d'un loader pour signifier l'action
+                    $('#ajaxLoader').show(); // ajout d'un loader pour signifier l'action
                 },
                 success: function (data) {
                     // traitements JS à faire APRES le retour du fichier .php
                     //alert('success: '+data);
+                    $('#ajaxLoader').hide();
                     $('#results_centre').fadeIn().html(data); // affichage des résultats dans le bloc #results
                 }
             });
@@ -109,106 +110,82 @@ $(document).ready(function () {
     }
 
     $('#reinit_form').on('click', function () {
-        $('#form_ilot')[0].reset();
-        recup_form_ilot();
+        $('#form_centre')[0].reset();
+        recup_form_centre();
         requete_formulaire('reinit');
     });
     $('#all_form').on('click', function () {
-        $('#form_ilot')[0].reset();
+        $('#form_centre')[0].reset();
         requete_formulaire('select_all');
     });
 
     $('#rechercheCentreGlobal').on('keyup', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
 
     $('#centreList').on('change', function () {
         $('#rechercheCentreTape').val(''); // réinit de l'autre choix de l'îlot (ilot tapé)
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#rechercheCentreTape').on('keyup', function () {
         $('#centreList').prop('selectedIndex', 0);// réinit de l'autre choix de l'îlot (ilot listé)
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#zoneETR').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#idSiteGPC').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#NRA').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#repHab').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#zoneBlanche').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
     $('#blocageR2').on('change', function () {
-        recup_form_ilot();
+        recup_form_centre();
         requete_formulaire();
     });
 
 
-    // Clic sur un ilot pour afficher le détail de ce dernier
-    $('#results_ilot').on('click', '.lienIlotAjax', function () {
-        $("#form_ilot").hide(); // On cache le formulaire
+    // Clic sur un centre pour afficher le détail de ce dernier
+    $('#results_centre').on('click', '.lienCentreAjax', function () {
+        $("#form_centre").hide(); // On cache le formulaire
 //				$("#blocIlot").empty(); // On vide le <h1> et le <hr /> qui contient Ilot GPC - MidiPy
-        $("#results_ilot").empty(); // On vide le div qui reçoit les infos de l'îlot
-        $('.infoBulle').remove(); // On efface les infobulles qui peuvent être affichées
+        $("#results_centre").empty(); // On vide le div qui reçoit les infos de l'îlot
 
-        ilot = $(this).attr('ilot'); // On récupère l'îlot
+        centre = $(this).attr('centre'); // On récupère l'îlot
         requete_formulaire('select_one');  // On fait l'affichage
     });
 // Fin du 1
 
 // Affichage de la recherche avancé
-    $('.search_ilot_detail').hide(); // On cache la recherche avancé de base
-    $('#search_ilot_detail').on('click', function () {
-        $('.search_ilot_detail').fadeToggle();
+    $('.search_centre_detail').hide(); // On cache la recherche avancé de base
+    $('#search_centre_detail').on('click', function () {
+        $('.search_centre_detail').fadeToggle();
         $('#arrow').toggleClass('arrowBottom arrowTop');
     });
 
 
-// Affichage des infosBulles
-    $(document).on({
-        mouseenter: function (event) {
-            var toolTip;
-            toolTip = $(this).attr('infoBulle');
-
-            if ((typeof toolTip != 'undefined') && (toolTip != ''))
-            {
-                //alert(toolTip);
-                $('<span class="infoBulle"></span>').html(toolTip)
-                        .appendTo(this)
-                        .fadeIn('slow')
-                        .css('display', 'inline-block')
-                        .css('top', (event.pageY - 10) + 'px')
-                        .css('left', (event.pageX + 20) + 'px');
-            }
-        },
-        mouseleave: function () {
-            $('.infoBulle').remove();
-        }
-    }, '.champ').mousemove(function (event) {
-        $('.infoBulle').css('top', (event.pageY - 10) + 'px').css('left', (event.pageX + 20) + 'px');
-    });
-// Fin de l'affichage des infosBulles
 
 
 
-// Fonction permettant la mise à jour d'un ilot unique
 
 
+
+// Fonction permettant la mise à jour d'un centre unique
 
     $('#results_ilot').on('click', '#majBDD_tm_ilots', function () {
         if (confirm('Etes-vous sûr de voulour mettre à jour cet îlot ?')) {

@@ -84,6 +84,7 @@
     </form>
 
     <!-- div du retour de la requete Ajax -->
+    <div id="ajaxLoader" style="display: none;"><img src="<?=WEBPATH; ?>img/_design/ajax-loader.gif" alt="Chargement..." id="ajax-loader" /></div>
     <div id="results_ilot" style="display: none;"></div>
     <br />
 

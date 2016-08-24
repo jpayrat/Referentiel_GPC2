@@ -19,16 +19,9 @@
         if ($dataSelectAll['centre'] != '') { $req_cenCodeCentre = preg_replace('#('.$dataSelectAll['centre'].')#i', '<span class="surligner">$1</span>', strtoupper($row['cenCodeCentre'])); }
         else { $req_cenCodeCentre = preg_replace('#('.$dataSelectAll['rechercheCentreGlobal'].')#i', '<span class="surligner">$1</span>', $row['cenCodeCentre']); }
         $row['cenLibelleCentre'] = preg_replace('#('.$dataSelectAll['rechercheCentreGlobal'].')#i', '<span class="surligner">$1</span>', $row['cenLibelleCentre']);
-        // Pas Utile, la recherche se fait que sur 1 ou 0 // $row['iloOptim = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['iloOptim']);
-   /*
-    $row['tiIdTypeIot'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['tiIdTypeIot']);
-    $row['used'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['used']);
-    $row['coIdCompetence'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['coIdCompetence']);
-    $row['sedIdServDem'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['sedIdServDem']);
-    $row['enIdEntreprise'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['enIdEntreprise']);
-    $row['siIdSite'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['siIdSite']);
-    $row['dacIdDomAct'] = preg_replace('#('.$dataSelectAll['rechercheGlobal'].')#i', '<span class="surligner">$1</span>', $row['dacIdDomAct']);
-    */
+        $row['cenInfoAdmin'] = preg_replace('#('.$dataSelectAll['rechercheCentreGlobal'].')#i', '<span class="surligner">$1</span>', $row['cenInfoAdmin']);
+        $row['siLibelleSite'] = preg_replace('#('.$dataSelectAll['rechercheCentreGlobal'].')#i', '<span class="surligner">$1</span>', $row['siLibelleSite']);
+
     }
     else {
         if ($row['cenCodeCentre'] != '') { $req_cenCodeCentre = preg_replace('#('.$dataSelectAll['centre'].')#i', '<span class="surligner">$1</span>', strtoupper($row['cenCodeCentre'])); }

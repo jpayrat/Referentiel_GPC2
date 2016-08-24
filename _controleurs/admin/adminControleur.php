@@ -8,10 +8,13 @@ use \RefGPC\_models\ModelVue;
 use \RefGPC\_models\Formulaire;
 use \RefGPC\_systemClass\RefGPC;
 
+use \SplFileObject;
+use \LimitIterator;
+
 class adminControleur extends baseControleur{
-    
-    public function __construct($base) {
-        parent::__construct($base);
+
+    public function __construct($base, $categorie) {
+        parent::__construct($base, $categorie);
     }
 
     public function affIndex() {
@@ -36,12 +39,12 @@ class adminControleur extends baseControleur{
         $this->d['corps']['inputPass'] = $form->inputPasswd('pass','30','28',$placeholderMdp, $colorPlaceHolderMdp );
 
         $vue = new ModelVue($this->d);
-        $vue->afficheHaut($this->d['haut'], ''); // Le second paramètre = fichier js à inclure
+        $vue->afficheHaut($this->d['haut'], '', 'ilot'); // Le second paramètre = fichier js à inclure
         $vue->afficheMenuLateralAdmin();
         $vue->afficheAdminCorps($this->d['corps'], 'affIndexAdmin');
         $vue->afficheBas();
     }
-    
+
     public function connexion(){
 
         //Initialisation des variables :
